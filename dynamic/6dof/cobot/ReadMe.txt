@@ -1,0 +1,3 @@
+1、首先运行cobot_gen_traj_and_mass_param.m，生成机器人本体以及轨迹参数;Firstly, run cobot_gen_traj_and_mass_param.m to generate the robot body and trajectory parameters.
+2、打开cobot_dy_create_model.slx，运行simulink，生成力矩发送到工作空间中;Open cobot_dy_create_model.slx, run simulink, generate torque and send it to the workspace.
+3、运行cobot_dy_check.m，生成误差曲线，可以修改不同形式的动力学方程，得到的结果都是一样.Running cobot_dy_check.m and generating error curves, you can modify different forms of kinetic equations, and the results obtained are the same.

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -15,29 +15,29 @@
 
 function theta1 = ikine_sc(sc,T_home,theta_0,T_end)
 
-    omg = 0.001;        %×ËÌ¬Îó²îÈÝÈÌ¶È; oritation error tolerance;
-    ov = 0.001;         %Î»ÖÃÎó²îÈÝÈÌ¶È; Position error tolerance;
-    iter_max = 20;      %×î´óµÄµü´ú´ÎÊý; Maximum number of iterations
+    omg = 0.001;        %ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½; oritation error tolerance;
+    ov = 0.001;         %Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½; Position error tolerance;
+    iter_max = 20;      %ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Maximum number of iterations
     iter = 0;
     theta = theta_0;
     error_flag = 1;
 
     while((1 == error_flag)&&(iter<iter_max))
 
-        %µÚÒ»²½Çó°éËæ¿Õ¼äµÄ¾àÀë; The first step is to find the distance of the accompanying space;
-        T = fkine_sc(sc,T_home,theta);  %Õý½â; forward solution
-        T_trans = inv(T)*T_end;         %´Óµ±Ç°Î»×Ëµ½Ä¿±êÎ»×ËÖ®¼äµÄ²îÖµ; the difference between the current pose and the target pose;
-        T_se = SE3_to_se3(T_trans);     %×ªµ½Àî´úÊýÏÂ; Go under Lie algebra;
-        v = se3_to_v(T_se);             %×ªµ½Àî´úÊýÏÂ; Go under Lie algebra;
-        adtt = adt(T);                  %Çóµ±Ç°Î»×ËÏÂµÄ°éËæ; Find the concomitant in the current pose;
-        v = adtt*v';                    %½«vÊ¸Á¿×ªµ½°éËæ¿Õ¼ä; Turn the v vector to the Adjoint space;
-        error_flag = (sqrt(sum(v(1:3).^2))>= ov ||sqrt(sum(v(4:6).^2)) >= omg);%Èç¹û°éËæ¿Õ¼äµÄ¾àÀëÎª0; If the distance of the Adjoint space is 0;
+        %ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½Ä¾ï¿½ï¿½ï¿½; The first step is to find the distance of the accompanying space;
+        T = fkine_sc(sc,T_home,theta);  %ï¿½ï¿½ï¿½ï¿½; forward solution
+        T_trans = inv(T)*T_end;         %ï¿½Óµï¿½Ç°Î»ï¿½Ëµï¿½Ä¿ï¿½ï¿½Î»ï¿½ï¿½Ö®ï¿½ï¿½Ä²ï¿½Öµ; the difference between the current pose and the target pose;
+        T_se = SE3_to_se3(T_trans);     %×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Go under Lie algebra;
+        v = se3_to_v(T_se);             %×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Go under Lie algebra;
+        adtt = adt(T);                  %ï¿½ï¿½Ç°Î»ï¿½ï¿½ï¿½ÂµÄ°ï¿½ï¿½ï¿½; Find the concomitant in the current pose;
+        v = adtt*v';                    %ï¿½ï¿½vÊ¸ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½; Turn the v vector to the Adjoint space;
+        error_flag = (sqrt(sum(v(1:3).^2))>= ov ||sqrt(sum(v(4:6).^2)) >= omg);%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½Ä¾ï¿½ï¿½ï¿½Îª0; If the distance of the Adjoint space is 0;
 
-        %µÚ¶þ²½Çó½Ç¶ÈµÄÆ«²î; The second step is to find the deviation of the angle;
-        J = jac_space(sc,theta);        %ÕâÀïÊÇ¸ù¾Ý°éËæ¿Õ¼äÇóµÄÑÅ¿Ë±È¾ØÕó; Here is the Jacobian matrix based on the adjoint space
-        delta = pinv(J)*v;              %Ëãµ½½Ç¶È²îÖµ; Calculate the angle difference
-        theta = theta+delta';           %Ëã³öÐèÒªµþ¼ÓµÄÏîµþ¼Óµ½³õÊ¼Î»×Ë; Calculate the items that need to be stacked to the initial pose;
-        %theta(2) = theta(3)*0.5       %Èç¹ûÊÇÈßÓà£¬ÐèÒª¹Ì¶¨Ä³ÖÖ¹ØÏµ; If it's redundant, you need to fix some kind of relationship;
+        %ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶Èµï¿½Æ«ï¿½ï¿½; The second step is to find the deviation of the angle;
+        J = jac_space(sc,theta);        %ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½Ý°ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½Å¿Ë±È¾ï¿½ï¿½ï¿½; Here is the Jacobian matrix based on the adjoint space
+        delta = pinv(J)*v;              %ï¿½ãµ½ï¿½Ç¶È²ï¿½Öµ; Calculate the angle difference
+        theta = theta+delta';           %ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Ê¼Î»ï¿½ï¿½; Calculate the items that need to be stacked to the initial pose;
+        %theta(2) = theta(3)*0.5       %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½Òªï¿½Ì¶ï¿½Ä³ï¿½Ö¹ï¿½Ïµ; If it's redundant, you need to fix some kind of relationship;
         iter = iter+1;
     end
 

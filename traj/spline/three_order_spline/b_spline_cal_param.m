@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -30,8 +30,8 @@ function [a,b,c,d] = b_spline_cal_param(t,x,y,z)
     end
         
     
-    A = 0.0;%loEzËUsC;
-    B = 0.0;%ÖOlaËUsCÖl;
+    A = 0.0;%loEzï¿½UsC;
+    B = 0.0;%ï¿½Olaï¿½UsCï¿½l;
     
     n = t_length;
     counts = t(n)/Ts;

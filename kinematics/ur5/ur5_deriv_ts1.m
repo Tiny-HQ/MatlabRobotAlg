@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -159,7 +159,7 @@ T12*T23*T34;
 % ?????????????;
 % c2*a2+a3*c23 = x....(-(c1*px + py*s1 + d5*(c6*(c1*ox + oy*s1) + s6*(c1*nx + ny*s1)) - d6*(ax*c1 + ay*s1)))    ??
 % s2*a2+a3*s23 = y....(-(pz - d1 - az*d6 + d5*(c6*oz + nz*s6)))     ??
-% ????+???? = x^2+y^2 = a2^2+a3^2+2*a2*a3*c3;    q3 = ±acos((x^2+y^2-a2^2-a3^2)/(2*a2*a3))
+% ????+???? = x^2+y^2 = a2^2+a3^2+2*a2*a3*c3;    q3 = ï¿½acos((x^2+y^2-a2^2-a3^2)/(2*a2*a3))
 % ?q2:
 % ??????q3???????????,????c2?s2;
 % [c2] *[A B] = [M]   A = a2+a3*c3  B = -a3*s3;     M = -x;

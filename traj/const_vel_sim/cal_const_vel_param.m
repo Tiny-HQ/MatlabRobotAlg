@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,9 +11,9 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%% ÇóÁ½ÌõÖ±Ïß£¬ÒÔÖÐ¼äµãÎªÔ²ÐÄ¾àÀërÎ»ÖÃÇóÏàÇÐÔ²£¬²»ÊÇºÜºÃÃèÊö¡£¡£¡£¡£¡£ Finding two straight lines, taking the middle point as the center of the circle and the distance r position to find the tangent circle, is not very well described
-%P1Æðµã£¬P2ÖÐ¼äµã£¬P3ÖÕµã£¬rÊÇµ½P1P2Ö®¼ä¡¢P2P3Ö®¼äµ½P2µÄÁ½µãµ½P2µÄ¾àÀë; The starting point of P1, the middle point of P2, the end point of P3, r is the distance from two points to P2 to P1P2 and between P2P3 and P2;
-%AÎªÔ²»¡Æðµã£¬BÎªÔ²»¡ÖÕµã£» A is the starting point of the arc, and B is the end point of the arc;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ß£ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ÎªÔ²ï¿½Ä¾ï¿½ï¿½ï¿½rÎ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ÇºÜºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Finding two straight lines, taking the middle point as the center of the circle and the distance r position to find the tangent circle, is not very well described
+%P1ï¿½ï¿½ã£¬P2ï¿½Ð¼ï¿½ã£¬P3ï¿½Õµã£¬rï¿½Çµï¿½P1P2Ö®ï¿½ä¡¢P2P3Ö®ï¿½äµ½P2ï¿½ï¿½ï¿½ï¿½ï¿½ãµ½P2ï¿½Ä¾ï¿½ï¿½ï¿½; The starting point of P1, the middle point of P2, the end point of P3, r is the distance from two points to P2 to P1P2 and between P2P3 and P2;
+%AÎªÔ²ï¿½ï¿½ï¿½ï¿½ã£¬BÎªÔ²ï¿½ï¿½ï¿½Õµã£» A is the starting point of the arc, and B is the end point of the arc;
 
 
 

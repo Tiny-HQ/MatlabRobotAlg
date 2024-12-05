@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%arm_fkineÖÐµÄmodel2...OK!Çó¸÷¸ö¾ØÕó±í´ïÊ½; model2 in arm_fkine... OK!
+%arm_fkineï¿½Ðµï¿½model2...OK!ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; model2 in arm_fkine... OK!
 
 
 

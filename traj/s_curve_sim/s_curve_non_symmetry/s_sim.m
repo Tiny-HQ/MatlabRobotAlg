@@ -2,7 +2,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -24,7 +24,7 @@ S = 100.6;
 V = 20;
 A = 100;
 D = 100;
-J = 1000;%ÔÈ¼Ó£¬ÔÈ¼õ£¬ÔÈËÙ 
+J = 1000;%ï¿½È¼Ó£ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,1);
@@ -38,7 +38,7 @@ S = 100.1;
 V = 20;
 A = 200;
 D = 100;
-J = 1000;%ÎÞÔÈ¼Ó£¬ÔÈ¼õ£¬ÔÈËÙ
+J = 1000;%ï¿½ï¿½ï¿½È¼Ó£ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,2);
@@ -52,7 +52,7 @@ S = 100.9;
 V = 20;
 A = 100;
 D = 200;
-J = 1000;%ÔÈ¼Ó£¬ÎÞÔÈ¼õ£¬ÔÈËÙ
+J = 1000;%ï¿½È¼Ó£ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,5);
@@ -65,7 +65,7 @@ S = 100.9;
 V = 2000;
 A = 100;
 D = 200;
-J = 1000;%ÔÈ¼Ó£¬ÔÈ¼õ£¬ÎÞÔÈËÙ
+J = 1000;%ï¿½È¼Ó£ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,6);
@@ -80,7 +80,7 @@ S = 100.6;
 V = 20;
 A = 1000;
 D = 1000;
-J = 1000;%ÎÞÔÈ¼Ó£¬ÎÞÔÈ¼õ£¬ÔÈËÙ
+J = 1000;%ï¿½ï¿½ï¿½È¼Ó£ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,1);
@@ -93,7 +93,7 @@ S = 100.1;
 V = 200;
 A = 2000;
 D = 100;
-J = 1000;%ÎÞÔÈ¼Ó£¬ÔÈ¼õ£¬ÎÞÔÈËÙ
+J = 1000;%ï¿½ï¿½ï¿½È¼Ó£ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,2);
@@ -107,7 +107,7 @@ S = 100.9;
 V = 120;
 A = 40;
 D = 2000;
-J = 1000;%ÔÈ¼Ó£¬ÎÞÔÈ¼õ£¬ÎÞÔÈËÙ
+J = 1000;%ï¿½È¼Ó£ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,5);
@@ -120,7 +120,7 @@ S = 10.9;
 V = 2000;
 A = 100;
 D = 200;
-J = 100;%ÎÞÔÈ¼Ó£¬ÎÞÔÈ¼õ£¬ÎÞÔÈËÙ
+J = 100;%ï¿½ï¿½ï¿½È¼Ó£ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J);
 [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,J,0.001);
 subplot(4,2,6);

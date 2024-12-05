@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,11 +12,11 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%ÇóµÚÈý¹Ø½ÚµÄÁ¦¾ØÊ±£¬ÕÒµ½Ä³¸öÊ±¿Ì¶ÔÓ¦µÄ×îÐ¡²ÎÊý¼¯µÄ¾ØÕóÏî£¬ÏÂÃæµÄÕâÐ©¶¼ÊÇÏµÊý£¬¾ÍÊÇU_r¾ØÕóÖÐµÄÖµ£¬ÄÃ³öÀ´µÄ£¬
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Òµï¿½Ä³ï¿½ï¿½Ê±ï¿½Ì¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½U_rï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Öµï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½Ä£ï¿½
 %When finding the moment of the third joint, find the matrix terms corresponding to the minimum parameter set at a certain time, and the following are all coefficients, which are the values in the U_r matrix.
-%ÕâÀïÑ¡È¡×îºóÒ»¿ÌµÄU_r¾ØÕóµÄÏî(Here we pick the last-minute U_r matrix items)£¬mx3 = U_r(3,22),my3 = U_r(3,23),xx3 = U_r(3,25),xy3 =
+%ï¿½ï¿½ï¿½ï¿½Ñ¡È¡ï¿½ï¿½ï¿½Ò»ï¿½Ìµï¿½U_rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Here we pick the last-minute U_r matrix items)ï¿½ï¿½mx3 = U_r(3,22),my3 = U_r(3,23),xx3 = U_r(3,25),xy3 =
 %U_r(3,26),xz3 = U_r(3,27),yz3 = U_r(3,29),zz3 =
-%U_r(3,30),Ä¿±êÐèÒª×é³ÉM4µÄ¾ØÕóÏµÊý£¬Ò²¾ÍÊÇU_r(3,31);
+%U_r(3,30),Ä¿ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½M4ï¿½Ä¾ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½U_r(3,31);
 %The target needs to make up the matrix coefficients of M4, which is U_r(3,31);
 
 
@@ -32,7 +32,7 @@ a4 = 392.430/1000.0;
 d4 = 109/1000.0;
 
 
-target = 3.24837371633976;%Õâ¸öÊÇm4Ïî¶ÔÓ¦µÄ¾ØÕóÏµÊý;This is the matrix coefficient corresponding to the m4 term;
+target = 3.24837371633976;%ï¿½ï¿½ï¿½ï¿½ï¿½m4ï¿½ï¿½ï¿½Ó¦ï¿½Ä¾ï¿½ï¿½ï¿½Ïµï¿½ï¿½;This is the matrix coefficient corresponding to the m4 term;
 W = zeros(35,1);
 AA = zeros(10,1);
 BB = zeros(10,1);
@@ -42,7 +42,7 @@ EE = zeros(10,1);
 FF = zeros(10,1);
 GG = zeros(10,1);
 
-%¿ÉÄÜ´æÔÚa4¡¢d4¡¢a4^2¡¢d4^2¡¢a4*d4
+%ï¿½ï¿½ï¿½Ü´ï¿½ï¿½ï¿½a4ï¿½ï¿½d4ï¿½ï¿½a4^2ï¿½ï¿½d4^2ï¿½ï¿½a4*d4
 A1 = a4*mx3;
 A2 = d4*mx3;
 A3 = a4^2*mx3;
@@ -85,7 +85,7 @@ G3 = a4^2*zz3;
 G4 = d4^2*zz3;
 G5 = a4*d4*zz3;
 
-%Ò²¿ÉÄÜ´æÔÚ¼Ó¼õ£¬ËùÒÔÕâÀïÓÐ10Ïî£¬Ä³Ð©ÏµÊý¶¼ÓÐ¿ÉÄÜ³ÉÎªÆ´³öÀ´µÄÖµ;There may also be additions and subtractions, so there are 10 terms here, and some coefficients may become spelled values;
+%Ò²ï¿½ï¿½ï¿½Ü´ï¿½ï¿½Ú¼Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½î£¬Ä³Ð©Ïµï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Ü³ï¿½ÎªÆ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ;There may also be additions and subtractions, so there are 10 terms here, and some coefficients may become spelled values;
 AA(1) = A1;AA(2) = A2;AA(3) = A3;AA(4) = A4;AA(5) = A5;AA(6) = -A1;AA(7) = -A2;AA(8) = -A3;AA(9) = -A4;AA(10) = -A5;%A1
 BB(1) = B1;BB(2) = B2;BB(3) = B3;BB(4) = B4;BB(5) = B5;BB(6) = -B1;BB(7) = -B2;BB(8) = -B3;BB(9) = -B4;BB(10) = -B5;%
 CC(1) = C1;CC(2) = C2;CC(3) = C3;CC(4) = C4;CC(5) = C5;CC(6) = -C1;CC(7) = -C2;CC(8) = -C3;CC(9) = -C4;CC(10) = -C5;%-C5
@@ -109,9 +109,9 @@ for i = 1:10
                        
                         for r = 1:10
                             t1 = AA(i);t2 = BB(j);t3 = CC(m);t4 = DD(n);t5 = EE(k);t6 = FF(w);t7 = GG(r);
-                            %Ò»¹²ÓÐ7ÖÖ£¬ÓÐÐ©Ïî¿ÉÄÜ»¹Ã»ÓÐ£¬ËùÒÔÓÐ2^7´Î·½ÖÖ£¬Ã¿Ò»ÖÖ¶¼ÐèÒª²éÑ¯µ½£¬There are 7 kinds in total, and some items may not be available yet, so there are 2^7 power species, and each one needs to be queried
+                            %Ò»ï¿½ï¿½ï¿½ï¿½7ï¿½Ö£ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½Ü»ï¿½Ã»ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2^7ï¿½Î·ï¿½ï¿½Ö£ï¿½Ã¿Ò»ï¿½Ö¶ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½There are 7 kinds in total, and some items may not be available yet, so there are 2^7 power species, and each one needs to be queried
                             for tt = 1:127
-                                   %´ó¸Å¼ÆËãÁËÒ»Ç§Íò´Î¾Í³öÀ´ÁË¡£·´ÍÆ»ØÈ¥£¬¾ÍÄÜÖªµÀÊÇÄÄÐ©Ïî£¬È»ºóÔÙÍù×îÐ¡¶þ³ËÀïÃæÐ´ºÃÏàÓ¦µÄÏµÊý¾ÍÐÐÁË,It came out after about 10 million calculations. Push back to know which terms are, and then write the corresponding coefficients into the least squares
+                                   %ï¿½ï¿½Å¼ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ç§ï¿½ï¿½Î¾Í³ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½Æ»ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½î£¬È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,It came out after about 10 million calculations. Push back to know which terms are, and then write the corresponding coefficients into the least squares
                                 count = count+1;
                                 if(mod(count,10000) == 0)
                                    count 

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -40,7 +40,7 @@ end
 subplot(2,2,2);
 plot(new_x,new_y,'*');
 
-%��һȦ
+%��һȦ
 counts = 311;
 new_x1 = new_x(1:counts);new_x2 = new_x(counts+1:length(new_x)-1);
 new_y1 = new_y(1:counts);new_y2 = new_y(counts+1:length(new_y)-1);

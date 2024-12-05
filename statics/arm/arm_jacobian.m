@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -40,7 +40,7 @@ function J = arm_jacobian(DH,q,opt)
         theta = DH.theta*pi/180.0;
     end
     
-    q = q+theta;%thetaµÄÆ«²î
+    q = q+theta;%thetaï¿½ï¿½Æ«ï¿½ï¿½
     alpha0 = alpha(1); alpha1 = alpha(2); alpha2 = alpha(3);alpha3 = alpha(4);  alpha4 = alpha(5); alpha5 = alpha(6);
         
         

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -15,13 +15,13 @@ clc;
 clear;
 
 
-%Èç¹ûÊ¾½ÌµÄµãÎ»ÊÇÔÚPCSÏÂ½øÐÐµÄ£¬ÄÇÃ´ÉèÖÃPCS; If the teaching point is carried out under PCS, then set PCS;
-%Èç¹ûÃ»ÓÐÉèÖÃPCS£¬½«PCSµÄÖµÉèÖÃÎª0; If PCS is not set, set the value of PCS to 0;
+%ï¿½ï¿½ï¿½Ê¾ï¿½ÌµÄµï¿½Î»ï¿½ï¿½ï¿½ï¿½PCSï¿½Â½ï¿½ï¿½ÐµÄ£ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½PCS; If the teaching point is carried out under PCS, then set PCS;
+%ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PCSï¿½ï¿½ï¿½ï¿½PCSï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Îª0; If PCS is not set, set the value of PCS to 0;
 pcs = [291.7 -530.7 367.7 104.845 44.6819 -91.1188];
 %pcs = [0.0 0.0 0.0 0.0 0.0 0.0];
 
 
-%ÉèÖÃ¸÷¸öÊ¾½ÌµãÎ»,Óë³ÌÐò½çÃæµÄÖµ¶ÔÓ¦£¬²»ÒªÐÞ¸ÄË³Ðò; Set each teaching point to correspond to the value of the program interface, and do not modify the order;
+%ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½Ê¾ï¿½Ìµï¿½Î»,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Òªï¿½Þ¸ï¿½Ë³ï¿½ï¿½; Set each teaching point to correspond to the value of the program interface, and do not modify the order;
 P1 = [145.6 -0.1 0.0 57.77 170.78 -43.59];
 P2 = [0.099 0.1 0.0 57.77 170.78 -43.59 ];
 P3 = [147.50 115.199 0.00 57.77 170.78 -43.59 ];
@@ -29,22 +29,22 @@ P4 = [145.599911 -0.100142 0.000128 57.774833 170.78 -43.59 ];
 P5 = [145.599911 -0.100142 0.000128 57.774833 170.78 -43.59 ];
 
 
-%¼ÆËãÊÀ½ç×ø±êÏµÏÂµÄ¾ØÕó; Calculate matrices in the world coordinate system;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ÂµÄ¾ï¿½ï¿½ï¿½; Calculate matrices in the world coordinate system;
 T_WCS1 = cs_define_zyzeul(pcs)*cs_define_zyzeul(P1);
 T_WCS2 = cs_define_zyzeul(pcs)*cs_define_zyzeul(P2);
 T_WCS3 = cs_define_zyzeul(pcs)*cs_define_zyzeul(P3);
 T_WCS4 = cs_define_zyzeul(pcs)*cs_define_zyzeul(P4);
 T_WCS5 = cs_define_zyzeul(pcs)*cs_define_zyzeul(P5);
 
-%Çó±ê¶¨µÄÅÌ×ø±êÏµÏÂµÄx¡¢y¡¢zÖáÊ¸Á¿; Find the x, y, and z axis vectors in the calibrated disk coordinate system;
+%ï¿½ï¿½ê¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½Âµï¿½xï¿½ï¿½yï¿½ï¿½zï¿½ï¿½Ê¸ï¿½ï¿½; Find the x, y, and z axis vectors in the calibrated disk coordinate system;
 vx = splitT_P(T_WCS2) - splitT_P(T_WCS1);%vx = normal(vx);
 vy = splitT_P(T_WCS3) - splitT_P(T_WCS1);%vy = normal(vy);
 vz = splitT_P(T_WCS4) - splitT_P(T_WCS1);%vz = normal(vz);
 
 
 
-%ÇóxÖáÓÚyÖá¡¢xÓÚzÖá¡¢yÖáÓëzÖáµÄµã»ý£¬Èç¹ûÈýÕßµÄµã»ýÎª0»òÕß½Ó½ü0 Find the dot product of the x-axis in the y-axis, x-x-x-axis, y-axis and z-axis, if the dot product of the three is 0 or close to 0
-%ÄÇÃ´ËµÃ÷±ê¶¨Ð§¹û²»´í£¬Èç¹û²»Îª0£¬ÄÇÃ´ËµÃ÷±ê¶¨Ð§¹û±È½Ï²î; Then it means that the calibration effect is good, if it is not 0, then it means that the calibration effect is relatively poor;
+%ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½yï¿½á¡¢xï¿½ï¿½zï¿½á¡¢yï¿½ï¿½ï¿½ï¿½zï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµÄµï¿½ï¿½Îª0ï¿½ï¿½ï¿½ß½Ó½ï¿½0 Find the dot product of the x-axis in the y-axis, x-x-x-axis, y-axis and z-axis, if the dot product of the three is 0 or close to 0
+%ï¿½ï¿½Ã´Ëµï¿½ï¿½ï¿½ê¶¨Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½Ã´Ëµï¿½ï¿½ï¿½ê¶¨Ð§ï¿½ï¿½ï¿½È½Ï²ï¿½; Then it means that the calibration effect is good, if it is not 0, then it means that the calibration effect is relatively poor;
 sum(vx.*vy)
 sum(vy.*vz)
 sum(vz.*vx)

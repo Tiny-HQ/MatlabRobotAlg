@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,7 +13,7 @@
 % -------------------------------------------------------------------------
 
 
-%¸ù¾Ýscara_dy_cal_testÖÐµÄ²ÎÊý¼ÆËã;Calculated according to the parameters in the scara_dy_cal_test;
+%ï¿½ï¿½ï¿½ï¿½scara_dy_cal_testï¿½ÐµÄ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;Calculated according to the parameters in the scara_dy_cal_test;
 
 
 function tao = scara_dy_cal_data(q,dq,ddq)
@@ -70,7 +70,7 @@ function tao = scara_dy_cal_data(q,dq,ddq)
       
       
     w00 = [0 0 0]';     dw00 = [0 0 0]';     v00 = [0 0 0]';    dv00 = [0 0 g]';
-    P10 = [0 0 0]'; P21 = [a1 0 0]';P32 = [a2 0 d3]';P43 = [0 0 -d4]';P54 = [0 0 0]';      %p43¿ÉÒÔÐ´³É[0 0 0]',ÕâÀï·½±ãÓësimulink¶ÔÓ¦;%p43 can be written as [0 0 0]', which is convenient for simulink correspondence;
+    P10 = [0 0 0]'; P21 = [a1 0 0]';P32 = [a2 0 d3]';P43 = [0 0 -d4]';P54 = [0 0 0]';      %p43ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½[0 0 0]',ï¿½ï¿½ï¿½ï·½ï¿½ï¿½ï¿½ï¿½simulinkï¿½ï¿½Ó¦;%p43 can be written as [0 0 0]', which is convenient for simulink correspondence;
 % Pc11 = [a1/2 0 0]';Pc22 = [a2/2 0 0]';Pc33 = [0 0 d3_c]';Pc44 = [0 0 0]';
       
     w11 = R10*w00+dq1*Z11;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,7 +16,7 @@
 
 
 
-%Õý·´½âÀïÃæÓ¦¸Ã»¹Ó¦¸Ã¼ÓÒ»¸ötoolµÄ There should also be a tool added to the forward and backward solutions
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ã»ï¿½Ó¦ï¿½Ã¼ï¿½Ò»ï¿½ï¿½toolï¿½ï¿½ There should also be a tool added to the forward and backward solutions
 
 
 
@@ -48,7 +48,7 @@ function [T,shoulder,elbow,wrist] = arm_fkine_dh(q,DH,q_option,alpha_theta_optio
         theta = DH.theta*pi/180.0;
     end
     
-    q = q+theta;%thetaµÄÆ«²î offset
+    q = q+theta;%thetaï¿½ï¿½Æ«ï¿½ï¿½ offset
     
     alpha0 = alpha(1); alpha1 = alpha(2); alpha2 = alpha(3);alpha3 = alpha(4);  alpha4 = alpha(5); alpha5 = alpha(6);
     T01 = create_link(q(1),d1,alpha0,a0,'rad');

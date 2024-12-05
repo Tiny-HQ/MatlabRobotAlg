@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%×îÐ¡²ÎÊý¼¯ÐÎÊ½;min-parameter
+%ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½;min-parameter
 
 function [tao1,tao2] = pend2_ts4_cal_tao_min_param(q11,dq1,ddq1,q22,dq2,ddq2)
 
@@ -29,15 +29,15 @@ function [tao1,tao2] = pend2_ts4_cal_tao_min_param(q11,dq1,ddq1,q22,dq2,ddq2)
     
     fi1 = [m1 m1*PC11(1) m1*PC11(2) m1*PC11(3) Ii11xx Ii11xy Ii11xz Ii11yy Ii11yz Ii11zz]';
     fi2 = [m2 m2*PC22(1) m2*PC22(2) m2*PC22(3) Ii22xx Ii22xy Ii22xz Ii22yy Ii22yz Ii22zz]';
-    fi = [fi1;fi2];%ÏßÐÔ·ÖÀëÐÎÊ½µÄ¦Õ
+    fi = [fi1;fi2];%ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½Ä¦ï¿½
 
     R01 = splitT_R( hrotz(q11*180/pi));
     R12 = splitT_R( hrotx(-90)*hrotz(q22*180/pi));
     R23 = splitT_R( hrotx(90));
     R32 = R23';R21 = R12';R10 = R01';
     
-    %ÍâÍÆ0->3
-    w00 = [0 0 0]';dw00 = [0 0 0]';v00 = [0 0 0]';dv00 = [0 0 g]';%ÕâÀïÐ´gµÄ»°£¬±äÁ¿gÎª9.81£¬Èç¹ûÐ´-g£¬ÄÇÃ´±äÁ¿gÎª-9.81;% If you write g here, the variable g is 9.81, and if you write -g, then the variable g is -9.81;
+    %ï¿½ï¿½ï¿½ï¿½0->3
+    w00 = [0 0 0]';dw00 = [0 0 0]';v00 = [0 0 0]';dv00 = [0 0 g]';%ï¿½ï¿½ï¿½ï¿½Ð´gï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gÎª9.81ï¿½ï¿½ï¿½ï¿½ï¿½Ð´-gï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½gÎª-9.81;% If you write g here, the variable g is 9.81, and if you write -g, then the variable g is -9.81;
     zv = [0 0 1]';
     
     w11 = R10*w00+dq1*zv;
@@ -70,7 +70,7 @@ function [tao1,tao2] = pend2_ts4_cal_tao_min_param(q11,dq1,ddq1,q22,dq2,ddq2)
         U1(12,:);];
 
     %min-parameter;
-    fi1_min_param = Ii11zz+2*L1*m2*PC22(3)+Ii22yy+L1^2*m2;  %% ZZi_1 = zzi_1+sin^2(¦Á_i)*YYi+2*di*sin^2(¦Á_i)*MZi+(di^2*sin^2(¦Á_i)+ai^2)*Mi
+    fi1_min_param = Ii11zz+2*L1*m2*PC22(3)+Ii22yy+L1^2*m2;  %% ZZi_1 = zzi_1+sin^2(ï¿½ï¿½_i)*YYi+2*di*sin^2(ï¿½ï¿½_i)*MZi+(di^2*sin^2(ï¿½ï¿½_i)+ai^2)*Mi
     %fi1_min_param = Ii11zz;
     fi2_min_param = [m2*PC22(1) m2*PC22(2) Ii22xx-Ii22yy Ii22xy Ii22xz Ii22yz Ii22zz]';
     

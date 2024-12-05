@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -21,11 +21,11 @@ function [P1,P2,P3,P4] = draw_rect_dynamic(L,W,T,ms,axis_range)
     for i = 1:z
         
         clf;
-        % Èç¹û²»ÐèÒª£¬Ö±½Ó×¢ÊÍ; If not, comment directly;
-        % plotÒ»Ð©¶¨µãÎ»ÖÃ; plot some fixed-point positions;
+        % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ö±ï¿½ï¿½×¢ï¿½ï¿½; If not, comment directly;
+        % plotÒ»Ð©ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½; plot some fixed-point positions;
         const_pos = [200 300 0 0 0 0];
         plot(const_pos(1),const_pos(2),'*');
-        % plotÒ»Ð©¶¨µãÎ»ÖÃ; plot some fixed-point positions;
+        % plotÒ»Ð©ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½; plot some fixed-point positions;
         
         [P11,P22,P33,P44] = draw_rect(L,W,T(:,:,i))  ;
         axis(axis_range);
@@ -34,7 +34,7 @@ function [P1,P2,P3,P4] = draw_rect_dynamic(L,W,T,ms,axis_range)
         P3(i,:) = P33';
         P4(i,:) = P44';
         
-        % »­¾ØÕóÖÐÐÄµã¹ì¼£;Draw the trajectory of the center point of the matrix;
+        % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ì¼£;Draw the trajectory of the center point of the matrix;
         TTT = zeros(i,3);
         for j = 1:i
            TTT(j,:) = T(1:3,4,j)';       

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,17 +16,17 @@
 
 
 
-% U_quasi_uniform.mÎÄ¼þ
+% U_quasi_uniform.mï¿½Ä¼ï¿½
 function NodeVector = quasi_uniform_b_create_knots_ext(n, k)
-% ×¼¾ùÔÈBÑùÌõµÄ½ÚµãÏòÁ¿¼ÆËã£¬¹²n+1¸ö¿ØÖÆ¶¥µã£¬k´ÎBÑùÌõ
+% ×¼ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½Ä½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã£¬ï¿½ï¿½n+1ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ã£¬kï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½
     NodeVector = zeros(1, n+k+2);
-    piecewise = n - k + 1;       % ÇúÏßµÄ¶ÎÊý
-    if piecewise == 1       % Ö»ÓÐÒ»¶ÎÇúÏßÊ±£¬n = k
+    piecewise = n - k + 1;       % ï¿½ï¿½ï¿½ßµÄ¶ï¿½ï¿½ï¿½
+    if piecewise == 1       % Ö»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½n = k
         for i = n+2 : n+k+2
             NodeVector(1, i) = 1;
         end
     else
-        flag = 1;       % ²»Ö¹Ò»¶ÎÇúÏßÊ±
+        flag = 1;       % ï¿½ï¿½Ö¹Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±
         while flag ~= piecewise
             NodeVector(1, k+1+flag) = NodeVector(1, k + flag) + 1/piecewise;
             flag = flag + 1;

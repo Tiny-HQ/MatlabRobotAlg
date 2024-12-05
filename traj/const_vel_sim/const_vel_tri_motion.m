@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,27 +11,27 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%% ²ÎÊýÉè¶¨; parameter setting;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨; parameter setting;
 
 clc;
 clear;
 
-%¶¨µãÎ»ÖÃ; % fixed-point position;
+%ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½; % fixed-point position;
 const_pos = [200 300 0 0 0 0];
-offset = 2;     %¾ØÕóµÄ±ßÔµÐèÒªµÄÒ»¸öÆ«ÒÆÁ¿; an offset required for the edges of the matrix;
-Ts = 0.004;     %4msÉú³É 4ms generation
-L = 100;        %±ß³¤Îª300mmµÄÈý½ÇÐÎ; a triangle with a side length of 300mm;
+offset = 2;     %ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ôµï¿½ï¿½Òªï¿½ï¿½Ò»ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½; an offset required for the edges of the matrix;
+Ts = 0.004;     %4msï¿½ï¿½ï¿½ï¿½ 4ms generation
+L = 100;        %ï¿½ß³ï¿½Îª300mmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; a triangle with a side length of 300mm;
 
-r = 5;         %Ô²½ÇµÄ°ë¾¶;10mm the radius of the fillet; 10mm
-const_line_vel = 80;                %¼ÙÉèÔÈËÙËÙ¶È10mm/s Assuming a constant velocity of 10 mm/s
-const_arc_vel = const_line_vel/r;   %Ô²½ÇÊ±ºòµÄ½ÇËÙ¶Èrad/s The angular velocity rad/s at the time of filleting
-
-
-counts = 0;             % ¼ÇÂ¼×ÜµÄµãµÄ¸öÊý;³õÊ¼»¯Îª0; record the total number of points; Initialize to 0;
-T = zeros(4,4,10000);   %³õÊ¼¼ÇÂ¼µã;Initial recording point;
+r = 5;         %Ô²ï¿½ÇµÄ°ë¾¶;10mm the radius of the fillet; 10mm
+const_line_vel = 80;                %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½10mm/s Assuming a constant velocity of 10 mm/s
+const_arc_vel = const_line_vel/r;   %Ô²ï¿½ï¿½Ê±ï¿½ï¿½Ä½ï¿½ï¿½Ù¶ï¿½rad/s The angular velocity rad/s at the time of filleting
 
 
-%% Çó³õÊ¼Èý½ÇÐÎÖÐÐÄ×ø±ê; Find the center coordinates of the initial triangle;
+counts = 0;             % ï¿½ï¿½Â¼ï¿½ÜµÄµï¿½Ä¸ï¿½ï¿½ï¿½;ï¿½ï¿½Ê¼ï¿½ï¿½Îª0; record the total number of points; Initialize to 0;
+T = zeros(4,4,10000);   %ï¿½ï¿½Ê¼ï¿½ï¿½Â¼ï¿½ï¿½;Initial recording point;
+
+
+%% ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Find the center coordinates of the initial triangle;
 x = L/2-(r+offset)/tan(30*pi/180);
 y = L/2*tan(30*pi/180)-offset;
 
@@ -40,7 +40,7 @@ tri_start_pos(1) = const_pos(1)-x;
 tri_start_pos(2) = const_pos(2)-y;
 T_last = eye(4);
 
-%% µÚÒ»¶ÎÖ±Ïß; the first straight line;
+%% ï¿½ï¿½Ò»ï¿½ï¿½Ö±ï¿½ï¿½; the first straight line;
 n1 = floor(x*2/const_line_vel/Ts);
 for i = 1:n1
     tri_start_pos(1) = tri_start_pos(1)+Ts*const_line_vel;
@@ -50,8 +50,8 @@ for i = 1:n1
 end
 
 
-%% µÚÒ»¶ÎÔ²»¡; %% First arc;
-const_circle = const_pos-[0 r 0 0 0 0];%Èç¹ûµÚÒ»¶ÎµÄÖÕµã²»ÊÇÔ²¸ÕºÃµÄÆðµã£¬ÐèÒª×öÔÈËÙ´¦Àí£¬·ñÔò»á³öÏÖËÙ¶ÈÉÏµÄ²»Á¬Ðø£¬Ò²¾ÍÊÇ²»ÔÈËÙ;% If the end point of the first segment is not the starting point of the circle, it needs to be treated at a uniform speed, otherwise there will be discontinuity in velocity, that is, unevenness;  
+%% ï¿½ï¿½Ò»ï¿½ï¿½Ô²ï¿½ï¿½; %% First arc;
+const_circle = const_pos-[0 r 0 0 0 0];%ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îµï¿½ï¿½Õµã²»ï¿½ï¿½Ô²ï¿½ÕºÃµï¿½ï¿½ï¿½ã£¬ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ÏµÄ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½;% If the end point of the first segment is not the starting point of the circle, it needs to be treated at a uniform speed, otherwise there will be discontinuity in velocity, that is, unevenness;  
 
 T_circle = cs_define_zyzeul(const_circle);
 T_rel = inv(T_circle)*T_last;
@@ -64,7 +64,7 @@ for i = 1:n2
     counts = counts+1;
 end
 
-%% µÚ¶þ¶ÎÖ±Ïß; the second straight line;
+%% ï¿½Ú¶ï¿½ï¿½ï¿½Ö±ï¿½ï¿½; the second straight line;
 n3 = n1;
 for i = 1:n3
     T_last(1,4) = T_last(1,4)+Ts*const_line_vel;
@@ -72,7 +72,7 @@ for i = 1:n3
     counts = counts+1;
 end
 
-%% µÚ¶þ¶ÎÔ²»¡; the second arc;
+%% ï¿½Ú¶ï¿½ï¿½ï¿½Ô²ï¿½ï¿½; the second arc;
 n4 = n2;
 T_circle = cs_define_zyzeul(const_circle);
 T_rel = inv(T_circle)*T_last;
@@ -84,7 +84,7 @@ for i = 1:n4
     counts = counts+1;
 end
 
-%% µÚÈý¶ÎÖ±Ïß; the third straight line;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½; the third straight line;
 for i = 1:n3
     T_last(1,4) = T_last(1,4)+Ts*const_line_vel;
     T(:,:,counts) = T_last;
@@ -92,7 +92,7 @@ for i = 1:n3
 end
 
 
-%% µÚÈý¶ÎÔ²»¡; the third arc;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½; the third arc;
 T_circle = cs_define_zyzeul(const_circle);
 T_rel = inv(T_circle)*T_last;
 for i = 1:n4-1
@@ -106,7 +106,7 @@ end
 
 
 
-%% ËùÓÐµÄµã»­³öÀ´; All the dots are drawn out;
+%% ï¿½ï¿½ï¿½ÐµÄµã»­ï¿½ï¿½ï¿½ï¿½; All the dots are drawn out;
 
 figure;
 clf;

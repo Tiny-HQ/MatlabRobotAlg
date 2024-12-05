@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,8 +12,8 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%6Î¬»­Ïß;
-% draw_spline.mÎÄ¼þ
+%6Î¬ï¿½ï¿½ï¿½ï¿½;
+% draw_spline.mï¿½Ä¼ï¿½
 function [X] = draw_spline6D_adv(n, k, P, NodeVector,Ts)
     Nik = zeros(n+1, 1);
     T = 0 : Ts : 1-Ts;

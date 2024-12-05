@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -18,21 +18,21 @@ clear;
 
 
 
-%Éú³ÉËæ»úÊýÀ´³äµ±½Ç¶ÈÖµ£¬·ÖÁ½¿é£¬dhÄ£ÐÍ²âÊÔ£¬¸úÐýÁ¿Ä£ÐÍ²âÊÔ£¬×¢ÒâÐýÁ¿µÄ¶þÖá½Ç¶ÈÒª¼õµô90¶È£¬·´½âÖ®ºóÒª¼ÓÉÏ90¶È£¬ Generate a random number to act as an angle value, divided into two parts, DH model test, and spinor model test, pay attention to the two-axis angle of the spinor to subtract 90 degrees, and add 90 degrees after the reverse solution,
-%¼ÓÉÏÖ®ºó²ÅÄÜ¸ú³õÊ¼½Ç¶È±È½Ï; After addition, it can be compared with the initial angle;
-%Èç¹ûÐèÒª²âÊÔdhÄ£ÐÍ£¬´ò¿ª¢Ù´¦´úÂë; If you need to test the DH model, open the code at (1);
-%Èç¹ûÐèÒª²âÊÔscÄ£ÐÍ£¬´ò¿ª¢Ú´¦´úÂë; If you need to test the SC model, open the code at (2);
-%Ö¤Ã÷µÃµ½dhÄ£ÐÍ¸úscÄ£ÐÍabsolutely correct!!!!!; It is proved that the DH model and the SC model are absolutely correct!!!!;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½äµ±ï¿½Ç¶ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£¬dhÄ£ï¿½Í²ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½Í²ï¿½ï¿½Ô£ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½Ç¶ï¿½Òªï¿½ï¿½ï¿½ï¿½90ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½90ï¿½È£ï¿½ Generate a random number to act as an angle value, divided into two parts, DH model test, and spinor model test, pay attention to the two-axis angle of the spinor to subtract 90 degrees, and add 90 degrees after the reverse solution,
+%ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ü¸ï¿½ï¿½ï¿½Ê¼ï¿½Ç¶È±È½ï¿½; After addition, it can be compared with the initial angle;
+%ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½dhÄ£ï¿½Í£ï¿½ï¿½ò¿ª¢Ù´ï¿½ï¿½ï¿½ï¿½ï¿½; If you need to test the DH model, open the code at (1);
+%ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½scÄ£ï¿½Í£ï¿½ï¿½ò¿ª¢Ú´ï¿½ï¿½ï¿½ï¿½ï¿½; If you need to test the SC model, open the code at (2);
+%Ö¤ï¿½ï¿½ï¿½Ãµï¿½dhÄ£ï¿½Í¸ï¿½scÄ£ï¿½ï¿½absolutely correct!!!!!; It is proved that the DH model and the SC model are absolutely correct!!!!;
 
 
-DH.a(1) = 0.0;%ÕâÀïÊÇ´Ó0¿ªÊ¼µÄ;matlabÊý×éÖ»ÄÜ´Ó1¿ªÊ¼; Here it starts at 0; MATLAB arrays can only start at 1;
+DH.a(1) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½;matlabï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ü´ï¿½1ï¿½ï¿½Ê¼; Here it starts at 0; MATLAB arrays can only start at 1;
 DH.a(2) = 0.163655;
 DH.a(3) = 0.550739;
 DH.a(4) = 0.208847;
 DH.a(5) = 0.0;
 DH.a(6) = 0.0;
 
-DH.alpha(1) = 0.0;%ÕâÀïÊÇ´Ó0¿ªÊ¼µÄ;Here it starts at 0; 
+DH.alpha(1) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½;Here it starts at 0; 
 DH.alpha(2) = 90;
 DH.alpha(3) = 0.0;
 DH.alpha(4) = 90;
@@ -59,21 +59,21 @@ q = linspace(0,0,6);
 %check_dh
 %check_sc
 for i = 1:4000
-    q(1) = (rand()-0.5)*2*165;      %Ò»Öá  -165~165; first axis -165~165;
-    q(2) = rand()*160;              %¶þÖá  0~160£¨ÁãÎ»ÊÇ90¶È£©; second axis 0~160(zeros position is 90 degree)
-    q(3) = rand()*200-70;           %ÈýÖá  -70~130; thirth -70~130;
-    q(4) = (rand()-0.5)*2*170;      %ËÄÖá  -170~170; fouth -170~170;
-    q(5) = (rand()-0.5)*2*120;      %ÎåÖá  -120~120; fifth -120~120;
-    q(6) = (rand()-0.5)*2*180;      %ÁùÖá  -180~180; sixth -180~180; 
+    q(1) = (rand()-0.5)*2*165;      %Ò»ï¿½ï¿½  -165~165; first axis -165~165;
+    q(2) = rand()*160;              %ï¿½ï¿½ï¿½ï¿½  0~160ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½90ï¿½È£ï¿½; second axis 0~160(zeros position is 90 degree)
+    q(3) = rand()*200-70;           %ï¿½ï¿½ï¿½ï¿½  -70~130; thirth -70~130;
+    q(4) = (rand()-0.5)*2*170;      %ï¿½ï¿½ï¿½ï¿½  -170~170; fouth -170~170;
+    q(5) = (rand()-0.5)*2*120;      %ï¿½ï¿½ï¿½ï¿½  -120~120; fifth -120~120;
+    q(6) = (rand()-0.5)*2*180;      %ï¿½ï¿½ï¿½ï¿½  -180~180; sixth -180~180; 
  
-%¢Ù 
+%ï¿½ï¿½ 
 %    [T,shoulder,elbow,wrist] = arm_fkine_dh(q,DH,'deg','deg');
 %    q_i = arm_ikine_dh(T,DH,shoulder,elbow,wrist,'deg','deg');
 
 
-%¢Ú
+%ï¿½ï¿½
 %     q
-    q(2) = q(2)-90;%ÕâÀïÊÇÎªÁË½«·¶Î§ zeros position is 90 degree
+    q(2) = q(2)-90;%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ë½ï¿½ï¿½ï¿½Î§ zeros position is 90 degree
     [T1,shoulder1,elbow1,wrist1] = arm_fkine_sc(q,DH,'deg','deg');
     q_i = arm_ikine_sc(T1,DH,shoulder1,elbow1,wrist1,'deg','deg');
     q(2) = q(2)+90;

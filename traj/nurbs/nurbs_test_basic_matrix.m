@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,7 +16,7 @@ clear;
 Ts = 0.001;
 last_value = 5;
 u = 0:Ts:last_value;
-  k = 3; % ÇúDßsCE? 
+  k = 3; % ï¿½ï¿½Dï¿½sCE? 
   P = [0 10 1;
     1 12 -5;
     5 2 9;
@@ -26,7 +26,7 @@ u = 0:Ts:last_value;
     25 -11 20;
     28 -23 -25;
     39 33 28;
-    45 50 36;]; % zRÖCla×rae  
+    45 50 36;]; % zRï¿½Claï¿½rae  
 
 [n,m] = size(P);
   

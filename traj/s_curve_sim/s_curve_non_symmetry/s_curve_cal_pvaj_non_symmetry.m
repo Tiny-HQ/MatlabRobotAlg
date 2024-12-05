@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -31,7 +31,7 @@ function [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,j,t_int)
     delta_t(6) = t(6)-t(5);
     delta_t(7) = t(7)-t(6);
     
-    %ÖÐ¼ä¹ý³Ì½ÚµãËÙ¶È; mid point vel
+    %ï¿½Ð¼ï¿½ï¿½ï¿½Ì½Úµï¿½ï¿½Ù¶ï¿½; mid point vel
     am = j*t(1);dm = j*delta_t(7);
     v1 = 1/2*j*delta_t(1)^2;
     v2 = v1+am*delta_t(2);
@@ -40,7 +40,7 @@ function [s,v,a,jerk] = s_curve_cal_pvaj_non_symmetry(t,j,t_int)
     v5 = v4-1/2*j*delta_t(5)^2;
     v6 = v5-dm*delta_t(6);
     
-    %ÖÐ¼ä½ÚµãÎ»ÖÃ; mid point position
+    %ï¿½Ð¼ï¿½Úµï¿½Î»ï¿½ï¿½; mid point position
     s1 = 1/6*j*delta_t(1)^3;
     s2 = s1+v1*delta_t(2)+1/2*am*delta_t(2)^2;
     s3 = s2+v2*delta_t(3)+1/2*am*delta_t(3)^2-1/6*j*delta_t(3)^3;

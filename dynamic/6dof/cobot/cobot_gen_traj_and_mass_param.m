@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -68,7 +68,7 @@ q6 = [t',pos6']; dq6 = [t',vel6']; ddq6 = [t',acc6'];
 %  q5 = [zero',zero']; dq5 = [zero',zero']; ddq5 = [zero',zero'];
 % q6 = [zero',zero']; dq6 = [zero',zero']; ddq6 = [zero',zero'];
 
-%Éú³ÉÖÊÁ¿²ÎÊý;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 global g m1 m2 m3 m4 m5 m6;
 global a3 a4 d1 d4 d5 d6;
 global ic1xx ic1xy ic1xz ic1yy ic1yz ic1zz ic2xx ic2xy ic2xz ic2yy ic2yz ic2zz ic3xx ic3xy ic3xz ic3yy ic3yz ic3zz;

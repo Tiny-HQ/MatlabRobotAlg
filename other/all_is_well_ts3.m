@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -23,22 +23,22 @@ clear;
 T_trans = [0.16212250768242 0.00232477206632926 0 209.713484467607;
     -0.0022296898156149 -0.168577842718384 0 914.441278359736;
     0 0 1 0;
-    0 0 0 1]%ccd×ø±ê×ªµ½wcs CCD coordinates go to WCS
+    0 0 0 1]%ccdï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½wcs CCD coordinates go to WCS
 
 
-ccd = [1751.55 714.673 0 1]';%ÏñËØ×ø±ê Pixel coordinates
-T_wcs = T_trans*ccd%ÏñËØ×ø±ê×ªµ½ÊÀ½ç×ø±êÏµ×ø±ê The pixel coordinates go to the world coordinate system coordinates
+ccd = [1751.55 714.673 0 1]';%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Pixel coordinates
+T_wcs = T_trans*ccd%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ The pixel coordinates go to the world coordinate system coordinates
 
 
-T_trans_conveyor = rotz(-89*pi/180);%Æ¤´ø×ø±êÏµµ½wcs×ø±êÏµ×ËÌ¬×ª»»¹ØÏµ Attitude conversion relationship from belt coordinate system to WCS coordinate system
-T_trans_conveyor(1,4) = 453.748;%Æ¤´ø×ø±êÏµµ½wcs×ø±êÏµÎ»ÖÃ×ª»»¹ØÏµ The position conversion relationship between the belt coordinate system and the WCS coordinate system
-T_trans_conveyor(2,4) = 604.124;%Æ¤´ø×ø±êÏµµ½wcs×ø±êÏµÎ»ÖÃ×ª»»¹ØÏµ The position conversion relationship between the belt coordinate system and the WCS coordinate system
-T_trans_conveyor(3,4) = -92.398;%Æ¤´ø×ø±êÏµµ½wcs×ø±êÏµÎ»ÖÃ×ª»»¹ØÏµ Æ¤´ø×ø±êÏµµ½wcs×ø±êÏµÎ»ÖÃ×ª»»¹ØÏµ
+T_trans_conveyor = rotz(-89*pi/180);%Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½wcsï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ì¬×ªï¿½ï¿½ï¿½ï¿½Ïµ Attitude conversion relationship from belt coordinate system to WCS coordinate system
+T_trans_conveyor(1,4) = 453.748;%Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½wcsï¿½ï¿½ï¿½ï¿½ÏµÎ»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ïµ The position conversion relationship between the belt coordinate system and the WCS coordinate system
+T_trans_conveyor(2,4) = 604.124;%Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½wcsï¿½ï¿½ï¿½ï¿½ÏµÎ»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ïµ The position conversion relationship between the belt coordinate system and the WCS coordinate system
+T_trans_conveyor(3,4) = -92.398;%Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½wcsï¿½ï¿½ï¿½ï¿½ÏµÎ»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ïµ Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½wcsï¿½ï¿½ï¿½ï¿½ÏµÎ»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ïµ
 T_trans_conveyor(4,4) = 1.0;
 
 T_trans_conveyor
 
-T_conveyor = T_trans_conveyor\T_wcs%Ëãµ½Æ¤´ø×ø±êÏµÏÂ×ø±êÖµ;yÖµÊÇ44£¬yÖµ·¶Î§-237µ½-51ÔõÃ´ÄÜ½øµÄÈ¥£¿£¿£¿ Calculate the coordinate value in the belt coordinate system; The y-value is 44, and the y-value ranges from -237 to -51???
+T_conveyor = T_trans_conveyor\T_wcs%ï¿½ãµ½Æ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ;yÖµï¿½ï¿½44ï¿½ï¿½yÖµï¿½ï¿½Î§-237ï¿½ï¿½-51ï¿½ï¿½Ã´ï¿½Ü½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Calculate the coordinate value in the belt coordinate system; The y-value is 44, and the y-value ranges from -237 to -51???
 
 
 

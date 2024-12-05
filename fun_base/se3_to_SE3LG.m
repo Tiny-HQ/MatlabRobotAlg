@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,9 +16,9 @@ function [T] = se3_to_SE3LG(V)
     [m,n] = size(V);
     
     V_se3 = zeros(1,6);
-    if(((m == 6)&&(n == 1))||((m == 1)&&(n == 6))) %ÊäÈëµÄÊÇÀî´úÊýÏÂµÄÊ¸Á¿;Ç°ÈýÎ»ÊÇ×ËÌ¬Ê¸Á¿;The input is a vector in Lie algebra; The first three are pose vectors;
+    if(((m == 6)&&(n == 1))||((m == 1)&&(n == 6))) %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½Ê¸ï¿½ï¿½;Ç°ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ì¬Ê¸ï¿½ï¿½;The input is a vector in Lie algebra; The first three are pose vectors;
         V_se3 = V;
-    elseif ((m == 4)&&(n == 4))     %ÊäÈëµÄÊÇse3ÏÂµÄÖµ; The value under SE3 is entered;
+    elseif ((m == 4)&&(n == 4))     %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½se3ï¿½Âµï¿½Öµ; The value under SE3 is entered;
         V_se3 = se3_to_v(V);
     end
     Ori = V_se3(1:3);

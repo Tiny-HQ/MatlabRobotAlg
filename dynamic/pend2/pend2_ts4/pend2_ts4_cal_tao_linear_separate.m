@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%ÏßÐÔ·ÖÀë;Linear separation
+%ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½;Linear separation
 function [tao1,tao2] = pend2_ts4_cal_tao_linear_separate(q11,dq1,ddq1,q22,dq2,ddq2)
 
     global  g m1 m2 P01 P12 PC11 PC22;
@@ -32,8 +32,8 @@ function [tao1,tao2] = pend2_ts4_cal_tao_linear_separate(q11,dq1,ddq1,q22,dq2,dd
     R12 = splitT_R( hrotx(-90)*hrotz(q22*180/pi));
     R23 = splitT_R( hrotx(90));
     R32 = R23';R21 = R12';R10 = R01';
-    %ÍâÍÆ0->3
-    w00 = [0 0 0]';dw00 = [0 0 0]';v00 = [0 0 0]';dv00 = [0 0 g]';%ÕâÀïÐ´gµÄ»°£¬±äÁ¿gÎª9.81£¬Èç¹ûÐ´-g£¬ÄÇÃ´±äÁ¿gÎª-9.81;% If you write g here, the variable g is 9.81, and if you write -g, then the variable g is -9.81;
+    %ï¿½ï¿½ï¿½ï¿½0->3
+    w00 = [0 0 0]';dw00 = [0 0 0]';v00 = [0 0 0]';dv00 = [0 0 g]';%ï¿½ï¿½ï¿½ï¿½Ð´gï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gÎª9.81ï¿½ï¿½ï¿½ï¿½ï¿½Ð´-gï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½gÎª-9.81;% If you write g here, the variable g is 9.81, and if you write -g, then the variable g is -9.81;
     zv = [0 0 1]';
     
     w11 = R10*w00+dq1*zv;

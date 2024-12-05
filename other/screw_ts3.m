@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,7 +13,7 @@
 % -------------------------------------------------------------------------
 
 
-%µ¥¸öÖáÐý×ªÐýÁ¿¼ÆËã¾ØÕó; Calculation matrix of rotational spinor for a single axis;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Calculation matrix of rotational spinor for a single axis;
 
 
 clc;
@@ -35,11 +35,11 @@ v = kc1(1:3);
 
 w_r = eye(3);
 a1 = w(1);a2 = w(2);a3 = w(3);
-w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wµÄ·´¶Ô³Æ¾ØÕó; w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½; w's antisymmetric matrix;
 w_r(2,1) = a3;w_r(2,2) = 0;w_r(2,3) = -a1;
 w_r(3,1) = -a2;w_r(3,2) = a1;w_r(3,3) = 0;
 w_r;
-ew = eye(3)+w_r*s1+w_r*w_r*(1-c1);%Ö¸Êý»ý¹«Ê½; exponential product formula;
+ew = eye(3)+w_r*s1+w_r*w_r*(1-c1);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; exponential product formula;
 
 I = eye(3);
 x = cross(w,v);

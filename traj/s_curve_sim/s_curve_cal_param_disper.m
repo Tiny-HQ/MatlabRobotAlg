@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-% ÀëÉ¢ÐÍÇó²ÎÊý discreate
+% ï¿½ï¿½É¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ discreate
 
 
 function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
@@ -38,7 +38,7 @@ function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
         tj=sqrt(Vel/Jerk);
         ta=0;
         tv=(abs(Disp)-2*Jerk*tj^3)/Vel;
-        %ÀëÉ¢
+        %ï¿½ï¿½É¢
         nj = ceil(tj / Ts);
         tj_dct = nj*Ts;
         na = ceil(ta / Ts);
@@ -50,7 +50,7 @@ function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
         tj = (abs(Disp)/2/Jerk)^(1/3);
         ta = 0.0;
         tv = 0.0;
-        %ÀëÉ¢
+        %ï¿½ï¿½É¢
         nj = ceil(tj / Ts);
         tj_dct = nj*Ts;
         na = ceil(ta / Ts);
@@ -65,7 +65,7 @@ function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
             tj=tj_v;
             tv=(abs(Disp)-2*Jerk*tj^3)/Vel;
             ta=0;
-            %ÀëÉ¢
+            %ï¿½ï¿½É¢
             nj = ceil(tj / Ts);
             tj_dct = nj*Ts;
             na = ceil(ta / Ts);
@@ -77,7 +77,7 @@ function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
             tj=tj_d;
             ta=0;
             tv=0;
-            %ÀëÉ¢
+            %ï¿½ï¿½É¢
             nj = ceil(tj / Ts);
             tj_dct = nj*Ts;
             na = ceil(ta / Ts);
@@ -93,7 +93,7 @@ function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
         if(ta_v>=ta_d)
             ta=ta_d;
             tv=0;
-            %ÀëÉ¢
+            %ï¿½ï¿½É¢
             nj = ceil(tj / Ts);
             tj_dct = nj*Ts;
             na = ceil(ta / Ts);
@@ -104,7 +104,7 @@ function [n,jerk] = s_curve_cal_param_disper(Disp,Vel,Acc,Jerk)
         else
             ta=ta_v;
             tv=(abs(Disp)-2*Jerk*tj^3-3*Jerk*tj^2*ta-Jerk*tj*ta^2)/Vel;
-            %ÀëÉ¢
+            %ï¿½ï¿½É¢
             nj = ceil(tj / Ts);
             tj_dct = nj*Ts;
             na = ceil(ta / Ts);

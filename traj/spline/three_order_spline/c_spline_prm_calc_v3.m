@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -28,7 +28,7 @@ function [a,b,c,d] = c_spline_prm_calc_v3(t,x,flag)
     d(t_length)=-6*(x(t_length)-x(t_length-1))/(t(t_length)-t(t_length-1));
 	
 	if flag==1
-		%???»±?????????????????????????????0?????a(1),b(1),c(1),d(1),a(n),b(n),c(n),d(n)
+		%???ï¿½ï¿½?????????????????????????????0?????a(1),b(1),c(1),d(1),a(n),b(n),c(n),d(n)
 		d(1)=0;d(t_length)=0;
 		a(t_length)=0;
 		b(1)=1;b(t_length)=1;

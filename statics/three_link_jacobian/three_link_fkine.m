@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -35,7 +35,7 @@ function T = three_link_fkine(DH,q,opt)
         q = q*pi/180.0;
     end
 
-    %q = q+theta;%thetaµÄÆ«²î
+    %q = q+theta;%thetaï¿½ï¿½Æ«ï¿½ï¿½
   
     T01 = create_link(q(1),d1,0,a0,'rad');
     T12 = create_link(q(2),d2,0,a1,'rad');

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,8 +13,8 @@
 % -------------------------------------------------------------------------
 
 
-%Éú³É¹ì¼£ºÍÖÊÁ¿²ÎÊý;generation of trajectories and mass parameters;
-% ÐÞ¸ÄµÄdh Modified DH
+%ï¿½ï¿½ï¿½É¹ì¼£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;generation of trajectories and mass parameters;
+% ï¿½Þ¸Äµï¿½dh Modified DH
 %+---+-----------+-----------+-----------+-----------+-----------+
 %| j |     theta |         d |         a |     alpha |    offset |
 %+---+-----------+-----------+-----------+-----------+-----------+

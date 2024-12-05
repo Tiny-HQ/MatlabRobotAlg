@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -35,11 +35,11 @@ while true
         break;
     end
     count=count+1;
-    %ÇóA(k+1)=R(k+1)*A(k)*R(k+1)
+    %ï¿½ï¿½A(k+1)=R(k+1)*A(k)*R(k+1)
     dbApp=ma(nrow,nrow);
     dbApq=ma(nrow,ncol);
     dbAqq=ma(ncol,ncol);
-    %¼ÆËãR
+    %ï¿½ï¿½ï¿½ï¿½R
      dbAngle = 0.5*atan2(-2*dbApq,dbAqq-dbApp);
      %dbAngle = 0.5*atan(-2*dbApq/(dbAqq-dbApp));
      dbSinTheta = sin(dbAngle);

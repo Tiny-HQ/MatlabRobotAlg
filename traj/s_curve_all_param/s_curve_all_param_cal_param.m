@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -75,7 +75,7 @@ function [t,w] = s_curve_all_param_cal_param(s0,s5,v0,v5,a0,a5,v,a,d)
     w10 = (a5-2*d+a2)/6/t35^2;
 %     t35 = abs(t35);
 
-    s25 = s_curve_all_param_cal_s(w6,w7,w8,w9,w10,t35)-s_curve_all_param_cal_s(w6,w7,w8,w9,w10,0);%ÕâÀïÊÇ´Ów5µ½w5+x;Çó¹ì¼£µÄÊ±ºò£¬ÐèÒª¹ØÓÚy¶Ô³ÆÒ»ÏÂ;
+    s25 = s_curve_all_param_cal_s(w6,w7,w8,w9,w10,t35)-s_curve_all_param_cal_s(w6,w7,w8,w9,w10,0);%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½w5ï¿½ï¿½w5+x;ï¿½ï¿½ì¼£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½yï¿½Ô³ï¿½Ò»ï¿½ï¿½;
     %figure_plot(w6,w7,w8,w9,w10,abs(t35));
     %s25 = abs(s25);
     t23 = 0.0;
@@ -102,7 +102,7 @@ function [t,w] = s_curve_all_param_cal_param(s0,s5,v0,v5,a0,a5,v,a,d)
                 t02 = x1;
             end
         else
-            %ÎÞ½â»òÕß¸º½â;Ò»°ã²»¿ÉÄÜ;
+            %ï¿½Þ½ï¿½ï¿½ï¿½ß¸ï¿½ï¿½ï¿½;Ò»ï¿½ã²»ï¿½ï¿½ï¿½ï¿½;
         end
         w1 = s0; w2 = v0; w3 = a0/2; w4 = (4*a1-a2-3*a0)/6/t02; w5 = (a0-2*a1+a2)/6/t02^2;
         t35 = k*t02+b; w6 = s5;  w7 = v5; w8 = a5/2;  w9 = (4*d-a2-3*a5)/6/t35;  w10 = (a5-2*d+a2)/6/t35^2;
@@ -120,9 +120,9 @@ function [t,w] = s_curve_all_param_cal_param(s0,s5,v0,v5,a0,a5,v,a,d)
     w(9) = w9;
     w(10) = w10;
     if(ss0>ss5)
-        w(11) = 1;%·´Ïò¹æ»®;
+        w(11) = 1;%ï¿½ï¿½ï¿½ï¿½æ»®;
     else
-        w(11) = 0;%ÕýÏò¹æ»®;
+        w(11) = 0;%ï¿½ï¿½ï¿½ï¿½æ»®;
    end
 
     t(1) = abs(t02);

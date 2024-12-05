@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,11 +12,11 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-% Á¬ÐøÐÍ£¬¹«Ê½¼ÆËã£¬ÎÞÎó²î£» Continuous, formula calculation, no error;
-%t t1~8Êý×é£» arrary
-%j Îªjerk£»
-%t_int Ê±¼ä¼ä¸ô  Time interval 
-%ÐÞ¸ÄÅÐ¶ÏÌõ¼þ£¬ÔÚ4msÕû³ýÇé¿öÏÂ£¬ÊýÖµµÄ´óÐ¡ÎÞÏÞ½Ó½ü£¬µ«²¢²»ÏàµÈ Modify the judgment condition, in the case of 4ms divisible, the magnitude of the values is infinitely close, but not equal
+% ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½î£» Continuous, formula calculation, no error;
+%t t1~8ï¿½ï¿½ï¿½é£» arrary
+%j Îªjerkï¿½ï¿½
+%t_int Ê±ï¿½ï¿½ï¿½ï¿½  Time interval 
+%ï¿½Þ¸ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4msï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½Öµï¿½Ä´ï¿½Ð¡ï¿½ï¿½ï¿½Þ½Ó½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Modify the judgment condition, in the case of 4ms divisible, the magnitude of the values is infinitely close, but not equal
 
 
 
@@ -40,7 +40,7 @@ function [s,v,a,jerk] = s_curve_cal_pvaj_con_ext(t,j,t_int)
     delta_t(6) = t(6)-t(5);
     delta_t(7) = t(7)-t(6);
     
-    %ÖÐ¼ä¹ý³Ì½ÚµãËÙ¶È; mid point vel
+    %ï¿½Ð¼ï¿½ï¿½ï¿½Ì½Úµï¿½ï¿½Ù¶ï¿½; mid point vel
     am = j*t(1);
     v1 = 1/2*j*delta_t(1)^2;
     v2 = v1+am*delta_t(2);
@@ -49,7 +49,7 @@ function [s,v,a,jerk] = s_curve_cal_pvaj_con_ext(t,j,t_int)
     v5 = v4-1/2*j*delta_t(5)^2;
     v6 = v5-am*delta_t(6);
     
-    %ÖÐ¼ä½ÚµãÎ»ÖÃ; mid pooint position
+    %ï¿½Ð¼ï¿½Úµï¿½Î»ï¿½ï¿½; mid pooint position
     s1 = 1/6*j*delta_t(1)^3;
     s2 = s1+v1*delta_t(2)+1/2*am*delta_t(2)^2;
     s3 = s2+v2*delta_t(3)+1/2*am*delta_t(3)^2-1/6*j*delta_t(3)^3;

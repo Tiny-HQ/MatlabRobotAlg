@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -36,10 +36,10 @@ for i = 1:sum
         ;
     end
 
-   % tao = puma_dy_cal_data(q,dq,ddq);%Å£¶ÙÅ·À­·½·¨Çó;newton-euler method
-   %  tao = puma_dy_cal_data_linear_separate(q,dq,ddq);%ÏßÐÔ·ÖÀëÐÎÊ½Çó;Linear separation form
+   % tao = puma_dy_cal_data(q,dq,ddq);%Å£ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;newton-euler method
+   %  tao = puma_dy_cal_data_linear_separate(q,dq,ddq);%ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½;Linear separation form
    
-   tao = puma_dy_cal_data_min_param_2(q,dq,ddq);%×îÐ¡¼¯ÐÎÊ½Çó;the min-paramter caculate,tao = puma_dy_cal_data_min_param is also ok, but some paramters is not the same as the book.
+   tao = puma_dy_cal_data_min_param_2(q,dq,ddq);%ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½;the min-paramter caculate,tao = puma_dy_cal_data_min_param is also ok, but some paramters is not the same as the book.
 
     tao1(i) = tao(1);
     tao2(i) = tao(2);

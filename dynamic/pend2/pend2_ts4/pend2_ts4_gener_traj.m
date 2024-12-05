@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,13 +12,13 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%Éú³É¹ì¼£ºÍÖÊÁ¿²ÎÊý;generation of trajectories and mass parameters;
-% ÐÞ¸ÄµÄdh Modified DH
-% Á¬¸ËµÄ´óÖÂÄ£Ñù Approximate appearance of the connecting rod link
-%                           ×ø±êÏµ3
+%ï¿½ï¿½ï¿½É¹ì¼£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;generation of trajectories and mass parameters;
+% ï¿½Þ¸Äµï¿½dh Modified DH
+% ï¿½ï¿½ï¿½ËµÄ´ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ Approximate appearance of the connecting rod link
+%                           ï¿½ï¿½ï¿½ï¿½Ïµ3
 %                             |
 %                             |     L2 
-%          ×ø±êÏµ1   _________|  ×ø±êÏµ2
+%          ï¿½ï¿½ï¿½ï¿½Ïµ1   _________|  ï¿½ï¿½ï¿½ï¿½Ïµ2
 %                   |   L1
 %                 0 |
 %

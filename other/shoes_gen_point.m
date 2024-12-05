@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -15,16 +15,16 @@
 clc;
 clear;
 
-%%0¡¢Èç¹ûÊÇµÚÒ»´Î£¬ÄÇÃ´½«.xlsxÎÄ¼þÀïÃæÊý¾Ý±£´æµ½.matÎÄ¼þ£¬¶ÁÈ¡xlsxÎÄ¼þºÜÂý;
+%%0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½Ò»ï¿½Î£ï¿½ï¿½ï¿½Ã´ï¿½ï¿½.xlsxï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½æµ½.matï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½È¡xlsxï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½;
 % shoes_data = xlsread('shoes_data.xlsx');
 % save shoes_data;
 
-%% 1¡¢°ÑÁ½´®Êý¾Ý°þÀë¿ªÀ´;
+%% 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý°ï¿½ï¿½ë¿ªï¿½ï¿½;
 [num] = load('shoes_data.mat');
 x = num.shoes_data(:,1);y = num.shoes_data(:,2);
 
 inter = 10;
-limit_dis = 10;%Ã¿¸ôinter¸öµã×î´ó¾àÀëÏÞÖÆ£¬Èç¹û³¬¹ýÕâ¸öÖµ¾ÍËµÃ÷µÚ¶þ¸öÍ¼ÐÎ¿ªÊ¼;
+limit_dis = 10;%Ã¿ï¿½ï¿½interï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ëµï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Í¼ï¿½Î¿ï¿½Ê¼;
 counts = length(x);
 dis = linspace(0,0,counts/inter+1);
 dis1 = zeros(2,inter);
@@ -64,17 +64,17 @@ x1 = x(1:circle1(1));x2 = x(circle1(1)+1:circle1(2));
 y1 = y(1:circle1(1));y2 = y(circle1(1)+1:circle1(2));
 
 %clf;
-%plot(x1,y1,'b*');hold on;plot(x2,y2,'b*');%Ô­ Ð¬µ×;
+%plot(x1,y1,'b*');hold on;plot(x2,y2,'b*');%Ô­ Ð¬ï¿½ï¿½;
 
-%% 2¡¢¹Õ½Ç±È½Ï´óµÄµØ·½È¡µãÃÜ¼¯£¬¹Õ½Ç±È½ÏÐ¡µÄµØ·½Ï¡ÊèÒ»µã;
-inter = 10;%ÖØÐÂÖÃ¼ä¸ôµãÊý;
+%% 2ï¿½ï¿½ï¿½Õ½Ç±È½Ï´ï¿½ÄµØ·ï¿½È¡ï¿½ï¿½ï¿½Ü¼ï¿½ï¿½ï¿½ï¿½Õ½Ç±È½ï¿½Ð¡ï¿½ÄµØ·ï¿½Ï¡ï¿½ï¿½Ò»ï¿½ï¿½;
+inter = 10;%ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 len_no1 = length(x1);len_no2 = length(x2);
 r1 = linspace(0,0,len_no1-2);r2 = linspace(0,0,len_no2-2);
 
 p1 = [x1,y1,zeros(len_no1,1)];p2 = [x2,y2,zeros(len_no2,1)];
 for i = 1:len_no1-2
-    [pc,r1(i),theta] = cal_arc_param1(p1(i,:),p1(i+1,:),p1(i+2,:));%ÇóÈýµãËùÐÎ³ÉµÄÔ²»¡;
-    r1(i) = 1/r1(i);%°ë¾¶µ¼Êý;
+    [pc,r1(i),theta] = cal_arc_param1(p1(i,:),p1(i+1,:),p1(i+2,:));%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î³Éµï¿½Ô²ï¿½ï¿½;
+    r1(i) = 1/r1(i);%ï¿½ë¾¶ï¿½ï¿½ï¿½ï¿½;
 end
 
 for i = 1:len_no2-2
@@ -90,15 +90,15 @@ suptitle('circle-r,circle-r-diff');
 counts1 = 1;cou1 = 1;counts_tmp1 = 1;
 x1_new = linspace(0,0,len_no1);x2_new = linspace(0,0,len_no2);y1_new = linspace(0,0,len_no1);y2_new = linspace(0,0,len_no2);
 
-while (1)%Ð¬µ×ÆäÖÐÒ»²ã;
+while (1)%Ð¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½;
     for i = 1:len_no1-2
-        if(r1(i)>(1-cou1*0.0005))    %´Ó°ë¾¶µ¼Êý´óÓÚ1¿ªÊ¼È¡£¬ÈçÍùÏÂËõ¼õ;
+        if(r1(i)>(1-cou1*0.0005))    %ï¿½Ó°ë¾¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½Ê¼È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
             x1_new(counts1) = x1(i);
             y1_new(counts1) = y1(i);
             counts1 = counts1+1;counts_tmp1 = 0;  
         else
             counts_tmp1 = counts_tmp1+1;
-            if(counts_tmp1>10)       %Èç¹û°ë¾¶µ¼ÊýÒ»Ö±Ð¡ÓÚ1£¬ÀÛ¼Ó20¸ö¹ýºóÈ¡Ò»¸öµã;
+            if(counts_tmp1>10)       %ï¿½ï¿½ï¿½ï¿½ë¾¶ï¿½ï¿½ï¿½ï¿½Ò»Ö±Ð¡ï¿½ï¿½1ï¿½ï¿½ï¿½Û¼ï¿½20ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½ï¿½;
                 x1_new(counts1) = x1(i);
                 y1_new(counts1) = y1(i);
                 counts1 = counts1+1;  counts_tmp1 = 0;
@@ -106,7 +106,7 @@ while (1)%Ð¬µ×ÆäÖÐÒ»²ã;
         end  
     end
     
-    if(counts1 >500)     %Ö±µ½³¬³ö500¸öµã£¬
+    if(counts1 >500)     %Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½500ï¿½ï¿½ï¿½ã£¬
         break;
     else
         counts1 = 1;
@@ -118,7 +118,7 @@ while (1)%Ð¬µ×ÆäÖÐÒ»²ã;
 end
 
 
-%Ö±½Ó°´ÕÕ¸ôÄ³Ð©µãÖ±½ÓÈ¡;
+%Ö±ï¿½Ó°ï¿½ï¿½Õ¸ï¿½Ä³Ð©ï¿½ï¿½Ö±ï¿½ï¿½È¡;
  counts2 = 1;cou2 = 2;counts_tmp2 = 1;
 while (1)
   
@@ -147,7 +147,7 @@ format long g;
 data1 = [x1_new(1:counts1-1)' y1_new(1:counts1-1)'];
 data2 = [x2_new(1:counts2-1)' y2_new(1:counts2-1)'];
 
-%% 2-1¡¢ÓÐÐ©µØ·½¾àÀë¹ý½ü£¬ÐèÒªÌÞ³ý£¬·ñÔò»á³öÏÖ¿¨¶ÙµÄÇé¿ö;
+%% 2-1ï¿½ï¿½ï¿½ï¿½Ð©ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Þ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½ï¿½Ùµï¿½ï¿½ï¿½ï¿½;
 [m,n] = size(data1);
 dist = linspace(0,0,m-1);
 for i = 1:m-1
@@ -159,18 +159,18 @@ count2_1 = 1;count2_1_list = linspace(0,0,300);
 
 
 
-%% 3¡¢Éú³ÉµÄ»úÆ÷ÈËÅÜµÄÊ¾½Ìµã;
+%% 3ï¿½ï¿½ï¿½ï¿½ï¿½ÉµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½Ê¾ï¿½Ìµï¿½;
 figure;
 %plot(x1,y1,'b*');hold on;plot(x2,y2,'b*');hold on;
 plot(x1_new(1:counts1-1),y1_new(1:counts1-1),'*');hold on;
 plot(x2_new(1:counts2-1),y2_new(1:counts2-1),'*');hold on;
 title('tech-point');
-dlmwrite('shoes_tech_point1.txt',data1,'delimiter','\t','newline','pc');%ÕâÐ©µã¼´ÎªÊ¾½Ìµã;
-dlmwrite('shoes_tech_point2.txt',data2,'delimiter','\t','newline','pc');%ÕâÐ©µã¼´ÎªÊ¾½Ìµã;
+dlmwrite('shoes_tech_point1.txt',data1,'delimiter','\t','newline','pc');%ï¿½ï¿½Ð©ï¿½ã¼´ÎªÊ¾ï¿½Ìµï¿½;
+dlmwrite('shoes_tech_point2.txt',data2,'delimiter','\t','newline','pc');%ï¿½ï¿½Ð©ï¿½ã¼´ÎªÊ¾ï¿½Ìµï¿½;
 
-%% 4¡¢Éú³É»úÆ÷ÈËµ¥ÖÜÆÚµã¸úÊµ¼Êµã¶Ô±È;
+%% 4ï¿½ï¿½ï¿½ï¿½ï¿½É»ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½Êµï¿½Êµï¿½Ô±ï¿½;
 % figure;
-% plot(x1,y1,'b*');hold on;plot(x2,y2,'b*');hold on;%Ô­ Ð¬µ×;
+% plot(x1,y1,'b*');hold on;plot(x2,y2,'b*');hold on;%Ô­ Ð¬ï¿½ï¿½;
 % t = linspace(0,20,counts1-1);
 % [ax1,bx1,cx1,dx1]=c_spline_prm_calc_v3(t,x1_new(1:counts1-1),0);
 % pointx1 = c_spline_point_calc(ax1,bx1,cx1,dx1,t,0.004);

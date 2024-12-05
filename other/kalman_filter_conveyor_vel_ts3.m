@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -14,8 +14,8 @@
 
 
 
-%¶ÔÆ¤´øËÙ¶ÈÂË²¨;kalman_filter; Filtering of belt speed
-%¸Ð¾õÊÇÄ¿Ç°×îºÃµÄÏßÐÔÂË²¨Ëã·¨ÁË; It feels like the best linear filtering algorithm at the moment
+%ï¿½ï¿½Æ¤ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½Ë²ï¿½;kalman_filter; Filtering of belt speed
+%ï¿½Ð¾ï¿½ï¿½ï¿½Ä¿Ç°ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ã·¨ï¿½ï¿½; It feels like the best linear filtering algorithm at the moment
 
 
 clc;
@@ -34,12 +34,12 @@ N = length(Z);
 
 
 X = [0 0]';
-P = [1 0; 0 1];             %³õÊ¼×´Ì¬Ð­·½²î¾ØÕó;³õÊ¼µÄÊ±ºò²»ÊÇºÜÖØÒª;ºÃÏñÊÇ»áÓ°ÏìÊÕÁ²Ê±¼ä  initial state covariance matrix; It's not very important at first; It seems to affect the convergence time
-F = [1 0.004;0 1];          %×´Ì¬×ªÒÆ¾ØÕó;  State transition matrix
-%Q = [0.001 0;0 0.001];     %×´Ì¬×ªÒÆÐ­·½²î¾ØÕó; State Transition Covariance Matrix
-Q = [0.001 0;0 0.001];      %×´Ì¬×ªÒÆÐ­·½²î¾ØÕó;  Ö±¹ÛµÄÀí½âÎªÔ¤²âµÄÊý¾ÝÄãÏàÐÅ¶àÉÙ£¬ÖµÔ½´ó£¬ËµÃ÷Ô½²»ÏàÐÅÔ¤²âµÄÖµ£¬kÖÐ£¬Ô¤²âµÄ±ÈÖØÔ½Ð¡; state transfer covariance matrix;  The intuitive understanding is how much you believe in the predicted data, the larger the value, the less you believe in the predicted value, and the smaller the proportion of the prediction in k;
-H = [1 0];                  %¹Û²â¾ØÕó; Observation matrix
-R = 1.0;                    %¹Û²âÔëÉù·½²î;        Ö±¹ÛµÄÀí½âÎª¹Û²âµÄÊý¾ÝÄãÏàÐÅ¶àÉÙ£¬ÖµÔ½´ó£¬ËµÃ÷Ô½²»ÏàÐÅ¹Û²âµÄÖµ£¬kÖÐ£¬¹Û²âµÄ±ÈÖØÔ½Ð¡; observed noise variance;        The intuitive understanding is how much you believe in the observed data, the larger the value, the less you believe in the observed value, and the smaller the proportion of the observation in k;
+P = [1 0; 0 1];             %ï¿½ï¿½Ê¼×´Ì¬Ð­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½Òª;ï¿½ï¿½ï¿½ï¿½ï¿½Ç»ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½  initial state covariance matrix; It's not very important at first; It seems to affect the convergence time
+F = [1 0.004;0 1];          %×´Ì¬×ªï¿½Æ¾ï¿½ï¿½ï¿½;  State transition matrix
+%Q = [0.001 0;0 0.001];     %×´Ì¬×ªï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; State Transition Covariance Matrix
+Q = [0.001 0;0 0.001];      %×´Ì¬×ªï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;  Ö±ï¿½Ûµï¿½ï¿½ï¿½ï¿½ï¿½ÎªÔ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶ï¿½ï¿½Ù£ï¿½ÖµÔ½ï¿½ï¿½Ëµï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½Öµï¿½ï¿½kï¿½Ð£ï¿½Ô¤ï¿½ï¿½Ä±ï¿½ï¿½ï¿½Ô½Ð¡; state transfer covariance matrix;  The intuitive understanding is how much you believe in the predicted data, the larger the value, the less you believe in the predicted value, and the smaller the proportion of the prediction in k;
+H = [1 0];                  %ï¿½Û²ï¿½ï¿½ï¿½ï¿½; Observation matrix
+R = 1.0;                    %ï¿½Û²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;        Ö±ï¿½Ûµï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Û²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¶ï¿½ï¿½Ù£ï¿½ÖµÔ½ï¿½ï¿½Ëµï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Å¹Û²ï¿½ï¿½Öµï¿½ï¿½kï¿½Ð£ï¿½ï¿½Û²ï¿½Ä±ï¿½ï¿½ï¿½Ô½Ð¡; observed noise variance;        The intuitive understanding is how much you believe in the observed data, the larger the value, the less you believe in the observed value, and the smaller the proportion of the observation in k;
 
  
 

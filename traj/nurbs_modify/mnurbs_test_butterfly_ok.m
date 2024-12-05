@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -81,8 +81,8 @@ w = [1.00, 1.00, 1.00, 1.20, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 2.00, 1.0
 %                       0.6518, 0.6683, 0.6830, 0.7111, 0.7307, 0.7439, 0.7565, 0.7729, 0.8069, 0.8491, 0.8707,...
 %                       0.9145, 0.9639, 0.9850, 0.9917, 1, 1, 1, 1] ;
   
-% ¶¨Òå NURBS ÇúÏß¶ÈÊý  degree
-k = 3; % ÇúÏß¶ÈÊý  
+% ï¿½ï¿½ï¿½ï¿½ NURBS ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  degree
+k = 3; % ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  
 [m,n] = size(P);
 
 u_vec = mnurbs_cal_knot_ext(k,m,last_value);

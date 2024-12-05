@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,24 +12,24 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%% ÓÉÓÚ½âÎö·¨´æÔÚ¼ÓËÙ¶ÈµÄÁ¬ÐøÎÊÌâ£¬Êµ¼Ê¹¤³Ì²»Óè²ÉÓÃ£¬ÕâÀï²ÉÓÃÀëÉ¢·½·¨£¬ÒÔÇóµÃËÙ¶È¼ÓËÙ¶ÈµÄÁ¬Ðø;
-% »¹Ðè×¢ÒâµÄÊÇÁ½¶ÎÈÚºÏÎ»ÖÃÊ±£¬±ß½çÎÊÌâ£¬»¹ÓÐ×ÜµãÊý¼Ó1¼õ1ÎÊÌâ,ÐèÒªÈÏÕæµ÷ÊÔ;
-% ÁíÍâ´ËÊ±µÄÈÚºÏ°ë¾¶ÊÇ¼õËÙ¶È¶Î£¬²¢Ã»ÓÐ×öÈÚºÏ°ë¾¶£¬Èç¹ûÐèÒªÈÚºÏ°ë¾¶µÄ·½·¨µÄ»°Ò²±È½ÏÈÝÒ×£¬¾ÍÊÇÍ¨¹ý½«¼õËÙ¶ÈÊ±¼ä¸úÈÚºÏ°ë¾¶r´¦Àí£¬ÁíÍâÒ²ÐèÒªÀëÉ¢£¬·ñÔò»¹ÊÇ¸ßËÙÏÂ»¹ÊÇÇý¶¯Æ÷»¹ÊÇ±¨´í;
+%% ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ù¶Èµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬Êµï¿½Ê¹ï¿½ï¿½Ì²ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È¼ï¿½ï¿½Ù¶Èµï¿½ï¿½ï¿½ï¿½ï¿½;
+% ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½Î»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
+% ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ÚºÏ°ë¾¶ï¿½Ç¼ï¿½ï¿½Ù¶È¶Î£ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ÚºÏ°ë¾¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ÚºÏ°ë¾¶ï¿½Ä·ï¿½ï¿½ï¿½ï¿½Ä»ï¿½Ò²ï¿½È½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ÚºÏ°ë¾¶rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Òªï¿½ï¿½É¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½;
 % Due to the problem of continuity of acceleration in the analytical method, the actual engineering is not adopted, and the discrete method is used here to obtain the continuity of velocity acceleration.
 % It should also be noted that when the two sections are fused at the position, the boundary problem, as well as the total number of points plus 1 minus 1, need to be carefully debugged;
 %In addition, the fusion radius at this time is the deceleration segment, and there is no fusion radius, if you need a fusion radius method, it is also easier, that is, by processing the deceleration time with the fusion radius r, and it also needs to be discrete, otherwise it is still a driver or an error at high speed;
 clc;
 clear;
-Ts = 0.004;             %ÀëÉ¢ÖÜÆÚ; Discrete periods
-J = [0 -30 50 -20];     %¹Ø½Ú½Ç¶È; Joint angles
-Vel = [20 20 20 ];      %¹Ø½ÚËÙ¶È£¬ÕýÊý; joint velocity, positive;
-Acc = [100 100 100 ];    %¹Ø½Ú¼ÓËÙ¶È£¬ÕýÊý; joint acceleration, positive;
+Ts = 0.004;             %ï¿½ï¿½É¢ï¿½ï¿½ï¿½ï¿½; Discrete periods
+J = [0 -30 50 -20];     %ï¿½Ø½Ú½Ç¶ï¿½; Joint angles
+Vel = [20 20 20 ];      %ï¿½Ø½ï¿½ï¿½Ù¶È£ï¿½ï¿½ï¿½ï¿½ï¿½; joint velocity, positive;
+Acc = [100 100 100 ];    %ï¿½Ø½Ú¼ï¿½ï¿½Ù¶È£ï¿½ï¿½ï¿½ï¿½ï¿½; joint acceleration, positive;
 Jerk = [1000 1000 1000 ];
-n = 3;                      %µãµÄ¸öÊý¼õÒ»£¬ËµÃ÷ÎÊÌâ£¬²»ÐèÒªÄÇÃ´¶àµã; The number of points minus one illustrates the problem, and there is no need for so many points;
+n = 3;                      %ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ã´ï¿½ï¿½ï¿½; The number of points minus one illustrates the problem, and there is no need for so many points;
 
 
 
-%% µÚÒ»¶ÎÎ´ÈÚºÏ; The first segment is not fused;
+%% ï¿½ï¿½Ò»ï¿½ï¿½Î´ï¿½Úºï¿½; The first segment is not fused;
 P = zeros(1,10000);
 [t1,jerk]= s_curve_cal_param_con(abs(J(1)-J(2)),Vel(1),Acc(1),Jerk(1));
 [s1,v1,a1,jerk1] = s_curve_cal_pvaj_con(t1,jerk,Ts); 
@@ -44,23 +44,23 @@ for i = 1:n1-1
 end
 
 
-%% µÚÒ»¶Î¸úµÚ¶þ¶ÎÈÚºÏÇó£¬µÚ¶þ¶ÎÔÈËÙ; The first section is fused with the second section, and the second section is at a constant speed;
+%% ï¿½ï¿½Ò»ï¿½Î¸ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Úºï¿½ï¿½ó£¬µÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; The first section is fused with the second section, and the second section is at a constant speed;
  [t_temp2,v_temp2] = jugg_cur_max_average_vel(2,n,J(2),J(3),Vel(2),Acc(2),Jerk(2),Ts);     
 t_mix_a2 = t_temp2(1);
 t_mix_1 = t_mix_d1+t_mix_a2;
-n_mix_1 = ceil(t_mix_1/Ts);   t_mix_1 = n_mix_1*Ts; %½«Ê±¼ä¹æ»®ÎªÕûÊý±¶Ts£¬·ñÔòÒ»¶¨²î·ÖÖ®ºó¼ÓËÙ¶È»¹ÊÇ¸ú½âÎö·¨Ê±ºòÒ»¸öÄñÑù; The time is planned as an integer multiple Ts, otherwise the acceleration after a certain difference is still the same as that of the analytic method;
+n_mix_1 = ceil(t_mix_1/Ts);   t_mix_1 = n_mix_1*Ts; %ï¿½ï¿½Ê±ï¿½ï¿½æ»®Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ù¶È»ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; The time is planned as an integer multiple Ts, otherwise the acceleration after a certain difference is still the same as that of the analytic method;
 
-%µÚÒ»¶ÎÈÚºÏÏµÊý; % Fusion coefficient of the first segment;
+%ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úºï¿½Ïµï¿½ï¿½; % Fusion coefficient of the first segment;
 [P_acc2,P_dec2] = cal_single_seg_acc_dec(J(2),J(3),t_temp2,Ts);
-[a1,b1,c1,d1,e1,f1] = five_polynomial(P_dec1,V_dec1,A_dec1,P_acc2,v_temp2,0.0,t_mix_1); %ÓÃÕýÊý±¶ÖÜÆÚÊ±¼äÈ¥ÇóÏµÊý£¬·ñÔò»¹ÊÇÓöµ½±ß½ç Use positive multiples of the period time to find the coefficients, otherwise you will still encounter the boundary
-%ÈÚºÏ¹ì¼£; fusion trajectories;
-for i = 1:n_mix_1+1     %Á½Í·¶¼ÒªÈ¡;Take both ends;
-    x = (i-1)*Ts;       %ÔÚµÚÒ»¶ÎÊ±²¢Î´È¡ ×îºóÒ»¸öÖµ; The last value is not taken in the first paragraph;
+[a1,b1,c1,d1,e1,f1] = five_polynomial(P_dec1,V_dec1,A_dec1,P_acc2,v_temp2,0.0,t_mix_1); %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½È¥ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ Use positive multiples of the period time to find the coefficients, otherwise you will still encounter the boundary
+%ï¿½ÚºÏ¹ì¼£; fusion trajectories;
+for i = 1:n_mix_1+1     %ï¿½ï¿½Í·ï¿½ï¿½ÒªÈ¡;Take both ends;
+    x = (i-1)*Ts;       %ï¿½Úµï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½Î´È¡ ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Öµ; The last value is not taken in the first paragraph;
     P(i+n1-1)  = a1*x^5+b1*x^4+c1*x^3+d1*x^2+e1*x+f1;
     V_acc2 = 5*a1*x^4+4*b1*x^3+3*c1*x^2+2*d1*x+e1;
 end
 P_acc2 = P(n1+n_mix_1); 
-%µÚ¶þ¶ÎÔÈËÙ¹ì¼£; % of the second stage of the constant trajectory;
+%ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¹ì¼£; % of the second stage of the constant trajectory;
 t_vel2 = t_temp2(2)-t_temp2(1);n_vel2 = ceil(t_vel2/Ts);t_vel2 = n_vel2*Ts;
 for i = 1:n_vel2
     x = i*Ts;
@@ -68,7 +68,7 @@ for i = 1:n_vel2
 end
 P_dec2 = P(n1+n_mix_1+n_vel2);V_dec2 = V_acc2;
 
-%% µÚ¶þ¶Î¸úµÚÈý¶ÎÈÚºÏ½×¶Î; the second and third stages of fusion;
+%% ï¿½Ú¶ï¿½ï¿½Î¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚºÏ½×¶ï¿½; the second and third stages of fusion;
 
 [t2,jerk]= s_curve_cal_param_con(abs(J(4)-J(3)),Vel(3),Acc(3),Jerk(3));
 [s2,v2,a2,jerk2] = s_curve_cal_pvaj_con(t2,jerk,Ts); 
@@ -79,14 +79,14 @@ A_acc3 = sign(J(4)-J(3))*a2(n2);
 t_mix_2 = t1(3)+t_temp2(3)-t_temp2(2);
 n_mix_2 = ceil(t_mix_2/Ts); t_mix_2 = n_mix_2*Ts;
 
-%ÈÚºÏ¹ì¼£; fusion trajectories;
+%ï¿½ÚºÏ¹ì¼£; fusion trajectories;
 [a1,b1,c1,d1,e1,f1] = five_polynomial(P_dec2,V_dec2,0.0,P_acc3,V_acc3,A_acc3,t_mix_2);
-for i = 1:n_mix_2     %Á½Í·¶¼ÒªÈ¡; Take both ends;
-    x = i*Ts;         %ÔÚµÚÒ»¶ÎÊ±²¢Î´È¡×îºóÒ»¸öÖµ; The last value is not taken in the first paragraph;
+for i = 1:n_mix_2     %ï¿½ï¿½Í·ï¿½ï¿½ÒªÈ¡; Take both ends;
+    x = i*Ts;         %ï¿½Úµï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½Î´È¡ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Öµ; The last value is not taken in the first paragraph;
     P(i+n1+n_mix_1+n_vel2) = a1*x^5+b1*x^4+c1*x^3+d1*x^2+e1*x+f1;
 end
 
-%×îºóÒ»¶Î; The last paragraph;
+%ï¿½ï¿½ï¿½Ò»ï¿½ï¿½; The last paragraph;
 for i = 2:n2
    P(i+n1+n_mix_1+n_vel2+n_mix_2-1) = sign(J(3)-J(4))*s2(n2-i+1)+J(4);
 end

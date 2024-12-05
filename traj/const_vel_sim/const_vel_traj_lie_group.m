@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,14 +13,14 @@
 % -------------------------------------------------------------------------
 
 
-%% ÔÈËÙ½ø¸ø,ÀîÈºÀî´úÊý½â·¨; Uniform feed, Lie Qun Lie algebraic solution; constant velocity
+%% ï¿½ï¿½ï¿½Ù½ï¿½ï¿½ï¿½,ï¿½ï¿½Èºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â·¨; Uniform feed, Lie Qun Lie algebraic solution; constant velocity
 
 clc;
 clear;
 format long g;
 
 
-%Æðµã¡¢¹ý¶Éµã¡¢ÖÕµã; starting point, transition point, end point;
+%ï¿½ï¿½ã¡¢ï¿½ï¿½ï¿½Éµã¡¢ï¿½Õµï¿½; starting point, transition point, end point;
 % P1 = [100 88 65-100 -60 -20 30];     
 % P2 = [88 25 63-100 0 30 -20];       
 % P3 = [50 30 20-100 -60 -70 -40]; 
@@ -40,19 +40,19 @@ se_T3 = SE3_to_se3(T3);     V3 = se3_to_v(se_T3);
 o1 = V1(1:3); p1 = P1(1:3);
 o2 = V2(1:3); p2 = P2(1:3);
 o3 = V3(1:3); p3 = P3(1:3);
-Ts = 0.01;%²å²¹ÖÜÆÚ; imputation cycles;
+Ts = 0.01;%ï¿½å²¹ï¿½ï¿½ï¿½ï¿½; imputation cycles;
 
-%½»ÈÚ°ë¾¶; blending radius;
+%ï¿½ï¿½ï¿½Ú°ë¾¶; blending radius;
 r = 30;
 Pos1 = zeros(1000,6);
 Pos2 = zeros(1000,6);
 Pos3 = zeros(1000,6);
 
-%Çó¿Õ¼ä¼¸ºÎµÄ¹¹ÐÍ; find the configuration of the space geometry;
+%ï¿½ï¿½Õ¼ä¼¸ï¿½ÎµÄ¹ï¿½ï¿½ï¿½; find the configuration of the space geometry;
 [A,B,c,new_r,theta_c] = cal_const_vel_param(P1,P2,P3,r,1);
 
-%Éú³É¹æ»®ÇúÏß; generation of planning curves;
-Disp = 1000;Vel = 20;Acc = 200;Jerk = 2000; %ÕâÀïÓÐÎÊÌâµÄÊÇÉú³É¶¼ÊÇÀî´úÊýÏÂµÄËÙ¶ÈÎÊÌâ£¬Èç¹ûÊÇµÑ¿¨¶û¿Õ¼ä£¬¿ÉÒÔÖ»×ª×ËÌ¬£¬µÑ¿¨¶ûÎ»ÖÃ²»±ä; The problem here is that the generation is a velocity problem under Lie algebra, if it is a Cartesian space, it can only turn the pose, and the Cartesian position remains the same;
+%ï¿½ï¿½ï¿½É¹æ»®ï¿½ï¿½ï¿½ï¿½; generation of planning curves;
+Disp = 1000;Vel = 20;Acc = 200;Jerk = 2000; %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ÇµÑ¿ï¿½ï¿½ï¿½ï¿½Õ¼ä£¬ï¿½ï¿½ï¿½ï¿½Ö»×ªï¿½ï¿½Ì¬ï¿½ï¿½ï¿½Ñ¿ï¿½ï¿½ï¿½Î»ï¿½Ã²ï¿½ï¿½ï¿½; The problem here is that the generation is a velocity problem under Lie algebra, if it is a Cartesian space, it can only turn the pose, and the Cartesian position remains the same;
 [t,jerk] = s_curve_cal_param_con(Disp,Vel,Acc,Jerk);
 [p,v,a1,jerk] = s_curve_cal_pvaj_con_ext(t,jerk,Ts);
 
@@ -66,7 +66,7 @@ l_p1A = cal_dis(A(1:3)',p1);
 l_p3B = cal_dis(B(1:3)',p3);
 le1 = 0;le3 = 0;
 
-%Çó·Ç½»ÈÚÊ±µÄÎ»ÖÃ×ËÌ¬£¬ÓÉÉÏÊöÉú³ÉµÄ¹æ»®ÇúÏßÉú³É¿Õ¼äÎ»ÖÃ¼°×ËÌ¬; find the position and pose in the non-blending situation, and generate the spatial position and attitude from the above-mentioned generated planning curve;
+%ï¿½ï¿½Ç½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉµÄ¹æ»®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¿Õ¼ï¿½Î»ï¿½Ã¼ï¿½ï¿½ï¿½Ì¬; find the position and pose in the non-blending situation, and generate the spatial position and attitude from the above-mentioned generated planning curve;
 for i = 1:length(p)
     Pos1(i,4:6) = p(i)*d_p1p2+p1;
     Pos1(i,1:3) = p(i)*rescale_1*o_p1p2+o1;
@@ -86,8 +86,8 @@ for i = 1:length(p)
 end
 
 
-%% ÇóÔ²Æ½¾ù·Ö¸îÖ®ºóµÄÎ»ÖÃ×ø±êÉú³ÉÊý×é; Find the position coordinates after the circle is evenly divided to generate an array;
-%ÕâÀïÓÐ¸öÎÊÌâ£¬Èç¹û²å²¹ÖÜÆÚTs±È½Ï´ó£¬ÄÇÃ´Ô²ÓëÖ±ÏßÆ´½ÓµÄµØ·½²¢²»ÊÇÔÈËÙÐèÒªÁí×÷´¦Àí; There is a problem here, if the interpolation period Ts is relatively large, then the place where the circle and the straight line are spliced is not uniform and needs to be treated separately;
+%% ï¿½ï¿½Ô²Æ½ï¿½ï¿½ï¿½Ö¸ï¿½Ö®ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Find the position coordinates after the circle is evenly divided to generate an array;
+%ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½å²¹ï¿½ï¿½ï¿½ï¿½Tsï¿½È½Ï´ï¿½ï¿½ï¿½Ã´Ô²ï¿½ï¿½Ö±ï¿½ï¿½Æ´ï¿½ÓµÄµØ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; There is a problem here, if the interpolation period Ts is relatively large, then the place where the circle and the straight line are spliced is not uniform and needs to be treated separately;
 t = new_r*theta_c/Vel;
 no = floor(t/Ts);
 for i = 1:no
@@ -96,7 +96,7 @@ for i = 1:no
     Pos2(i,4:6) = Temp';
 end
 
-%% ÇóÔ²»¡ÖÐ¼ä¹ý¶ÉÖÐ¼äµÄ×ËÌ¬; Find the attitude of the middle transition of the arc;
+%% ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½Ì¬; Find the attitude of the middle transition of the arc;
 start_ori_p = Pos1(le1,1:3)
 end_ori_p = Pos3(le3,1:3)
 
@@ -107,7 +107,7 @@ end_ori_v = -Vel*rescale_2*o_p3p2;
 [a2,b2,c2,d2] = three_polynomial(start_ori_p(2),start_ori_v(2),end_ori_p(2),end_ori_v(2),t);
 [a3,b3,c3,d3] = three_polynomial(start_ori_p(3),start_ori_v(3),end_ori_p(3),end_ori_v(3),t);
 
-%ÕâÀïÒ²¸úÉÏÃæÇóÎ»ÖÃÊ±Ò»Ñù£¬Ô²ÓëÖ±ÏßÆ´µÄµØ·½²»ÄÜÔÈËÙ£¬Áí×÷´¦Àí£¬·½·¨¾ÍÊÇÀûÓÃÖÕµãÎ»ÖÃ½øÐÐ¼ÆËã£¬ÀÁµÃ¸ãÁË; Here is also the same as when finding the position above, the place where the circle and the straight line are spelled can not be at a uniform speed, and the other way is to use the end position to calculate, too lazy to do it;
+%ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Ê±Ò»ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½Ö±ï¿½ï¿½Æ´ï¿½ÄµØ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½Î»ï¿½Ã½ï¿½ï¿½Ð¼ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½; Here is also the same as when finding the position above, the place where the circle and the straight line are spelled can not be at a uniform speed, and the other way is to use the end position to calculate, too lazy to do it;
 for i = 1:no
     tt = i*Ts;
     Pos2(i,1) = a1*tt^3+b1*tt^2+c1*tt+d1;
@@ -116,11 +116,11 @@ for i = 1:no
 end
 
 
-%% »­¹ì¼£; Draw a trajectory;
+%% ï¿½ï¿½ï¿½ì¼£; Draw a trajectory;
 
 T1 = zeros(4,4,le1);
 %figure;
-%×ø±êÏµ´óÐ¡; coordinate system size;
+%ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ð¡; coordinate system size;
 coord_scale = 5;
 %axis([0 100 0 100 0 100]);
 for i = 1:le1

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -40,7 +40,7 @@ end
 function theta_rad = angle_between_vectors(A, B)
  
     if length(A) ~= length(B)
-        error('Á½¸öÏòÁ¿µÄÎ¬¶È±ØÐëÏàÍ¬');
+        error('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½Í¬');
     end
     dot_product = dot(A, B);  
     norm_A = norm(A);

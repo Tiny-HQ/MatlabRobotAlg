@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -15,8 +15,8 @@
 
 
 
-%ori±íÊ¾×óÊÖ»¹ÊÇÓÒÊÖ; ori indicates whether it is left or right;
-%´Ë´¦µÄscaraÊÇ×ÀÃæÊ½;²»°üº¬µõ×°; The scara here is desktop; Lifting is not included;
+%oriï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; ori indicates whether it is left or right;
+%ï¿½Ë´ï¿½ï¿½ï¿½scaraï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°; The scara here is desktop; Lifting is not included;
 function [T,ori] = scara_fkine(q,DH,q_option,a_t_option)
 
 
@@ -46,7 +46,7 @@ function [T,ori] = scara_fkine(q,DH,q_option,a_t_option)
     end
 
 
-    q = q+theta;%thetaµÄÆ«²î offset
+    q = q+theta;%thetaï¿½ï¿½Æ«ï¿½ï¿½ offset
     alpha0 = alpha(1); alpha1 = alpha(2); alpha2 = alpha(3);alpha3 = alpha(4);  
     
     T01 = create_link(q(1),d1,alpha0,a0,'rad');
@@ -55,7 +55,7 @@ function [T,ori] = scara_fkine(q,DH,q_option,a_t_option)
     T34 = create_link(q(4),d4,alpha3,a3,'rad');
     T = T01*T12*T23*T34;
 
-    %q2µÄ·¶Î§ÊÇ-180µ½+180 Q2 ranges from -180 to +180
+    %q2ï¿½Ä·ï¿½Î§ï¿½ï¿½-180ï¿½ï¿½+180 Q2 ranges from -180 to +180
     if abs(q(2))<eps
         ori = 0;
     elseif q(2)>0

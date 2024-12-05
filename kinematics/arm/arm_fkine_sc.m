@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%ÐýÁ¿Õý½âÁù×ÔÓÉ¶È»úÐµ±Û; screw forward solution six-degree-of-freedom manipulator;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶È»ï¿½Ðµï¿½ï¿½; screw forward solution six-degree-of-freedom manipulator;
 
 
 
@@ -40,7 +40,7 @@ function [T,shoulder,elbow,wrist] = arm_fkine_sc(q,DH,q_option,alpha_theta_optio
         theta = DH.theta*pi/180.0;
     end
     
-    q_ = q+theta;%thetaµÄÆ«²î offset
+    q_ = q+theta;%thetaï¿½ï¿½Æ«ï¿½ï¿½ offset
 
 
     w1 = [0 0 1];
@@ -83,10 +83,10 @@ function [T,shoulder,elbow,wrist] = arm_fkine_sc(q,DH,q_option,alpha_theta_optio
 
     T = T01*T12*T23*T34*T45*T56*T0;
     
-    c2 = cos(q_(2)+pi/2);s2 = sin(q_(2)+pi/2);%ÒòÎªÕâÀïµÄ±ÛÐÍÅÐ¶ÏÊÇ¸ù¾ÝdhÄ£ÐÍÀïÃæÀ´µÄ£¬ÐýÁ¿ÀïÃæµÄ¶þÖáÁãÎ»ÊÇ0¶È;ËùÒÔÒª¼ÓÉÏ90¶È; Because the arm shape judgment here is based on the DH model, the two-axis zero position in the screw is 0 degrees; So add 90 degrees;
+    c2 = cos(q_(2)+pi/2);s2 = sin(q_(2)+pi/2);%ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½dhÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½0ï¿½ï¿½;ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½90ï¿½ï¿½; Because the arm shape judgment here is based on the DH model, the two-axis zero position in the screw is 0 degrees; So add 90 degrees;
     c3 = cos(q_(3));s3 = sin(q_(3));
     
-    if abs(a1 + a2*c2 + a3*(c2*c3 - s2*s3) + d4*(c2*s3 + c3*s2))<eps%ÕâÀïµÄÇ°±Ûºó±ÛÊÇT12*T23*T34£¬ÊÇ456ÖáµÄÖÐÐÄÔÚ1ÖáµÄ×ø±êÏµÖÐµÄxµÄÖµÓë0ÅÐ¶ÏµÃ³öµÄ;Here the forearm and the rear arm are T12*T23*T34, which is judged by the value of x and 0 in the coordinate system of the 1 axis of the center of the 456 axis;
+    if abs(a1 + a2*c2 + a3*(c2*c3 - s2*s3) + d4*(c2*s3 + c3*s2))<eps%ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½Ûºï¿½ï¿½ï¿½ï¿½T12*T23*T34ï¿½ï¿½ï¿½ï¿½456ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½Ðµï¿½xï¿½ï¿½Öµï¿½ï¿½0ï¿½Ð¶ÏµÃ³ï¿½ï¿½ï¿½;Here the forearm and the rear arm are T12*T23*T34, which is judged by the value of x and 0 in the coordinate system of the 1 axis of the center of the 456 axis;
         shoulder = 0;     
     elseif (a1 + a2*c2 + a3*(c2*c3 - s2*s3) + d4*(c2*s3 + c3*s2)>0)
         shoulder = 1;

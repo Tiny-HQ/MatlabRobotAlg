@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,7 +16,7 @@
 function [Nik_u] = base_function (i,k,u,NodeVector)
 
 
-%%  ·½·¨Ò»¡¢±ê×¼µÝ¹é ,²âÊÔOK;
+%%  ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½×¼ï¿½Ý¹ï¿½ ,ï¿½ï¿½ï¿½ï¿½OK;
    if (i - 1 > 1)
         if ((u < NodeVector(i)))
             Nik_u = 0.0; return ;

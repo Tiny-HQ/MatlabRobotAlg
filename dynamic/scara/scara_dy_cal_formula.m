@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,7 +16,7 @@
 
 
 
-%scara ¶¯Á¦Ñ§Çó½â;
+%scara ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½;
 
 
 clc;
@@ -25,37 +25,37 @@ clear;
 
 format long g;
 
-syms a1 a2 d4 real;             %dh²ÎÊý; DH parameters
-syms d3_c real;                 %3ÖáÖÊÐÄ; 3-axis centroid
-syms q1 q2 d3 q4 real;          %¹Ø½Ú½Ç¶ÈÒÔ¼°¹Ø½ÚÒÆ¶¯Á¿;Joint angle and the amount of joint movement
-syms g real;                    %ÖØÁ¦¼ÓËÙ¶È Gravitational acceleration
-syms m1 m2 m3 m4 real;          %ÖÊÁ¿;mass
+syms a1 a2 d4 real;             %dhï¿½ï¿½ï¿½ï¿½; DH parameters
+syms d3_c real;                 %3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; 3-axis centroid
+syms q1 q2 d3 q4 real;          %ï¿½Ø½Ú½Ç¶ï¿½ï¿½Ô¼ï¿½ï¿½Ø½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½;Joint angle and the amount of joint movement
+syms g real;                    %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ Gravitational acceleration
+syms m1 m2 m3 m4 real;          %ï¿½ï¿½ï¿½ï¿½;mass
 
 
-syms ic1xx ic1xy ic1xz ic1yy ic1yz ic1zz real;    %¹ßÁ¿;inertia
-syms ic2xx ic2xy ic2xz ic2yy ic2yz ic2zz real;    %¹ßÁ¿;inertia
-syms ic3xx ic3xy ic3xz ic3yy ic3yz ic3zz real;    %¹ßÁ¿;inertia
-syms ic4xx ic4xy ic4xz ic4yy ic4yz ic4zz real;    %¹ßÁ¿;inertia
+syms ic1xx ic1xy ic1xz ic1yy ic1yz ic1zz real;    %ï¿½ï¿½ï¿½ï¿½;inertia
+syms ic2xx ic2xy ic2xz ic2yy ic2yz ic2zz real;    %ï¿½ï¿½ï¿½ï¿½;inertia
+syms ic3xx ic3xy ic3xz ic3yy ic3yz ic3zz real;    %ï¿½ï¿½ï¿½ï¿½;inertia
+syms ic4xx ic4xy ic4xz ic4yy ic4yz ic4zz real;    %ï¿½ï¿½ï¿½ï¿½;inertia
 
 syms pc1x pc1y pc1z pc2x pc2y pc2z pc3x pc3y pc3z pc4x pc4y pc4z real;
 
-syms dq1 ddq1 dq2 ddq2 dd3 ddd3 dq4 ddq4 real;     %ËÙ¶È¡¢¼ÓËÙ¶È;vel acc
+syms dq1 ddq1 dq2 ddq2 dd3 ddd3 dq4 ddq4 real;     %ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½;vel acc
 
 ic1=[ic1xx -ic1xy -ic1xz;
      -ic1xy ic1yy -ic1yz;
-     -ic1xz -ic1yz ic1zz];              %¹ßÁ¿¾ØÕó inertia matrix
+     -ic1xz -ic1yz ic1zz];              %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ inertia matrix
 
 ic2=[ic2xx -ic2xy -ic2xz;
      -ic2xy ic2yy -ic2yz;
-     -ic2xz -ic2yz ic2zz];              %¹ßÁ¿¾ØÕó inertia matrix
+     -ic2xz -ic2yz ic2zz];              %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ inertia matrix
 
 ic3=[ic3xx -ic3xy -ic3xz;
      -ic3xy ic3yy -ic3yz;
-     -ic3xz -ic3yz ic3zz];              %¹ßÁ¿¾ØÕó inertia matrix
+     -ic3xz -ic3yz ic3zz];              %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ inertia matrix
  
  ic4=[ic4xx -ic4xy -ic4xz;
      -ic4xy ic4yy -ic4yz;
-     -ic4xz -ic4yz ic4zz];              %¹ßÁ¿¾ØÕó inertia matrix
+     -ic4xz -ic4yz ic4zz];              %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ inertia matrix
  
  R01 = [cos(q1) -sin(q1) 0 ;
      sin(q1) cos(q1) 0;
@@ -79,7 +79,7 @@ ic3=[ic3xx -ic3xy -ic3xz;
  R45 = [1 0 0;0 1 0;0 0 1];R54 = R45';
  
 Z11 = [0 0 1]'; Z22 = [0 0 1]'; Z33 = [0 0 1]'; Z44 = [0 0 1]'; 
-P10 = [0 0 0]'; P21 = [a1 0 0]';P32 = [a2 0 d3]';P43 = [0 0 -d4]';P54 = [0 0 0]';      %p43¿ÉÒÔÐ´³É[0 0 0]',ÕâÀï·½±ãÓësimulink¶ÔÓ¦; %p43 can be written as [0 0 0]', which is convenient for simulink correspondence;
+P10 = [0 0 0]'; P21 = [a1 0 0]';P32 = [a2 0 d3]';P43 = [0 0 -d4]';P54 = [0 0 0]';      %p43ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½[0 0 0]',ï¿½ï¿½ï¿½ï·½ï¿½ï¿½ï¿½ï¿½simulinkï¿½ï¿½Ó¦; %p43 can be written as [0 0 0]', which is convenient for simulink correspondence;
 % Pc11 = [a1/2 0 0]';Pc22 = [a2/2 0 0]';Pc33 = [0 0 d3_c]';Pc44 = [0 0 0]';
 Pc11 = [pc1x pc1y pc1z]';Pc22 = [pc2x pc2y pc2z]';Pc33 = [pc3x pc3y pc3z]';Pc44 = [pc4x pc4y pc4z]';
  

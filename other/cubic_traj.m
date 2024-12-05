@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -14,18 +14,18 @@
 %example2.7
 clc
 clear
-%¹ì¼£¶¨ÒåÌõ¼þ The trajectory defines the condition
+%ï¿½ì¼£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ The trajectory defines the condition
 t_array=[0,2,4,8,10];
 q_array=[10,20,0,30,40];
 v_array=[0,-10,10,3,0];
-%¼ÆËã¹ì¼£ Calculate trajectories
-%³õÊ¼Î»ÖÃ Initial position
+%ï¿½ï¿½ï¿½ï¿½ì¼£ Calculate trajectories
+%ï¿½ï¿½Ê¼Î»ï¿½ï¿½ Initial position
 t=t_array(1);
 q=q_array(1);
 v=v_array(1);
-%¼ÆËã¸÷¶Î¹ì¼£ Calculate the trajectories of each segment
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¹ì¼£ Calculate the trajectories of each segment
 for k=1:length(t_array)-1
-    %¼ÆËã¸÷¶Î¶àÏîÊ½µÄÏµÊý Calculate the coefficients for each segment polynomial
+    %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¶ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ïµï¿½ï¿½ Calculate the coefficients for each segment polynomial
     h(k)=q_array(k+1)-q_array(k);
     T(k)=t_array(k+1)-t_array(k);
     a0(k)=q_array(k);
@@ -33,29 +33,29 @@ for k=1:length(t_array)-1
     a2(k)=(3*h(k)-(2*v_array(k)+v_array(k+1))*T(k))/(T(k)*T(k));
     a3(k)=(-2*h(k)+(v_array(k)+v_array(k+1))*T(k))/(T(k)*T(k)*T(k));
 
-    %Éú³É¸÷¶Î¹ì¼£ÃÜ»¯µÄÊý¾Ýµã Generate data points for each segment of the trajectory densification
-    %¾Ö²¿Ê±¼ä×ø±ê Local time coordinates
+    %ï¿½ï¿½ï¿½É¸ï¿½ï¿½Î¹ì¼£ï¿½Ü»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ Generate data points for each segment of the trajectory densification
+    %ï¿½Ö²ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Local time coordinates
     tau=t_array(k):T(k)/100:t_array(k+1);
-    %È«¾ÖÊ±¼ä×ø±ê£¬ÓÉ¾Ö²¿Ê±¼ä×ø±ê×é³É Global time coordinates, which consist of local time coordinates
+    %È«ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ê£¬ï¿½É¾Ö²ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Global time coordinates, which consist of local time coordinates
     t=[t,tau(2:end)];
-    %¾Ö²¿Î»ÖÃ×ø±ê Local location coordinates
+    %ï¿½Ö²ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Local location coordinates
     qk=a0(k)+a1(k)*power(tau-tau(k),1)+a2(k)*power(tau-tau(k),2)+a3(k)*power(tau-tau(k),3);
-    %È«¾ÖÎ»ÖÃ×ø±ê Global location coordinates
+    %È«ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Global location coordinates
     q=[q,qk(2:end)];
-    %ËÙ¶È vel
+    %ï¿½Ù¶ï¿½ vel
     vk=a1(k)+2*a2(k)*power(tau-tau(k),1)+3*a3(k)*power(tau-tau(k),2);
     v=[v,vk(2:end)];
-    %¼ÓËÙ¶È acc
+    %ï¿½ï¿½ï¿½Ù¶ï¿½ acc
     acck=2*a2(k)+6*a3(k)*power(tau-tau(k),1);
     if(k==1)
         acc=2*a2(k);
     end
     acc=[acc,acck(2:end)];
 end
-%»æÍ¼ plot
+%ï¿½ï¿½Í¼ plot
 subplot(3,1,1);
 h1=plot(t,q,'-r');
-legend(h1,'µÚÒ»ÖÖ·½Ê½')
+legend(h1,'ï¿½ï¿½Ò»ï¿½Ö·ï¿½Ê½')
 hold on;
 plot(t_array,q_array,'or');
 axis([0,10,-5,45]);

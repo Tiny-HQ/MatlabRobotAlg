@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,16 +11,16 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-% 1. ¶¨Òå¿ØÖÆµã
-P = [0, 0; 1, 3; 3, 1; 5, 3; 6, 0]; % ¿ØÖÆµã×ø±ê Control point coordinates
-degree = 3; % ÇúÏßµÄ½×Êý The degree of the curve
+% 1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½
+P = [0, 0; 1, 3; 3, 1; 5, 3; 6, 0]; % ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½ Control point coordinates
+degree = 3; % ï¿½ï¿½ï¿½ßµÄ½ï¿½ï¿½ï¿½ The degree of the curve
 
-% 2. ¶¨Òå½ÚµãÏòÁ¿ Define the node vector
-% ¿ØÖÆµã 2 ºÍ 3 µÄÓ°Ïì·¶Î§ËõÐ¡£¬Ê¹ÓÃ¾Ö²¿½ÚµãÏòÁ¿ Control points 2 and 3 have a reduced sphere of influence, using local node vectors
+% 2. ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ Define the node vector
+% ï¿½ï¿½ï¿½Æµï¿½ 2 ï¿½ï¿½ 3 ï¿½ï¿½Ó°ï¿½ì·¶Î§ï¿½ï¿½Ð¡ï¿½ï¿½Ê¹ï¿½Ã¾Ö²ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ Control points 2 and 3 have a reduced sphere of influence, using local node vectors
 knotVector = [0 0 0 0 0.2 0.4 0.6 0.8 1 1 1 1];
 
-% 3. ¼ÆËãºÍ»æÖÆÇúÏß Calculate and plot curves
-u_fine = linspace(0, 1, 100); % ÇúÏß»æÖÆµÄÏ¸·Ö u ²ÎÊý The subdivision u parameter of the curve drawing
+% 3. ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Calculate and plot curves
+u_fine = linspace(0, 1, 100); % ï¿½ï¿½ï¿½ß»ï¿½ï¿½Æµï¿½Ï¸ï¿½ï¿½ u ï¿½ï¿½ï¿½ï¿½ The subdivision u parameter of the curve drawing
 curvePoints = zeros(length(u_fine), 2);
 numCtrlPoints = size(P, 1);
 
@@ -34,11 +34,11 @@ for i = 1:length(u_fine)
     curvePoints(i, :) = [Cx, Cy];
 end
 
-% 4. »æÖÆ½á¹û Plot the results
-% »æÖÆ¿ØÖÆµã Draw control points
+% 4. ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ Plot the results
+% ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½Æµï¿½ Draw control points
 plot(P(:, 1), P(:, 2), 'g--o', 'DisplayName', 'Control Points'); hold on;
 
-% »æÖÆNURBSÇúÏß Plot NURBS curves
+% ï¿½ï¿½ï¿½ï¿½NURBSï¿½ï¿½ï¿½ï¿½ Plot NURBS curves
 plot(curvePoints(:, 1), curvePoints(:, 2), 'b-', 'DisplayName', 'Local NURBS Curve');
 
 legend;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 function N = NURBSBasis(i, p, knotVector, u)
-    % µÝ¹é¼ÆËã NURBS BÑùÌõ»ùº¯ÊýÖµ Recursively calculates NURBS B-spline basis function values
+    % ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½ NURBS Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ Recursively calculates NURBS B-spline basis function values
     if p == 0
         if knotVector(i+1) <= u && u < knotVector(i+2)
             N = 1;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,8 +12,8 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%Áù×ÔÓÉ¶ÈÐýÁ¿Õý½â;forward solution of six-degree-of-freedom screw;
-%Ó¦¸ÃÊÇÕýÈ·µÄ£¬¸údh¼ÆËãµÄ½á¹ûÏàÍ¬£¬¶þÖáµÄ½Ç¶ÈÏà²î90£¬dhÖÐ¶þÖá90¶È¶ÔÓ¦ÕâÀïµÄ0¶È; It should be correct, the same as the result of DH calculation, the angle difference of the two axes is 90, and the 90 degrees of the two axes in DH correspond to 0 degrees here;
+%ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;forward solution of six-degree-of-freedom screw;
+%Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ä£ï¿½ï¿½ï¿½dhï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½Ç¶ï¿½ï¿½ï¿½ï¿½90ï¿½ï¿½dhï¿½Ð¶ï¿½ï¿½ï¿½90ï¿½È¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½; It should be correct, the same as the result of DH calculation, the angle difference of the two axes is 90, and the 90 degrees of the two axes in DH correspond to 0 degrees here;
 
 
 
@@ -74,10 +74,10 @@ v6 = -cross(w6,q6);
 
 w_r = eye(3);
 A1 = w1(1);A2 = w1(2);A3 = w1(3);
-w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wµÄ·´¶Ô³Æ¾ØÕó; w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½; w's antisymmetric matrix;
 w_r(2,1) = A3;w_r(2,2) = 0;w_r(2,3) = -A1;
 w_r(3,1) = -A2;w_r(3,2) = A1;w_r(3,3) = 0;
-ew = eye(3)+w_r*s1+w_r*w_r*(1-c1);%Ö¸Êý»ý¹«Ê½; exponential product formula;
+ew = eye(3)+w_r*s1+w_r*w_r*(1-c1);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; exponential product formula;
 I = eye(3);
 x = cross(w1,v1);
 p1 = (I-ew)*x';
@@ -87,10 +87,10 @@ vpa(T1,3)
 
 w_r = eye(3);
 A1 = w2(1);A2 = w2(2);A3 = w2(3);
-w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wµÄ·´¶Ô³Æ¾ØÕó; w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½; w's antisymmetric matrix;
 w_r(2,1) = A3;w_r(2,2) = 0;w_r(2,3) = -A1;
 w_r(3,1) = -A2;w_r(3,2) = A1;w_r(3,3) = 0;
-ew = eye(3)+w_r*s2+w_r*w_r*(1-c2);%Ö¸Êý»ý¹«Ê½; exponential product formula;
+ew = eye(3)+w_r*s2+w_r*w_r*(1-c2);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; exponential product formula;
 I = eye(3);
 x = cross(w2,v2);
 p2 = (I-ew)*x';
@@ -101,10 +101,10 @@ vpa(T2,3)
 
 w_r = eye(3);
 A1 = w3(1);A2 = w3(2);A3 = w3(3);
-w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wµÄ·´¶Ô³Æ¾ØÕó;w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½;w's antisymmetric matrix;
 w_r(2,1) = A3;w_r(2,2) = 0;w_r(2,3) = -A1;
 w_r(3,1) = -A2;w_r(3,2) = A1;w_r(3,3) = 0;
-ew = eye(3)+w_r*s3+w_r*w_r*(1-c3);%Ö¸Êý»ý¹«Ê½;exponential product formula;
+ew = eye(3)+w_r*s3+w_r*w_r*(1-c3);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½;exponential product formula;
 I = eye(3);
 x = cross(w3,v3);
 p3 = (I-ew)*x';
@@ -115,10 +115,10 @@ vpa(T3,3)
 
 w_r = eye(3);
 A1 = w4(1);A2 = w4(2);A3 = w4(3);
-w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wµÄ·´¶Ô³Æ¾ØÕó; w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½; w's antisymmetric matrix;
 w_r(2,1) = A3;w_r(2,2) = 0;w_r(2,3) = -A1;
 w_r(3,1) = -A2;w_r(3,2) = A1;w_r(3,3) = 0;
-ew = eye(3)+w_r*s4+w_r*w_r*(1-c4);%Ö¸Êý»ý¹«Ê½; exponential product formula;
+ew = eye(3)+w_r*s4+w_r*w_r*(1-c4);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; exponential product formula;
 I = eye(3);
 x = cross(w4,v4);
 p4 = (I-ew)*x';
@@ -130,10 +130,10 @@ vpa(T4,3)
 
 w_r = eye(3);
 A1 = w5(1);A2 = w5(2);A3 = w5(3);
-w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wµÄ·´¶Ô³Æ¾ØÕó; w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½; w's antisymmetric matrix;
 w_r(2,1) = A3;w_r(2,2) = 0;w_r(2,3) = -A1;
 w_r(3,1) = -A2;w_r(3,2) = A1;w_r(3,3) = 0;
-ew = eye(3)+w_r*s5+w_r*w_r*(1-c5);%Ö¸Êý»ý¹«Ê½; exponential product formula;
+ew = eye(3)+w_r*s5+w_r*w_r*(1-c5);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; exponential product formula;
 I = eye(3);
 x = cross(w5,v5);
 p5 = (I-ew)*x';
@@ -145,10 +145,10 @@ vpa(T5,3)
 
 w_r = eye(3);
 A1 = w6(1);A2 = w6(2);A3 = w6(3);
-w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wµÄ·´¶Ô³Æ¾ØÕó;w's antisymmetric matrix;
+w_r(1,1) = 0;w_r(1,2) = -A3;w_r(1,3) = A2;%wï¿½Ä·ï¿½ï¿½Ô³Æ¾ï¿½ï¿½ï¿½;w's antisymmetric matrix;
 w_r(2,1) = A3;w_r(2,2) = 0;w_r(2,3) = -A1;
 w_r(3,1) = -A2;w_r(3,2) = A1;w_r(3,3) = 0;
-ew = eye(3)+w_r*s6+w_r*w_r*(1-c6);%Ö¸Êý»ý¹«Ê½;exponential product formula;
+ew = eye(3)+w_r*s6+w_r*w_r*(1-c6);%Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½;exponential product formula;
 I = eye(3);
 x = cross(w6,v6);
 p6 = (I-ew)*x';

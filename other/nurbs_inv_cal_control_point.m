@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,9 +11,9 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-% 1. ¶¨ÒåÑù±¾µã
-Q = [0, 0; 1, 2; 2, 2; 3, 1.5; 4, 0.5; 5, 0; 9,10; 6,9;]; % Ñù±¾µã×ø±ê
-numDataPoints = size(Q, 1); % Ñù±¾µãÊýÁ¿
+% 1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+Q = [0, 0; 1, 2; 2, 2; 3, 1.5; 4, 0.5; 5, 0; 9,10; 6,9;]; % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+numDataPoints = size(Q, 1); % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 % 2. ??NURBS??
 degree = 3; % NURBS?????

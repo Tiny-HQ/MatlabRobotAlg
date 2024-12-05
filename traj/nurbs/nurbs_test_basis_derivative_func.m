@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -22,10 +22,10 @@ last_value = 15;
 u = 0:Ts:last_value;
   
  
-Px = [0 ;1;2;3;5;0 ;1;2;3;5;]; % ¿ØÖÆµã×ø±ê  control point cooodinate
-W = [1 ;2;3;4;5;6 ;1 ;2;3;4;5;6 ]; % È¨ÖØ   weight
+Px = [0 ;1;2;3;5;0 ;1;2;3;5;]; % ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½  control point cooodinate
+W = [1 ;2;3;4;5;6 ;1 ;2;3;4;5;6 ]; % È¨ï¿½ï¿½   weight
 
-k = 3; % ÇúÏß¶ÈÊý  The degree of the curve
+k = 3; % ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  The degree of the curve
 [m,n] = size(Px);
 u_vec = nurbs_cal_knot(k,m,last_value);
  

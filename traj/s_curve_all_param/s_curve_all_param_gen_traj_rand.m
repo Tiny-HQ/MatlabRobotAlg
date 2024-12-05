@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -18,7 +18,7 @@ clc;clear;
 
  t_int = 0.001;
 
-% %ÆðÊ¼ËÙ¶È¡¢¼ÓËÙ¶È¶¼ÊÇ´ø·½ÏòµÄ; The starting velocity and acceleration are all directional;
+% %ï¿½ï¿½Ê¼ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶È¶ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; The starting velocity and acceleration are all directional;
 % s0 = 1000;
 % s5 = 100;
 % v0 = -50;
@@ -27,7 +27,7 @@ clc;clear;
 % a5 = 20;
 % 
 % 
-% %ËÙ¶È¡¢¼ÓËÙ¶È¡¢¼õËÙ¶ÈÕý·´ÎÞÓ°Ïì£¬ÄÚ²¿ÒÑ¾­×öÁË´¦Àí£¬ÎªÁË·½±ãÌî²Î£¬ÒÔ·À²ÎÊýÕý·´¼ÆËã³öÏÖÎÊÌâ;% velocity, acceleration, deceleration have no positive and negative effects, and have been processed internally, in order to facilitate the filling of parameters, in case there is a problem with the positive and negative calculation of parameters;
+% %ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ì£¬ï¿½Ú²ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½Î£ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;% velocity, acceleration, deceleration have no positive and negative effects, and have been processed internally, in order to facilitate the filling of parameters, in case there is a problem with the positive and negative calculation of parameters;
 % v = 7200;
 % a = 2000;
 % d = 5000;

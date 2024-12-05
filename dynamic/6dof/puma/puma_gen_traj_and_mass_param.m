@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,8 +11,8 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%Éú³É¹ì¼£ºÍÖÊÁ¿²ÎÊý;generation of trajectories and mass parameters;
-%ÕâÀï±ØÐëÓÃÐÞ¸Ädh£¬·ñÔò×îÐ¡¼¯ÄÇÀïÓÐÎÊÌâ;Here you have to modify dh, otherwise there is a problem with the minimum set;
+%ï¿½ï¿½ï¿½É¹ì¼£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;generation of trajectories and mass parameters;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½dhï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;Here you have to modify dh, otherwise there is a problem with the minimum set;
 %+---+-----------+-----------+-----------+-----------+-----------+
 %| j |     theta |         d |         a |     alpha |    offset |
 %+---+-----------+-----------+-----------+-----------+-----------+
@@ -78,7 +78,7 @@ q6 = [t',pos6']; dq6 = [t',vel6']; ddq6 = [t',acc6'];
 
 
 
-%ÉúlÉÖEÁz?ÎE?
+%ï¿½ï¿½lï¿½ï¿½Eï¿½z?ï¿½E?
 
 global g a3 d2 d4 d6 m1 m2 m3 m4 m5 m6;
 global ic1xx ic1xy ic1xz ic1yy ic1yz ic1zz ic2xx ic2xy ic2xz ic2yy ic2yz ic2zz ic3xx ic3xy ic3xz ic3yy ic3yz ic3zz;

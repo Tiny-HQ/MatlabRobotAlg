@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,7 +13,7 @@
 % -------------------------------------------------------------------------
 
 
-%´Óscara_dy_fir_test.slxÖÐ»ñµÃ¸÷¸ö¹Ø½ÚµÄ·ÂÕæ³öÀ´µÄtao£¬È»ºóÓÃ¹ì¼£Éú³É²ÎÊý´øÈë¶¯Á¦Ñ§¹«Ê½¼ÆËãµÃµ½tao£¬Á½¸ö×ö²î;
+%ï¿½ï¿½scara_dy_fir_test.slxï¿½Ð»ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Ø½ÚµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½taoï¿½ï¿½È»ï¿½ï¿½ï¿½Ã¹ì¼£ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¶¯ï¿½ï¿½Ñ§ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ãµï¿½taoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 %The simulated TAO of each joint is obtained from scara_dy_fir_test.SLX, and then the trajectory generation parameters are brought into the dynamic formula to calculate the TAO, and the difference between the two is made.
 
 sum = length(t);
@@ -29,7 +29,7 @@ for i = 1:sum
     dq(1) = dq1(i,2);   dq(2) = dq2(i,2);   dq(3) = dd3(i,2)/1000;   dq(4) = dq4(i,2); 
     ddq(1) = ddq1(i,2);   ddq(2) = ddq2(i,2);   ddq(3) = ddd3(i,2)/1000;   ddq(4) = ddq4(i,2); 
     
-    %scara_dy_fir_test.slxÖÐµÚÈý¸ö¹Ø½ÚÊÇmmµ¥Î»£¬ËùÒÔÕâÀïµÄµÚÈý¹Ø½Ú¶¼³ý1000;scara_dy_fir_test. The third joint in SLX is mm units, so the third joint here is divided by 1000;
+    %scara_dy_fir_test.slxï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½mmï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½Ø½Ú¶ï¿½ï¿½ï¿½1000;scara_dy_fir_test. The third joint in SLX is mm units, so the third joint here is divided by 1000;
     tao = scara_dy_cal_data(q,dq,ddq);
     %tao = scara_cal_tao_test(q,dq,ddq);
 

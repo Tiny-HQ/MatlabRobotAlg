@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%sin??????»®
+%sin??????ï¿½ï¿½
 
 
 
@@ -66,7 +66,7 @@ function [t,j] = sin_sim_cal_param(S,V,A,D,J)
             Sa2 = sin_cal_s_model(T1,T2,T3,J);Sd2 = sin_cal_s_model(T5,T6,T7,J);
             if (Sa2+Sd2>S)%????????
                 a = 2*J^2/(A*pi^2);b = 2*J/pi;c =J*T1/pi;d = 0.0;e = -S;%???;ax^4+bx^3+cx^2+dx+e=0;
-                T5 = cal_4_quartic_function(a,b,c,e);%;A(T1+T2) = 2J/pi*T5^2 = V'...V'/2*(2*T1+T2)+V'*T5=S...V'?????????????»µ?V??????????????;
+                T5 = cal_4_quartic_function(a,b,c,e);%;A(T1+T2) = 2J/pi*T5^2 = V'...V'/2*(2*T1+T2)+V'*T5=S...V'?????????????ï¿½ï¿½?V??????????????;
                 v = 2*T5*J*T5/pi;   T2 = v/A-T1;T6 = 0.0;T7 = T5;T4 = 0.0;T3=T1;
             else%????????
                 T1 = pi*A/2/J;T5 = pi*D/2/J;

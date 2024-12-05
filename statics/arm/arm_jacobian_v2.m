@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -36,7 +36,7 @@ function J = arm_jacobian_v2(DH,q,opt)
         theta = DH.theta*pi/180.0;
     end
     
-    q = q+theta;%theta¦Ì???2?
+    q = q+theta;%thetaï¿½ï¿½???2?
     alpha0 = alpha(2); alpha1 = alpha(3); alpha2 = alpha(4);alpha3 = alpha(5);  alpha4 = alpha(6); alpha5 = alpha(1);
         
         
@@ -65,35 +65,35 @@ function J = arm_jacobian_v2(DH,q,opt)
     
     J = zeros(6,6);
     
-   %¦Ì¨²¨°?¨¢D
+   %ï¿½Ì¨ï¿½ï¿½ï¿½?ï¿½ï¿½D
    J(4:6,1) = T06(3,1:3)';
    n = T06(1:3,1); o = T06(1:3,2); a = T06(1:3,3);p = T06(1:3,4);
    tmp = cross(p,n);J(1,1) = tmp(3);
    tmp = cross(p,o);J(2,1) = tmp(3);
    tmp = cross(p,a);J(3,1) = tmp(3);
 
-   %¦Ì¨²?t¨¢D
+   %ï¿½Ì¨ï¿½?tï¿½ï¿½D
    J(4:6,2) = T16(3,1:3)';
    n = T16(1:3,1); o = T16(1:3,2); a = T16(1:3,3);p = T16(1:3,4);
    tmp = cross(p,n);J(1,2) = tmp(3);
    tmp = cross(p,o);J(2,2) = tmp(3);
    tmp = cross(p,a);J(3,2) = tmp(3);
    
-   %¦Ì¨²¨¨y¨¢D
+   %ï¿½Ì¨ï¿½ï¿½ï¿½yï¿½ï¿½D
    J(4:6,3) = T26(3,1:3)';
    n = T26(1:3,1); o = T26(1:3,2); a = T26(1:3,3);p = T26(1:3,4);
    tmp = cross(p,n);J(1,3) = tmp(3);
    tmp = cross(p,o);J(2,3) = tmp(3);
    tmp = cross(p,a);J(3,3) = tmp(3);
     
-      %¦Ì¨²??¨¢D
+      %ï¿½Ì¨ï¿½??ï¿½ï¿½D
    J(4:6,4) = T36(3,1:3)';
    n = T36(1:3,1); o = T36(1:3,2); a = T36(1:3,3);p = T36(1:3,4);
    tmp = cross(p,n);J(1,4) = tmp(3);
    tmp = cross(p,o);J(2,4) = tmp(3);
    tmp = cross(p,a);J(3,4) = tmp(3);
    
-   %¦Ì¨²??¨¢D
+   %ï¿½Ì¨ï¿½??ï¿½ï¿½D
    J(4:6,5) = T46(3,1:3)';
    n = T46(1:3,1); o = T46(1:3,2); a = T46(1:3,3);p = T46(1:3,4);
    tmp = cross(p,n);J(1,5) = tmp(3);
@@ -101,7 +101,7 @@ function J = arm_jacobian_v2(DH,q,opt)
    tmp = cross(p,a);J(3,5) = tmp(3);
    
  
-   %¦Ì¨²¨¢¨´¨¢D
+   %ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½D
    J(4:6,6) = T56(3,1:3)';
    n = T56(1:3,1); o = T56(1:3,2); a = T56(1:3,3);p = T56(1:3,4);
    tmp = cross(p,n);J(1,6) = tmp(3);

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,10 +16,10 @@
 
 clc;
 clear;
-%a从0开始到5;  a starts from 0 to 5; 
-%alpha从0开始到5; alpha starts from 0 to 5; 
-%d从1开始到6; d starts from 1 to 6; 
-%theta从1开始到6; theta starts from 1 to 6; 
+%a锟斤拷0锟斤拷始锟斤拷5;  a starts from 0 to 5; 
+%alpha锟斤拷0锟斤拷始锟斤拷5; alpha starts from 0 to 5; 
+%d锟斤拷1锟斤拷始锟斤拷6; d starts from 1 to 6; 
+%theta锟斤拷1锟斤拷始锟斤拷6; theta starts from 1 to 6; 
 %
 %+---+-----------+-----------+-----------+-----------+-----------+
 %| j |     theta |         d |         a |     alpha |    offset |
@@ -54,14 +54,14 @@ clear;
 %|  6|        180|       99.6|        0.0|         90|          0|
 %+---+-----------+-----------+-----------+-----------+-----------+
 
-% DH.a(1) = 0.0;%这里是从0开始的;matlab数组只能从1开始; Here it starts at 0; MATLAB arrays can only start at 1;
+% DH.a(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷;matlab锟斤拷锟斤拷只锟杰达拷1锟斤拷始; Here it starts at 0; MATLAB arrays can only start at 1;
 % DH.a(2) = 0.0;
 % DH.a(3) = 425.0;
 % DH.a(4) = 392.25;
 % DH.a(5) = 0.0;
 % DH.a(6) = 0.0;
 % 
-% DH.alpha(1) = 0.0;%这里是从0开始的; Here it starts at 0;
+% DH.alpha(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷; Here it starts at 0;
 % DH.alpha(2) = 90;
 % DH.alpha(3) = 0.0;
 % DH.alpha(4) = 0.0;
@@ -83,7 +83,7 @@ DH.a(4) = 392.430;
 DH.a(5) = 0.0;
 DH.a(6) = 0.0;
 
-DH.alpha(1) = 0.0;%这里是从0开始的;Here it starts at 0;
+DH.alpha(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷;Here it starts at 0;
 DH.alpha(2) = 90;
 DH.alpha(3) = 0.0;
 DH.alpha(4) = 0.0;
@@ -97,7 +97,7 @@ DH.d(4) = 109.000;
 DH.d(5) = 93.650;
 DH.d(6) = 82.000;
 
-DH.theta(1) = 0.0;%这里是从0开始的; Here it starts at 0;
+DH.theta(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷; Here it starts at 0;
 DH.theta(2) = 180;
 DH.theta(3) = 0.0;
 DH.theta(4) = 0.0;
@@ -114,7 +114,7 @@ DH.theta(6) = 180;
 % DH.a(5) = 0.0;
 % DH.a(6) = 0.0;
 % 
-% DH.alpha(1) = 0.0;%这里是从0开始的; Here it starts at 0;
+% DH.alpha(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷; Here it starts at 0;
 % DH.alpha(2) = 90;
 % DH.alpha(3) = 0.0;
 % DH.alpha(4) = 0.0;
@@ -128,7 +128,7 @@ DH.theta(6) = 180;
 % DH.d(5) = 99.7;
 % DH.d(6) = 99.6;
 % 
-% DH.theta(1) = 0.0;%这里是从0开始的; Here it starts at 0;
+% DH.theta(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷; Here it starts at 0;
 % DH.theta(2) = 180;
 % DH.theta(3) = 0.0;
 % DH.theta(4) = 0.0;

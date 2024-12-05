@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,8 +11,8 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%Ò»½×¸ßÍ¨ÂË²¨; First-order high-pass filtering
-%²»ÊÊºÏÎÒÃÇ; Not for us
+%Ò»ï¿½×¸ï¿½Í¨ï¿½Ë²ï¿½; First-order high-pass filtering
+%ï¿½ï¿½ï¿½Êºï¿½ï¿½ï¿½ï¿½ï¿½; Not for us
 
 clc;
 clear;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -136,7 +136,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
         zeros(6,10) zeros(6,10) zeros(6,10) zeros(6,10) U55 U56;
         zeros(6,10) zeros(6,10) zeros(6,10) zeros(6,10) zeros(6,10) U66;];
     
-    % ÏßÐÔ·ÖÀëµÄU¾ØÕó;
+    % ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½ï¿½;
     U_r = [U(6,:);
         U(12,:);
         U(18,:);
@@ -144,15 +144,15 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
         U(30,:);
         U(36,:);];
 
-      %% ×îÐ¡¼¯;
-     %% ³¢ÊÔµÚÁù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬½á¹ûok£¬µÚÁùÖá½á¹ûÕýÈ·£¬ÕâÀïÒ²½âÊÍÒ»ÏÂ£¬ÎªÉ¶ÆäËûÖá²»¶Ô£¬ÄÇÊÇÒòÎªÐ´µÚÁù¹Ø½ÚÊ±£¬µÚÁù¹Ø½ÚµÄÏàÓ¦µÄÁÐÏîÐèÒªÉ¾µô£¬ËùÒÔÔÚÆäËûÖá»¹Ã»Íê³ÉÊ±£¬²Å»á²»¶Ô£¬ËùÒÔÕâÀïÖ»ÐèÒª¹Ø×¢µÚÁùÖáÁ¦¾Ø¼´¿É;
+      %% ï¿½ï¿½Ð¡ï¿½ï¿½;
+     %% ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½ÎªÉ¶ï¿½ï¿½ï¿½ï¿½ï¿½á²»ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÐ´ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»¹Ã»ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Å»á²»ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½;
     %Try to write the minimum set of the sixth joint alone, the other joints do not move first, the result is ok, the sixth axis is correct, here is also explained, why the other axes are wrong, that is because when writing the sixth joint, the corresponding column items of the sixth joint need to be deleted, so when the other axes are not completed, it will be wrong, so here you only need to pay attention to the sixth axis moment;
      %     YY6 = Ii66yy;M6 = m6;
 %     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
 %     XX6 = Ii66xx-YY6; XY6 = Ii66xy;XZ6 = Ii66xz;YZ6 = Ii66yz;ZZ6 = Ii66zz;
 %     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
 %     fi_min = [fi1;fi2;fi3;fi4;fi5;fi6_min_param];
-%     U_min_param = zeros(6,57);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»After each axis is written as the smallest set, the corresponding number of columns will be missing;
+%     U_min_param = zeros(6,57);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½After each axis is written as the smallest set, the corresponding number of columns will be missing;
 %     U_min_param(:,1:50) = U_r(:,1:50);
 %     U_min_param(:,51) = U_r(:,52);
 %     U_min_param(:,52) = U_r(:,53);
@@ -163,7 +163,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     U_min_param(:,57) = U_r(:,60);  
 %     tao = U_min_param*fi_min;
     
-    %% ³¢ÊÔµÚÎå¡¢Áù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬5¡¢6Öá½á¹ûok£¬Try to write the minimum set separately for the fifth and sixth joints, and the other joints will not move first, and the results of the 5th and 6th axes are OK,
+    %% ï¿½ï¿½ï¿½Ôµï¿½ï¿½å¡¢ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½Try to write the minimum set separately for the fifth and sixth joints, and the other joints will not move first, and the results of the 5th and 6th axes are OK,
 %     YY6 = Ii66yy;M6 = m6;
 %     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
 %     XX6 = Ii66xx-YY6; XY6 = Ii66xy;XZ6 = Ii66xz;YZ6 = Ii66yz;ZZ6 = Ii66zz;
@@ -173,7 +173,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     fi5_min_param = [MX5 MY5 XX5 XY5 XZ5 YZ5 ZZ5]';
 %     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
 %     fi_min = [fi1;fi2;fi3;fi4;fi5_min_param;fi6_min_param];
-%     U_min_param = zeros(6,54);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»After each axis is written as the smallest set, the corresponding number of columns will be missing;
+%     U_min_param = zeros(6,54);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½After each axis is written as the smallest set, the corresponding number of columns will be missing;
 %     U_min_param(:,1:40) = U_r(:,1:40);
 %     U_min_param(:,41) = U_r(:,42);
 %     U_min_param(:,42) = U_r(:,43);
@@ -191,7 +191,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     U_min_param(:,54) = U_r(:,60);  
 %     tao = U_min_param*fi_min;
 
-    %% ³¢ÊÔµÚËÄ¡¢Îå¡¢Áù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬4¡¢5¡¢6Öá½á¹ûok£¬Try to write the minimum set separately for the fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 4th, 5th, and 6th axes are OK.
+    %% ï¿½ï¿½ï¿½Ôµï¿½ï¿½Ä¡ï¿½ï¿½å¡¢ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½5ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½Try to write the minimum set separately for the fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 4th, 5th, and 6th axes are OK.
 %     YY6 = Ii66yy;M6 = m6;
 %     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
 %     XX6 = Ii66xx-YY6; XY6 = Ii66xy;XZ6 = Ii66xz;YZ6 = Ii66yz;ZZ6 = Ii66zz;
@@ -205,7 +205,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     fi5_min_param = [MX5 MY5 XX5 XY5 XZ5 YZ5 ZZ5]';
 %     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
 %     fi_min = [fi1;fi2;fi3;fi4_min_param;fi5_min_param;fi6_min_param];
-%     U_min_param = zeros(6,51);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»After each axis is written as the smallest set, the corresponding number of columns will be missing;
+%     U_min_param = zeros(6,51);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½After each axis is written as the smallest set, the corresponding number of columns will be missing;
 %     U_min_param(:,1:30) = U_r(:,1:30);
 %     U_min_param(:,31) = U_r(:,32);
 %     U_min_param(:,32) = U_r(:,33);
@@ -230,7 +230,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     U_min_param(:,51) = U_r(:,60);  
 %     tao = U_min_param*fi_min;
     
-    %% ³¢ÊÔµÚÈý¡¢ËÄ¡¢Îå¡¢Áù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬3¡¢4¡¢5¡¢6Öá½á¹ûok£¬Try to write the minimum set separately for the third, fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 3rd, 4th, 5th, and 6th axes are OK,
+    %% ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½å¡¢ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½4ï¿½ï¿½5ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½Try to write the minimum set separately for the third, fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 3rd, 4th, 5th, and 6th axes are OK,
 %     YY6 = Ii66yy;M6 = m6;
 %     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
 %     XX6 = Ii66xx-YY6; XY6 = Ii66xy;XZ6 = Ii66xz;YZ6 = Ii66yz;ZZ6 = Ii66zz;
@@ -248,7 +248,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     fi5_min_param = [MX5 MY5 XX5 XY5 XZ5 YZ5 ZZ5]';
 %     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
 %     fi_min = [fi1;fi2;fi3_min_param;fi4_min_param;fi5_min_param;fi6_min_param];
-%     U_min_param = zeros(6,48);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»After each axis is written as the smallest set, the corresponding number of columns will be missing;
+%     U_min_param = zeros(6,48);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½After each axis is written as the smallest set, the corresponding number of columns will be missing;
 %     U_min_param(:,1:20) = U_r(:,1:20);
 %     U_min_param(:,21) = U_r(:,22);
 %     U_min_param(:,22) = U_r(:,23);
@@ -280,7 +280,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     U_min_param(:,48) = U_r(:,60);  
 %     tao = U_min_param*fi_min;
     
-        %% ³¢ÊÔµÚ¶þ¡¢Èý¡¢ËÄ¡¢Îå¡¢Áù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬2¡¢3¡¢4¡¢5¡¢6Öá½á¹ûok£¬Try to write the minimum set separately for the second, third, fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 2nd, 3rd, 4th, 5th, and 6th axes are OK,
+        %% ï¿½ï¿½ï¿½ÔµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½å¡¢ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½3ï¿½ï¿½4ï¿½ï¿½5ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½Try to write the minimum set separately for the second, third, fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 2nd, 3rd, 4th, 5th, and 6th axes are OK,
 %     YY6 = Ii66yy;M6 = m6;
 %     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
 %     XX6 = Ii66xx-YY6; XY6 = Ii66xy;XZ6 = Ii66xz;YZ6 = Ii66yz;ZZ6 = Ii66zz;
@@ -295,7 +295,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     XX3 = Ii33xx-YY3+YY4+2*d4*MZ4+d4^2*M4;XY3 = Ii33xy;XZ3 = Ii33xz;YZ3 = Ii33yz;ZZ3 = Ii33zz+YY4+2*d4*MZ4+d4^2*M4;
 %     YY2 = Ii22yy;M2 = m2+m3+m4+m5+m6;
 %     MX2 = m2*Pc222(1)+a3*M3;MY2 = m2*Pc222(2);MZ2 = m2*Pc222(3)+MZ3;%+MZ3;
-%     XX2 = Ii22xx-YY2-a3^2*M3;%Õâ¸öµØ·½ÊÇÊÔ³öÀ´µÄ....²»ÒªÎÊÎÒÔõÃ´ÊÔ³öÀ´£¬ÖÐ¼äÊý¾Ý¸÷ÖÖ×éºÏ£¬¼ÓÉÏÒ»µãÁé¸Ð£¬Ò»°ãÈËÕæÊÔ²»³öÀ´¡£¡£¡£Ë­ÄÜ²»¿´ÎÒ¹«Ê½ÊÔ³öÀ´£¬ÎÒµ¹Á¢Ï´Í·¡£ÌáÊ¾£ºÊéÉÏ¹«Ê½ÒÑ¾­²»¶¥ÓÃÁË£¬ÐèÒª¸÷¸öÁÐÏî³öÀ´£¬¹Ø¼üÔÚÓÚM3µÄÏµÊý¶Ô²»ÉÏ;
+%     XX2 = Ii22xx-YY2-a3^2*M3;%ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½....ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ð£ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë­ï¿½Ü²ï¿½ï¿½ï¿½ï¿½Ò¹ï¿½Ê½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ï´Í·ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ï¹ï¿½Ê½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½M3ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½;
                                 %This place is tried out.... Don't ask me how to try it out, all kinds of combinations of data in the middle, plus a little inspiration, the average person really can't try it... Who can not look at my formula to try it out, I wash my hair upside down. Tips: The formula in the book is no longer used, and each column needs to be out, the key is that the coefficient of M3 is not matched;
 %     XY2 = Ii22xy;XZ2 = Ii22xz-a3*MZ3;YZ2 = Ii22yz;ZZ2 = Ii22zz+a3^2*M3;   
 %     fi2_min_param = [MX2 MY2 XX2 XY2 XZ2 YZ2 ZZ2]';
@@ -304,7 +304,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     fi5_min_param = [MX5 MY5 XX5 XY5 XZ5 YZ5 ZZ5]';
 %     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
 %     fi_min = [fi1;fi2_min_param;fi3_min_param;fi4_min_param;fi5_min_param;fi6_min_param];
-%     U_min_param = zeros(6,45);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»After each axis is written as the smallest set, the corresponding number of columns will be missing;
+%     U_min_param = zeros(6,45);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½After each axis is written as the smallest set, the corresponding number of columns will be missing;
 %     U_min_param(:,1:10) = U_r(:,1:10);
 %     U_min_param(:,11) = U_r(:,12);
 %     U_min_param(:,12) = U_r(:,13);
@@ -343,7 +343,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
 %     U_min_param(:,45) = U_r(:,60);  
 %     tao = U_min_param*fi_min;
 
-       %% ³¢ÊÔµÚÒ»¡¢¶þ¡¢Èý¡¢ËÄ¡¢Îå¡¢Áù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬1¡¢2¡¢3¡¢4¡¢5¡¢6Öá½á¹ûok£¬ Try to write the smallest set of the first, second, third, fourth, fifth, and sixth joints separately, and the other joints will not move first, and the results of the 1, 2, 3, 4, 5, and 6 axes are OK,
+       %% ï¿½ï¿½ï¿½Ôµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½å¡¢ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½2ï¿½ï¿½3ï¿½ï¿½4ï¿½ï¿½5ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½ Try to write the smallest set of the first, second, third, fourth, fifth, and sixth joints separately, and the other joints will not move first, and the results of the 1, 2, 3, 4, 5, and 6 axes are OK,
     YY6 = Ii66yy;M6 = m6;
     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
     XX6 = Ii66xx-YY6; XY6 = Ii66xy;XZ6 = Ii66xz;YZ6 = Ii66yz;ZZ6 = Ii66zz;
@@ -358,12 +358,12 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
     XX3 = Ii33xx-YY3+YY4+2*d4*MZ4+d4^2*M4;XY3 = Ii33xy;XZ3 = Ii33xz;YZ3 = Ii33yz;ZZ3 = Ii33zz+YY4+2*d4*MZ4+d4^2*M4;
     YY2 = Ii22yy;M2 = m2+m3+m4+m5+m6;
     MX2 = m2*Pc222(1)+a3*M3;MY2 = m2*Pc222(2);MZ2 = m2*Pc222(3);%+MZ3;
-    XX2 = Ii22xx-YY2-a3^2*M3;%Õâ¸öµØ·½ÊÇÊÔ³öÀ´µÄ....²»ÒªÎÊÎÒÔõÃ´ÊÔ³öÀ´£¬ÖÐ¼äÊý¾Ý¸÷ÖÖ×éºÏ£¬¼ÓÉÏÒ»µãÁé¸Ð£¬Ò»°ãÈËÕæÊÔ²»³öÀ´¡£¡£¡£Ë­ÄÜ²»¿´ÎÒ¹«Ê½ÊÔ³öÀ´£¬ÎÒµ¹Á¢Ï´Í·¡£ÌáÊ¾£ºÊéÉÏ¹«Ê½ÒÑ¾­²»¶¥ÓÃÁË£¬ÐèÒª¸÷¸öÁÐÏî³öÀ´£¬¹Ø¼üÔÚÓÚM3µÄÏµÊý¶Ô²»ÉÏ£¬»¹ÓÐÕâÀïµÄYY3Ò²²»ÔÚÁË£¬ÊÇÒòÎªÎÒ·¢ÏÖYY3µÄÏµÊý¸úXX3Ïà·´£¬¶øÔÚÉÏÃæ¹«Ê½XX3 = Ii33xx-YY3+YY4+2*d4*MZ4+d4^2*M4Ò²¸ÕºÃ£¬ËùÒÔÐèÒªÈ¥µôYY3;
+    XX2 = Ii22xx-YY2-a3^2*M3;%ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½....ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ð£ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë­ï¿½Ü²ï¿½ï¿½ï¿½ï¿½Ò¹ï¿½Ê½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ï´Í·ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ï¹ï¿½Ê½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½M3ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ô²ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½YY3Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ò·ï¿½ï¿½ï¿½YY3ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½XX3ï¿½à·´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¹«Ê½XX3 = Ii33xx-YY3+YY4+2*d4*MZ4+d4^2*M4Ò²ï¿½ÕºÃ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÈ¥ï¿½ï¿½YY3;
                             %This place is tried out.... Don't ask me how to try it out, all kinds of combinations of data in the middle, plus a little inspiration, the average(ordinary,gpt tranlate average.....) person really can't try it... Who can not look at my formula to try it out, I wash my hair upside down. Tips: The formula in the book is no longer used, and each column needs to come out, the key is that the coefficient of M3 is not right, and YY3 here is also not there, because I found that the coefficient of YY3 is the opposite of XX3, and the above formula XX3 = Ii33xx-YY3+YY4+2*d4*MZ4+d4^2*M4 is also just right, so YY3 needs to be removed;
     XY2 = Ii22xy;XZ2 = Ii22xz-a3*MZ3;YZ2 = Ii22yz;ZZ2 = Ii22zz+a3^2*M3;     
-    ZZ1 = Ii11zz+YY2+2*d2*MZ2+d2^2*M2+YY3 +a3^2*M3+2*d2*MZ3;%ÕâÀïÒ²ÊÇÊÔ³öÀ´µÄ£¬¸ù¾Ý¾ØÕóµÄµÚÒ»ÐÐµÄÁÐÏî£¬¾ÍÊÇÇóµÚÒ»¹Ø½ÚµÄÁ¦¾ØÊ±£¬Ä³Ð©ÏîÐèÒªÖØÐÂ¼ÆËã£¬¹ØÓÚÎªÉ¶µÚÒ»¹Ø½ÚµÄ×îÐ¡¼¯»áÉæ¼°µ½µÚ¶þ¹Ø½ÚºÍµÚÈý¹Ø½Ú£¬ÎÒ¾õµÃ¿ÉÄÜ´æÔÚµÄÔ­ÒòÔÚÓÚthetaÖµ£¬
-                                                            %ÔÚdhÖÐ£¬µÚÈý¹Ø½ÚµÄthetaÖµÎª-180£¬´ÓÕâ¸öµØ·½¿ªÊ¼Ö®ºó£¬ºóÃæµÄ×îÐ¡¼¯¸úÊéÉÏÍêÈ«²»ÊÇÒ»¸öÑù£¬ÕâÀï¸Ð¾õÊéÉÏÖ»ÊÇ»³ÒÉÊéÉÏÓÐÎÊÌâ£¬¸Ð¾õÏñÊÇ·­×ªÁËÒ»ÏÂ£¬Ò²¾ÍÊÇËµÈýËÄÎåÁùµÄ×îÐ¡¼¯¿ÉÒÔ¸ù¾ÝÊéÉÏÖ±½ÓÐ´£¬
-                                                            %µ«µ½ÁËµÚ¶þ¹Ø½Ú£¬µÚÒ»¹Ø½Ú£¬ÕâÀïÃ÷ÏÔÌ×²»ÁËÊéÉÏµÄ¹«Ê½£¬Ö»ÄÜ²»¶ÏµÄÆ´´Õ£¬±È¶Ô¸÷¸öÁÐÏîµÄÊý¾Ý£¬²Å¿ÉÒÔÍê³É×îÐ¡¼¯µÄ±àÐ´£»
+    ZZ1 = Ii11zz+YY2+2*d2*MZ2+d2^2*M2+YY3 +a3^2*M3+2*d2*MZ3;%ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ï¿½ï¿½Äµï¿½Ò»ï¿½Ðµï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ø½Úµï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ä³Ð©ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â¼ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ÎªÉ¶ï¿½ï¿½Ò»ï¿½Ø½Úµï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½æ¼°ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½Ø½ÚºÍµï¿½ï¿½ï¿½ï¿½Ø½Ú£ï¿½ï¿½Ò¾ï¿½ï¿½Ã¿ï¿½ï¿½Ü´ï¿½ï¿½Úµï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½thetaÖµï¿½ï¿½
+                                                            %ï¿½ï¿½dhï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½Úµï¿½thetaÖµÎª-180ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½Ê¼Ö®ï¿½ó£¬ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½Ç·ï¿½×ªï¿½ï¿½Ò»ï¿½Â£ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Ð´ï¿½ï¿½
+                                                            %ï¿½ï¿½ï¿½ï¿½ï¿½ËµÚ¶ï¿½ï¿½Ø½Ú£ï¿½ï¿½ï¿½Ò»ï¿½Ø½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÄ¹ï¿½Ê½ï¿½ï¿½Ö»ï¿½Ü²ï¿½ï¿½Ïµï¿½Æ´ï¿½Õ£ï¿½ï¿½È¶Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½Å¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ä±ï¿½Ð´ï¿½ï¿½
                                                      %% here is also a test out, according to the first row of the matrix of the columns, that is, when finding the moment of the first joint, some terms need to be recalculated, about why the minimum set of the first joint involves the second joint and the third joint, I think the possible reason is the theta value,
                                                             % In DH, the theta value of the third joint is -180, after starting from this place, the minimum set behind is not the same as the book at all, here it feels like the book is just suspecting that there is a problem in the book, it feels like flipping it, that is to say, the smallest set of three, four, five or six can be written directly according to the book,
                                                             % But when it comes to the second joint, the first joint, there is obviously no formula in the book, and you can only keep piecing together and comparing the data of each column to complete the compilation of the minimum set;
@@ -374,7 +374,7 @@ function tao = puma_dy_cal_data_min_param(q,dq,ddq)
     fi5_min_param = [MX5 MY5 XX5 XY5 XZ5 YZ5 ZZ5]';
     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
     fi_min = [fi1_min_param;fi2_min_param;fi3_min_param;fi4_min_param;fi5_min_param;fi6_min_param];
-    U_min_param = zeros(6,36);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»After each axis is written as the smallest set, the corresponding number of columns will be missing;
+    U_min_param = zeros(6,36);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½After each axis is written as the smallest set, the corresponding number of columns will be missing;
     U_min_param(:,1) = U_r(:,10);
     U_min_param(:,2) = U_r(:,12);
     U_min_param(:,3) = U_r(:,13);

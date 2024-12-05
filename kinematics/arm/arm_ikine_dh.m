@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -36,7 +36,7 @@ function q = arm_ikine_dh(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
 
 
     V65 = [0 0 -d6 1]';
-    V05 = T*V65;%´ÓµÚ0ºÅ×ø±êÏµµ½ÎåºÅ×ø±êÏµµÄÎ»ÖÃ×ª»»£¬»òÕßËµµ½µÚËÄºÅ×ø±êÏµµÄÎ»ÖÃ×ª»»£» Position conversion from coordinate system 0 to coordinate system 5, or position conversion to coordinate system 4;
+    V05 = T*V65;%ï¿½Óµï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ Position conversion from coordinate system 0 to coordinate system 5, or position conversion to coordinate system 4;
     xp = V05(1);yp = V05(2);zp = V05(3);
     
     if shoulder == -1
@@ -49,7 +49,7 @@ function q = arm_ikine_dh(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
     elseif shoulder == 1
         q(1) = atan2(yp,xp)-atan2(-d3,sqrt(xp^2+yp^2-d3^2));
     elseif shoulder == 0
-          %shoulder ÆæÒì,Ò²ÊÇÇ°ºóÆæÒì; shoulder is singularty, but also singularty before and after;
+          %shoulder ï¿½ï¿½ï¿½ï¿½,Ò²ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; shoulder is singularty, but also singularty before and after;
           return;
     end
 
@@ -57,7 +57,7 @@ function q = arm_ikine_dh(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
     xp_1 = xp + d3*sin(q(1));
 	yp_1 = yp - d3*cos(q(1));
     
-    xp1=xp_1*cos(q(1))-a1+yp_1*sin(q(1));%ÔÚ1ºÅ×ø±êÏµÏÂ£¬Íó¹Ø½ÚÒ²¾ÍÊÇ4ºÅ¡¢ÎåºÅ×ø±êÏµµÄÎ»ÖÃ; In the No. 1 coordinate system, the wrist joint is also the position of the No. 4 and No. 5 coordinate systems;
+    xp1=xp_1*cos(q(1))-a1+yp_1*sin(q(1));%ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½Â£ï¿½ï¿½ï¿½Ø½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½4ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Î»ï¿½ï¿½; In the No. 1 coordinate system, the wrist joint is also the position of the No. 4 and No. 5 coordinate systems;
     yp1=zp-d1;
     
     o1p=sqrt(xp1^2+yp1^2);
@@ -69,7 +69,7 @@ function q = arm_ikine_dh(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
     elseif elbow == 1
         q(2) = atan2(yp1,xp1)-acos((o1o2^2+o1p^2-o2p^2)/(2*o1o2*o1p));
     else 
-        %elbowÆæÒì£¬Ò²ÊÇ±ß½çÆæÒì;Elbow is singular, but also borderline singular;
+        %elbowï¿½ï¿½ï¿½ì£¬Ò²ï¿½Ç±ß½ï¿½ï¿½ï¿½ï¿½ï¿½;Elbow is singular, but also borderline singular;
         return;
     end
     if q(2)>pi
@@ -107,8 +107,8 @@ function q = arm_ikine_dh(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
         q(4) = atan2(T_46(3,3)/sin(q(5)),T_46(1,3)/sin(q(5)));
         q(6) = atan2(T_46(2,2)/(-sin(q(5))),T_46(2,1)/sin(q(5)));
     else
-        %ÕâÀïÒªÖØÐÂ´¦Àí;Òª¼ÇÂ¼ÉÏÒ»´ÎµÄÖµ£¬È»ºó¹ýÆæÒìµãµÄÊ±ºò±£³ÖÆäÖÐq(4)»òÕßq(6)²»±ä; Here it needs to be reprocessed; The last value should be recorded, and then q(4) or q(6) should be kept unchanged when passing the singularity;
-        %¾ÍÊÇÎåÖá·¢Ö¸ÁîµÄÊ±ºò£¬²»Òª·¢½Ç¶ÈÎª0Õâ¸öÖ¸Áî; That is, when the five axes send instructions, do not send the command with an angle of 0;
+        %ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½;Òªï¿½ï¿½Â¼ï¿½ï¿½Ò»ï¿½Îµï¿½Öµï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ò±£³ï¿½ï¿½ï¿½ï¿½ï¿½q(4)ï¿½ï¿½ï¿½ï¿½q(6)ï¿½ï¿½ï¿½ï¿½; Here it needs to be reprocessed; The last value should be recorded, and then q(4) or q(6) should be kept unchanged when passing the singularity;
+        %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á·¢Ö¸ï¿½ï¿½ï¿½Ê±ï¿½ò£¬²ï¿½Òªï¿½ï¿½ï¿½Ç¶ï¿½Îª0ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½; That is, when the five axes send instructions, do not send the command with an angle of 0;
         q(5) = 0;
         theta46 = atan2(T_46(3,1),T_46(1,1));
         q(4) = 0;

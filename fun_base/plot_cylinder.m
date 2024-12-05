@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -17,14 +17,14 @@ function plot_cylinder(T,r,h,color,cl_fi)
     
     if(nargin == 3)
         color = 4;
-        cl_fi = 'hold';     %Èç¹ûÎªclear¾ÍÒªÖØÐÂ»æÖÆ£¬·ñÔò¾Í±£ÁôÉÏÒ»´Î»­µÄÄÚÈÝ; If it is clear, it must be redrawn, otherwise the content of the last drawing will be retained;
+        cl_fi = 'hold';     %ï¿½ï¿½ï¿½Îªclearï¿½ï¿½Òªï¿½ï¿½ï¿½Â»ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; If it is clear, it must be redrawn, otherwise the content of the last drawing will be retained;
     elseif(nargin == 4)
         cl_fi = 'hold';
     end
     
-    [x,y,z]=cylinder(r,n);%Éú³É±ê×¼µÄ100¸öÃæµÄÔ²ÖùÊý¾Ý£¬°ë¾¶Îªr£¬¸ßÎª1£¬µ×ÃæÔ²ÐÄ0£¬0£»Generate standard cylindrical data of 100 faces, with a radius of r, a height of 1, and a bottom circle center of 0,0;
-    z1=[z(1,:);z(2,:)*h];%Ô²Öù¸ßÔö¸ß£¬±äÎª¸ßh The height of the cylinder increases and becomes high h
-    %Îª±ä³ÉÊµÐÄ·â¶¥Ìí¼ÓÊý¾Ý Add data to become a solid cap
+    [x,y,z]=cylinder(r,n);%ï¿½ï¿½ï¿½É±ï¿½×¼ï¿½ï¿½100ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ë¾¶Îªrï¿½ï¿½ï¿½ï¿½Îª1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½0ï¿½ï¿½0ï¿½ï¿½Generate standard cylindrical data of 100 faces, with a radius of r, a height of 1, and a bottom circle center of 0,0;
+    z1=[z(1,:);z(2,:)*h];%Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½Îªï¿½ï¿½h The height of the cylinder increases and becomes high h
+    %Îªï¿½ï¿½ï¿½Êµï¿½Ä·â¶¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Add data to become a solid cap
     z2=[z(1,:);z1;z1(2,:)];
     x2=[zeros(1,n+1);x;zeros(1,n+1)];
     y2=[zeros(1,n+1);y;zeros(1,n+1)];
@@ -41,24 +41,24 @@ function plot_cylinder(T,r,h,color,cl_fi)
     X2 = zeros(4,n+1); Y2 = zeros(4,n+1); Z2 = zeros(4,n+1);
     
     for i = 1:n
-        %Íâ±íÃæ; outer surface;
+        %ï¿½ï¿½ï¿½ï¿½ï¿½; outer surface;
         tmp = T*[x(1,i);y(1,i);z1(1,i);1];
         X(1,i) = tmp(1);Y(1,i) = tmp(2);Z(1,i) = tmp(3);
         tmp = T*[x(2,i);y(2,i);z1(2,i);1];
         X(2,i) = tmp(1);Y(2,i) = tmp(2);Z(2,i) = tmp(3);
         
-        %ÏÂÃæµÄÔ²ÂÖÀª; Circular profile below;
+        %ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½; Circular profile below;
         tmp = T*[x3(1,i);y3(1,i);z3(1,i);1];
         X3(1,i) = tmp(1);Y3(1,i) = tmp(2);Z3(1,i) = tmp(3);
         tmp = T*[x3(2,i);y3(2,i);z3(2,i);1];
         X3(2,i) = tmp(1);Y3(2,i) = tmp(2);Z3(2,i) = tmp(3);
-        %ÉÏÃæµÄÔ²ÂÖÀª; the circular outline above;
+        %ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½; the circular outline above;
         tmp = T*[x3(1,i);y3(1,i);z4(1,i);1];
         X4(1,i) = tmp(1);Y4(1,i) = tmp(2);Z4(1,i) = tmp(3);
         tmp = T*[x3(2,i);y3(2,i);z4(2,i);1];
         X4(2,i) = tmp(1);Y4(2,i) = tmp(2);Z4(2,i) = tmp(3);
         
-        %Ìî³äÔ²;Fill the circle;
+        %ï¿½ï¿½ï¿½Ô²;Fill the circle;
         tmp = T*[x2(1,i);y2(1,i);z2(1,i);1];
         X2(1,i) = tmp(1);Y2(1,i) = tmp(2);Z2(1,i) = tmp(3);
         tmp = T*[x2(2,i);y2(2,i);z2(2,i);1];
@@ -69,7 +69,7 @@ function plot_cylinder(T,r,h,color,cl_fi)
         X2(4,i) = tmp(1);Y2(4,i) = tmp(2);Z2(4,i) = tmp(3);
         
     end
-    %ÊÕÎ²Ïà½ÓÆðÀ´£¬·ñÔòÖÐ¼äÓÐ¸ö·ìÏ¶; Finish together, otherwise there is a gap in the middle;
+    %ï¿½ï¿½Î²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½Ï¶; Finish together, otherwise there is a gap in the middle;
     X(1,n+1) = X(1,1);X(2,n+1) = X(2,1);
     Y(1,n+1) = Y(1,1);Y(2,n+1) = Y(2,1);
     Z(1,n+1) = Z(1,1);Z(2,n+1) = Z(2,1);
@@ -101,14 +101,14 @@ function plot_cylinder(T,r,h,color,cl_fi)
     elseif (color<=0)
         color = 1;
     end
-    map1=map(color,:);%bgr,·Ö³É360·Ý£¬Ò»¸öÊý×ÖÒ»ÖÖÑÕÉ« Divided into 360 parts, one number and one color
+    map1=map(color,:);%bgr,ï¿½Ö³ï¿½360ï¿½Ý£ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½É« Divided into 360 parts, one number and one color
     colormap(map1)
     %hold on
-    surf(X2,Y2,Z2,'LineStyle','none');  %»­Ìî³äµÄÔ²ÐÎ; Draw a circle of fills;
-    surf(X3,Y3,Z3); %»­Ô²,²¢Ã»ÓÐ»­ÊµÐÄ; Draw a circle, not a solid one;
-    surf(X4,Y4,Z4); %»­Ô²,²¢Ã»ÓÐ»­ÊµÐÄ;Draw a circle, not a solid one;
-    alpha(.8)%µ÷½ÚÍ¸Ã÷¶È(0-1) Adjust Transparency (0-1)
-    plot_coord(T,r,3);        %ÔÚÔ²Öùµ×²¿»­Ò»¸ö×ø±êÏµ; Draw a coordinate system at the bottom of the cylinder;
+    surf(X2,Y2,Z2,'LineStyle','none');  %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½; Draw a circle of fills;
+    surf(X3,Y3,Z3); %ï¿½ï¿½Ô²,ï¿½ï¿½Ã»ï¿½Ð»ï¿½Êµï¿½ï¿½; Draw a circle, not a solid one;
+    surf(X4,Y4,Z4); %ï¿½ï¿½Ô²,ï¿½ï¿½Ã»ï¿½Ð»ï¿½Êµï¿½ï¿½;Draw a circle, not a solid one;
+    alpha(.8)%ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½(0-1) Adjust Transparency (0-1)
+    plot_coord(T,r,3);        %ï¿½ï¿½Ô²ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ; Draw a coordinate system at the bottom of the cylinder;
     axis equal;
 
 

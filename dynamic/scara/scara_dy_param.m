@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -15,7 +15,7 @@ g= 9.80665;
 
 q=[ q1 q2 0 q4 ];
 al=[ 0 0 0 0 ];
-a1=0.5;   a2=0.5;    % µ¥Î»£ºÃ×
+a1=0.5;   a2=0.5;    % ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 
 P001 = [0; 0; 0];
 P112 = [a1; 0; 0];

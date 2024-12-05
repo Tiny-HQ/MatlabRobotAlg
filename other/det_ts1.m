@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%³õµÈ±ä»»ÇóÐÐÁÐÊ½; The elementary transformation is used to find the determinant;
+%ï¿½ï¿½ï¿½È±ä»»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½; The elementary transformation is used to find the determinant;
 
 clc;
 clear;
@@ -21,7 +21,7 @@ clear;
 
 
 %x = randn(8);
-%x = magic(3)%magic()º¯Êý²ÎÊý£¬ÔÚÅ¼Êý½×Ê±£¬¾ØÕóºÜÈÝÒ×ÆæÒì£¬ÐÐÁÐÊ½Îª0; magic() function argument, at the even order, the matrix is easily singular, and the determinant is 0;
+%x = magic(3)%magic()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì£¬ï¿½ï¿½ï¿½ï¿½Ê½Îª0; magic() function argument, at the even order, the matrix is easily singular, and the determinant is 0;
 %x = [1 2 3;2 4 6 ;3 6 9]
 x = [1 2 3;2 4 7 ;3 8 7]
 y = x
@@ -47,12 +47,12 @@ for i = 1:max_column
        end
     end
     
-    %Èç¹ûÄ³Ò»ÐÐÊÇÁîÒ»ÐÐµÄ±¶Êý£¬ÄÇÃ´»á³öÏÖÏÂÃæÕâÖÖÇé¿ö; If a line is a multiple of a line, the following situation will occur;
+    %ï¿½ï¿½ï¿½Ä³Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ÐµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; If a line is a multiple of a line, the following situation will occur;
     if max_c == 0
         break ;
     end
      
-    %½»»»µÚiÐÐ¸ú×î´óÐÐ;½»»»Ò»´ÎÒª³ËÒÔ¸ö£¨-1£©£¬ÕâÀïÊÇÎªÁË±£Ö¤Ã¿´Îx£¨i£¬i£©²»Îª0;Swap the ith line with the largest row; The exchange is multiplied by (-1) once, here to ensure that x(i,i) is not 0 each time;
+    %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Òªï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½-1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ë±ï¿½Ö¤Ã¿ï¿½ï¿½xï¿½ï¿½iï¿½ï¿½iï¿½ï¿½ï¿½ï¿½Îª0;Swap the ith line with the largest row; The exchange is multiplied by (-1) once, here to ensure that x(i,i) is not 0 each time;
     if i ~= max_c
         temp = x(i,:);         
         x(i,:) = x(max_c,:);   

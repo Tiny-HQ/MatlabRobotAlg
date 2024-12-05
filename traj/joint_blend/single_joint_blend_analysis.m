@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,19 +12,19 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%% ¿ÉÒÔ³ÆÖ®Îª½âÎö·¨£¬µ«Êµ¼ÊÉÏÓÉÓÚ¼ÓËÙ¶ÈµÄÔ­Òò£¬Ò»°ã²»»á²ÉÓÃ£¬¸ßËÙÔËÐÐÆðÀ´£¬Çý¶¯Æ÷É¶µÄ¶¼»á±¨¾¯,µ«ÊÇÀíÂÛÉÏÊÇÐÐµÄÍ¨µÄ;
+%% ï¿½ï¿½ï¿½Ô³ï¿½Ö®Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ù¶Èµï¿½Ô­ï¿½ï¿½Ò»ï¿½ã²»ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½Ä¶ï¿½ï¿½á±¨ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Í¨ï¿½ï¿½;
 %It can be called an analytical method, but in fact, due to the reason of acceleration, it is generally not used, and when it runs at high speed, the driver will alarm or something, but it works in theory;
 clear;
 
 Ts = 0.004;
-J = [0 -30 60 20 70 -100];    %¹Ø½Ú½Ç¶È;
-Vel = [10 55 20 30 10];      %¹Ø½ÚËÙ¶È;
+J = [0 -30 60 20 70 -100];    %ï¿½Ø½Ú½Ç¶ï¿½;
+Vel = [10 55 20 30 10];      %ï¿½Ø½ï¿½ï¿½Ù¶ï¿½;
 Acc = [100 50 200 300 100]; 
 Jerk = [500 250 1000 1500 500];
-n = 5;                      %µãµÄ¸öÊý¼õÒ»;
+n = 5;                      %ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ò»;
 
 
-%% ÇóÃ¿Ò»¶ÎÔÈËÙËùÄÜ´ïµ½µÄËÙ¶È£¬ÓÐÊ±ºò¿ÉÄÜÉèÖÃµÄËÙ¶Èµ½²»µ½; Find the speed that can be achieved by each section of constant speed, sometimes the speed may not be set;
+%% ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü´ïµ½ï¿½ï¿½ï¿½Ù¶È£ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½Ù¶Èµï¿½ï¿½ï¿½ï¿½ï¿½; Find the speed that can be achieved by each section of constant speed, sometimes the speed may not be set;
 v = zeros(1,n);t = zeros(1,n-1);
 t_total = zeros(n,3);
 for i = 1:n
@@ -35,10 +35,10 @@ for i = 1:n-1
 end
 
 
-%% Çóblend¶Î¶àÏîÊ½²ÎÊýÏµÊý; Find the polynomial parameter coefficients of the blend segment;
+%% ï¿½ï¿½blendï¿½Î¶ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½; Find the polynomial parameter coefficients of the blend segment;
 P_acc = zeros(1,n);
 P_dec = zeros(1,n);
-a = zeros(1,n-1);b = zeros(1,n-1);c = zeros(1,n-1);d = zeros(1,n-1);e = zeros(1,n-1);f = zeros(1,n-1);  %ÏµÊý;
+a = zeros(1,n-1);b = zeros(1,n-1);c = zeros(1,n-1);d = zeros(1,n-1);e = zeros(1,n-1);f = zeros(1,n-1);  %Ïµï¿½ï¿½;
 for i = 1:n
     [P_acc(i),P_dec(i)] = cal_single_seg_acc_dec(J(i),J(i+1),t_total(i,:),Ts);
 end
@@ -52,10 +52,10 @@ end
 
 
 
-%% Çó¸÷¸ö½×¶ÎµãÎ»Éú³É;Generate points at each stage;
-%µÚÒ»¶Î; The first paragraph;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¶Îµï¿½Î»ï¿½ï¿½ï¿½ï¿½;Generate points at each stage;
+%ï¿½ï¿½Ò»ï¿½ï¿½; The first paragraph;
 [P1,V1,n] = cal_seg_pos(1,J(1),J(2),Vel(1),Acc(1),Jerk(1),Ts,t_total(1,2));
-%ÈÚºÏ½×¶Î; Fusion stage;
+%ï¿½ÚºÏ½×¶ï¿½; Fusion stage;
 n1 = ceil(t(1)/Ts);n2 = ceil(t(2)/Ts);n3 = ceil(t(3)/Ts);n4 = ceil(t(4)/Ts);
 R1 = zeros(1,n1);R2 = zeros(1,n2);R3 = zeros(1,n3);R4 = zeros(1,n4);
 for i =1:n1
@@ -75,7 +75,7 @@ for i =1:n4
     R4(i) = a(4)*x^5+b(4)*x^4+c(4)*x^3+d(4)*x^2+e(4)*x+f(4);
 end
 
-%ÔÈËÙ½×¶Î;% constant velocity phase;
+%ï¿½ï¿½ï¿½Ù½×¶ï¿½;% constant velocity phase;
 t_cv1 = t_total(2,2)-t_total(2,1);t_cv2 = t_total(3,2)-t_total(3,1);t_cv3 = t_total(4,2)-t_total(4,1);
 n_cv1 = ceil(t_cv1/Ts);n_cv2 = ceil(t_cv2/Ts);n_cv3 = ceil(t_cv3/Ts);
 CV1 = zeros(1,n_cv1);CV2 = zeros(1,n_cv2);CV3 = zeros(1,n_cv3);
@@ -92,10 +92,10 @@ for i = 1:n_cv3
    CV3(i) = temp*v(4)+P_acc(4);
 end
 
-%×îºóÒ»¶Î; % last paragraph;
+%ï¿½ï¿½ï¿½Ò»ï¿½ï¿½; % last paragraph;
 [P6,V6,n6] = cal_seg_pos(0,J(5),J(6),Vel(5),Acc(5),Jerk(5),Ts,t_total(5,1));
 
-%% °ÑËùÓÐµÄ¹ì¼£ÕûºÏÒ»Æð; %% Integrate all the trajectories together;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¹ì¼£ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½; %% Integrate all the trajectories together;
 n_total = n+n1+n2+n3+n4+n_cv1+n_cv2+n_cv3+n6;
 JJ = zeros(1,n_total);
 

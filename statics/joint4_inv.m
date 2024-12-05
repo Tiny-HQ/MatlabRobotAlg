@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -25,12 +25,12 @@ T_home = [1 0 0 4;
     0 0 1 0;
     0 0 0 1];
 
-theta_0 = [0 0 0 0];    %³oÊ¼½Ç¶ÈÖµ;
+theta_0 = [0 0 0 0];    %ï¿½oÊ¼ï¿½Ç¶ï¿½Öµ;
 tic
 T_end = fkine_sc(sc,T_home,htrans(2,1,0)*hrotz(90))
 
-%ÈßÓàÊÇÇó²»³ö½â£¬?OßËµÎÛÇî¶à½â£¬Ð?ª¹`¶¨Ä³¸öÖá;
-%½«ÆäÖÐµÄÄ³?»¸öÖáÉèÖA³É¹`¶¨Öµ£¬?OßÄ³ÖÖ¹ØÏ?
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó²»³ï¿½ï¿½â£¬?Oï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½?ï¿½ï¿½`ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½;
+%ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ä³?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½É¹`ï¿½ï¿½Öµï¿½ï¿½?Oï¿½Ä³ï¿½Ö¹ï¿½ï¿½?
 theta = ikine_sc(sc,T_home,theta_0,T_end)
 
 T_end = fkine_sc(sc,T_home,theta)

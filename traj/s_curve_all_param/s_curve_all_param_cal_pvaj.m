@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -73,9 +73,9 @@ function [s,v,a,jerk] = s_curve_all_param_cal_pvaj(t,w,t_int)
                    a(i) = 2*w(8)+6*w(9)*temp_t+12*w(10)*temp_t^2;
                    v(i) = w(7)+2*w(8)*temp_t+3*w(9)*temp_t^2+4*w(10)*temp_t^3;
                    ww = w(6)+w(7)*temp_t+w(8)*temp_t^2+w(9)*temp_t^3+w(10)*temp_t^4;
-                   s(i) =2*w(6)-ww;     %ÕâÀïÐèÒª×¢ÒâµÄÊÇ£ºÔÚ¼ÆËã²ÎÊýµÄÊ±ºò£¬¼ÙÈçÇ°ÃæÍ¼Ïñ¼ÆËãyÊÇ´Ó1µ½5£¬ÄÇÃ´ÕâÀïÊÇ-3µ½1µÄ£¬Í¼Ïñ¹ØÓÚy=1¶Ô³Æ£» It should be noted here that when calculating the parameters, if the previous image calculates y from 1 to 5, then here it is -3 to 1, and the image is symmetrical with respect to y=1;
-                                        %Í¼ÏñÊÇ¹ØÓÚy=w(6)¶Ô³Æ£¬y1+y2 = 2*w(6)µÄ£¬ËùÒÔ The image is about y=w(6) symmetry, y1+y2 = 2*w(6), so
-                                        %ÇóÁíÒ»¸öµÄÊ±ºòy1 = 2*w(6)-y2;Ìæ»»µÃµ½s(i) =2*w(6)-ww;    When finding the other, y1 = 2*w(6)-y2; substitution yields s(i) =2*w(6)-ww;   
+                   s(i) =2*w(6)-ww;     %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ò£¬¼ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½yï¿½Ç´ï¿½1ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-3ï¿½ï¿½1ï¿½Ä£ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½y=1ï¿½Ô³Æ£ï¿½ It should be noted here that when calculating the parameters, if the previous image calculates y from 1 to 5, then here it is -3 to 1, and the image is symmetrical with respect to y=1;
+                                        %Í¼ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½y=w(6)ï¿½Ô³Æ£ï¿½y1+y2 = 2*w(6)ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ The image is about y=w(6) symmetry, y1+y2 = 2*w(6), so
+                                        %ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½y1 = 2*w(6)-y2;ï¿½æ»»ï¿½Ãµï¿½s(i) =2*w(6)-ww;    When finding the other, y1 = 2*w(6)-y2; substitution yields s(i) =2*w(6)-ww;   
 
              else
                     jerk(i) = j5;
@@ -117,9 +117,9 @@ function [s,v,a,jerk] = s_curve_all_param_cal_pvaj(t,w,t_int)
                    a(i) = 2*w(8)+6*w(9)*temp_t+12*w(10)*temp_t^2;
                    v(i) = w(7)+2*w(8)*temp_t+3*w(9)*temp_t^2+4*w(10)*temp_t^3;
                    ww = w(6)+w(7)*temp_t+w(8)*temp_t^2+w(9)*temp_t^3+w(10)*temp_t^4;
-                   s(i) =2*w(6)-ww;     %ÕâÀïÐèÒª×¢ÒâµÄÊÇ£ºÔÚ¼ÆËã²ÎÊýµÄÊ±ºò£¬¼ÙÈçÇ°ÃæÍ¼Ïñ¼ÆËãyÊÇ´Ó1µ½5£¬ÄÇÃ´ÕâÀïÊÇ-3µ½1µÄ£¬Í¼Ïñ¹ØÓÚy=1¶Ô³Æ£» It should be noted here that when calculating the parameters, if the previous image calculates y from 1 to 5, then here it is -3 to 1, and the image is symmetrical with respect to y=1;
-                                        %Í¼ÏñÊÇ¹ØÓÚy=w(6)¶Ô³Æ£¬y1+y2 = 2*w(6)µÄ£¬ËùÒÔ The image is about y=w(6) symmetry, y1+y2 = 2*w(6), so
-                                        %ÇóÁíÒ»¸öµÄÊ±ºòy1 = 2*w(6)-y2;Ìæ»»µÃµ½s(i) =2*w(6)-ww;    When finding the other, y1 = 2*w(6)-y2; substitution yields s(i) =2*w(6)-ww;   
+                   s(i) =2*w(6)-ww;     %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ò£¬¼ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½yï¿½Ç´ï¿½1ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-3ï¿½ï¿½1ï¿½Ä£ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½y=1ï¿½Ô³Æ£ï¿½ It should be noted here that when calculating the parameters, if the previous image calculates y from 1 to 5, then here it is -3 to 1, and the image is symmetrical with respect to y=1;
+                                        %Í¼ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½y=w(6)ï¿½Ô³Æ£ï¿½y1+y2 = 2*w(6)ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ The image is about y=w(6) symmetry, y1+y2 = 2*w(6), so
+                                        %ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½y1 = 2*w(6)-y2;ï¿½æ»»ï¿½Ãµï¿½s(i) =2*w(6)-ww;    When finding the other, y1 = 2*w(6)-y2; substitution yields s(i) =2*w(6)-ww;   
 
 
               elseif(j*t_int <= 0)

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,10 +11,10 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-% ÀëÉ¢ÐÍ£¬»ý·ÖÇó½â£¬ÓÐÎó²î£» Discrete, integral solving, with errors;
-%t t1~8Êý×é£»arrary
-%j Îªjerk£»
-%t_int Ê±¼ä¼ä¸ô  Time interval
+% ï¿½ï¿½É¢ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½î£» Discrete, integral solving, with errors;
+%t t1~8ï¿½ï¿½ï¿½é£»arrary
+%j Îªjerkï¿½ï¿½
+%t_int Ê±ï¿½ï¿½ï¿½ï¿½  Time interval
 
 
 
@@ -58,7 +58,7 @@ function [p,v,a,jerk] = s_curve_cal_pvaj_disper(n,j)
        else
            newj = 0;
        end
-       %»ý·Ö
+       %ï¿½ï¿½ï¿½ï¿½
        jerk(i+1) = newj;
        a(i+1) = a(i) + Ts*newj;
        v(i+1) = v(i) + a(i+1)*Ts;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,14 +13,14 @@
 % -------------------------------------------------------------------------
 
 
-%% ÔÈËÙ½ø¸ø,ËÄÔªÊý²åÖµ; Uniform feed, quaternion interpolation; constant velocity
+%% ï¿½ï¿½ï¿½Ù½ï¿½ï¿½ï¿½,ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½Öµ; Uniform feed, quaternion interpolation; constant velocity
 
 clc;
 clear;
 format long g;
 
 
-%Æðµã¡¢¹ý¶Éµã¡¢ÖÕµã;starting point, transition point, end point;
+%ï¿½ï¿½ã¡¢ï¿½ï¿½ï¿½Éµã¡¢ï¿½Õµï¿½;starting point, transition point, end point;
 P1 = [100 88 65-100 -60 -20 30];     
 P2 = [88 25 63-100 0 30 -20];       
 P3 = [50 30 20-100 -60 -70 -40]; 
@@ -36,9 +36,9 @@ Q3 = R_to_Quat(splitT_R(T3));
 p1 = P1(1:3); o1 = P1(4:6);
 p2 = P2(1:3); o2 = P2(4:6);
 p3 = P3(1:3); o3 = P3(4:6);
-Ts = 0.01;%²å²¹ÖÜÆÚ;imputation cycles;
+Ts = 0.01;%ï¿½å²¹ï¿½ï¿½ï¿½ï¿½;imputation cycles;
 
-%½»ÈÚ°ë¾¶; blending radius;
+%ï¿½ï¿½ï¿½Ú°ë¾¶; blending radius;
 r = 30;
 Pos1 = zeros(1000,6);
 Pos2 = zeros(1000,6);
@@ -47,9 +47,9 @@ Pos3 = zeros(1000,6);
 TT1 = zeros(4,4,1000);
 TT2 = zeros(4,4,1000);
 TT3 = zeros(4,4,1000);
-%Çó¿Õ¼ä¼¸ºÎµÄ¹¹ÐÍ;  find the configuration of the space geometry;
+%ï¿½ï¿½Õ¼ä¼¸ï¿½ÎµÄ¹ï¿½ï¿½ï¿½;  find the configuration of the space geometry;
 [A,B,c,new_r,theta_c] = cal_const_vel_param(P1,P2,P3,r,1);
-%Éú³É¹æ»®ÇúÏß; generation of planning curves;
+%ï¿½ï¿½ï¿½É¹æ»®ï¿½ï¿½ï¿½ï¿½; generation of planning curves;
 Disp = 1000;Vel = 20;Acc = 200;Jerk = 2000;
 [t,jerk] = s_curve_cal_param_con(Disp,Vel,Acc,Jerk);
 [p,v,a1,jerk] = s_curve_cal_pvaj_con_ext(t,jerk,Ts);
@@ -67,7 +67,7 @@ le1 = 0;le3 = 0;
 % of the quaternion pose at the starting point is recorded;
 QA = zeros(1,4);QB = zeros(1,4);
 
-%Çó·Ç½»ÈÚÊ±µÄÎ»ÖÃ×ËÌ¬£¬ÓÉÉÏÊöÉú³ÉµÄ¹æ»®ÇúÏßÉú³É¿Õ¼äÎ»ÖÃ¼°×ËÌ¬;find the position and pose in the non-blending situation, and generate the spatial position and attitude from the above-mentioned generated planning curve;
+%ï¿½ï¿½Ç½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉµÄ¹æ»®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¿Õ¼ï¿½Î»ï¿½Ã¼ï¿½ï¿½ï¿½Ì¬;find the position and pose in the non-blending situation, and generate the spatial position and attitude from the above-mentioned generated planning curve;
 for i = 1:length(p)
     Pos1(i,1:3) = p(i)*d_p1p2+p1;
     lambda = abs(p(i))/l_p1A;
@@ -95,8 +95,8 @@ for i = 1:length(p)
 end
 
 
-%% ÇóÔ²Æ½¾ù·Ö¸îÖ®ºóµÄÎ»ÖÃ×ø±êÉú³ÉÊý×é;  Find the position coordinates after the circle is evenly divided to generate an array;
-%ÕâÀïÓÐ¸öÎÊÌâ£¬Èç¹û²å²¹ÖÜÆÚTs±È½Ï´ó£¬ÄÇÃ´Ô²ÓëÖ±ÏßÆ´½ÓµÄµØ·½²¢²»ÊÇÔÈËÙÐèÒªÁí×÷´¦Àí; There is a problem here, if the interpolation period Ts is relatively large, then the place where the circle and the straight line are spliced is not uniform and needs to be treated separately;
+%% ï¿½ï¿½Ô²Æ½ï¿½ï¿½ï¿½Ö¸ï¿½Ö®ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;  Find the position coordinates after the circle is evenly divided to generate an array;
+%ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½å²¹ï¿½ï¿½ï¿½ï¿½Tsï¿½È½Ï´ï¿½ï¿½ï¿½Ã´Ô²ï¿½ï¿½Ö±ï¿½ï¿½Æ´ï¿½ÓµÄµØ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; There is a problem here, if the interpolation period Ts is relatively large, then the place where the circle and the straight line are spliced is not uniform and needs to be treated separately;
 t = new_r*theta_c/Vel;
 no = floor(t/Ts);
 for i = 1:no
@@ -110,11 +110,11 @@ for i = 1:no
     TT2(1:3,4,i) = Pos2(i,1:3)';
 end
 
-%% »­¹ì¼£; Draw a trajectory;
+%% ï¿½ï¿½ï¿½ì¼£; Draw a trajectory;
 
 T1 = zeros(4,4,le1);
 %figure;
-%×ø±êÏµ´óÐ¡; coordinate system size;
+%ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ð¡; coordinate system size;
 coord_scale = 5;
 %axis([0 100 0 100 0 100]);
 for i = 1:le1

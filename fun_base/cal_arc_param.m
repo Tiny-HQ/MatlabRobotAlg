@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -36,7 +36,7 @@ function [pc,r,theta] = cal_arc_param(pos)
 
     pc=mid2+L*per2;
 
-    %Բ�Ľ�
+    %Բ�Ľ�
     vec1=p1-pc;
     vec1=unitVec(vec1);
     vec2=p3-pc;

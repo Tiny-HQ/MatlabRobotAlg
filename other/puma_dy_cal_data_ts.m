@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -98,7 +98,7 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
           -sin(q6)  -cos(q6)  0 ];
   
   
-    % ÍâÍÆ0->1
+    % ï¿½ï¿½ï¿½ï¿½0->1
     W101 = R10 * W000 + dq1 * Z111 ;
     dW101 = R10 * dW000 + cross ( R10 * W000 , dq1 * Z111 ) + ddq1 * Z111 ;
     dV101 = R10 * ( dV000 + cross ( dW000 , P001 ) + cross ( W000 , cross(W000,P001) )) ;
@@ -107,7 +107,7 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
     Fc111 = m1 * dVc101 ; 
     Nc111 = Ic1 * dW101 + cross ( W101 , Ic1 * W101 );
 
-    % ÍâÍÆ1->2
+    % ï¿½ï¿½ï¿½ï¿½1->2
     W202 = R21 * W101 + dq2 * Z222 ;
     dW202 = R21 * dW101 + cross ( R21 * W101 , dq2 * Z222 ) + ddq2 * Z222 ;
     dV202 = R21 * ( dV101 + cross ( dW101 , P112 ) + cross ( W101 , cross(W101,P112) )) ;
@@ -116,7 +116,7 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
     Fc222 = m2 * dVc202 ; 
     Nc222 = Ic2 * dW202 + cross ( W202 , Ic2 * W202 );
 
-    % ÍâÍÆ2->3
+    % ï¿½ï¿½ï¿½ï¿½2->3
     W303 = R32 * W202 + dq3 * Z333 ;
     dW303 = R32 * dW202 + cross ( R32 * W202 , dq3 * Z333 ) + ddq3 * Z333 ;
     dV303 = R32 * ( dV202 + cross ( dW202 , P223 ) + cross ( W202 , cross(W202,P223) )) ;
@@ -125,7 +125,7 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
     Fc333 = m3 * dVc303 ; 
     Nc333 = Ic3 * dW303 + cross ( W303 , Ic3 * W303 );
 
-    % ÍâÍÆ3->4
+    % ï¿½ï¿½ï¿½ï¿½3->4
     W404 = R43 * W303 + dq4 * Z444 ;
     dW404 = R43 * dW303 + cross ( R43 * W303 , dq4 * Z444 ) + ddq4 * Z444 ;
     dV404 = R43 * ( dV303 + cross ( dW303 , P334 ) + cross ( W303 , cross(W303,P334) )) ;
@@ -134,7 +134,7 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
     Fc444 = m4 * dVc404 ; 
     Nc444 = Ic4 * dW404 + cross ( W404 , Ic4 * W404 );
 
-    % ÍâÍÆ4->5
+    % ï¿½ï¿½ï¿½ï¿½4->5
     W505 = R54 * W404 + dq5 * Z555 ;
     dW505 = R54 * dW404 + cross ( R54 * W404 , dq5 * Z555 ) + ddq5 * Z555 ;
     dV505 = R54 * ( dV404 + cross ( dW404 , P445 ) + cross ( W404 , cross(W404,P445) )) ;
@@ -143,7 +143,7 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
     Fc555 = m5 * dVc505 ; 
     Nc555 = Ic5 * dW505 + cross ( W505 , Ic5 * W505 );
 
-    % ÍâÍÆ5->6
+    % ï¿½ï¿½ï¿½ï¿½5->6
     W606 = R65 * W505 + dq6 * Z666 ;
     dW606 = R65 * dW505 + cross ( R65 * W505 , dq6 * Z666 ) + ddq6 * Z666 ;
     dV606 = R65 * ( dV505 + cross ( dW505 , P556 ) + cross ( W505 , cross(W505,P556) )) ;
@@ -153,27 +153,27 @@ function tao = puma_dy_cal_data_ts(q,dq,ddq)
     Nc666 = Ic6 * dW606 + cross ( W606 , Ic6 * W606 );
 
 
-    % ÄÚÍÆ7->6
+    % ï¿½ï¿½ï¿½ï¿½7->6
     f666 = Fc666 ;
     n666 = Nc666 + cross(Pc666,Fc666) ;
 
-    % ÄÚÍÆ6->5
+    % ï¿½ï¿½ï¿½ï¿½6->5
     f555 = R56*f666 + Fc555 ;
     n555 = Nc555 + R56*n666 + cross(Pc555,Fc555) +cross (P556,R56*f666) ;
 
-    % ÄÚÍÆ5->4
+    % ï¿½ï¿½ï¿½ï¿½5->4
     f444 = R45*f555 + Fc444 ;
     n444 = Nc444 + R45*n555 + cross(Pc444,Fc444) +cross (P445,R45*f555) ;
 
-    % ÄÚÍÆ4->3
+    % ï¿½ï¿½ï¿½ï¿½4->3
     f333 = R34*f444 + Fc333 ;
     n333 = Nc333 + R34*n444 + cross(Pc333,Fc333) +cross (P334,R34*f444) ;
 
-    % ÄÚÍÆ3->2
+    % ï¿½ï¿½ï¿½ï¿½3->2
     f222 = R23*f333 + Fc222 ;
     n222 = Nc222 + R23*n333 + cross(Pc222,Fc222) +cross (P223,R23*f333) ;
 
-    % ÄÚÍÆ2->1
+    % ï¿½ï¿½ï¿½ï¿½2->1
     f111 = R12*f222 + Fc111 ;
     n111 = Nc111 + R12*n222 + cross(Pc111,Fc111) +cross (P112,R12*f222) ;
 

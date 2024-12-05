@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,7 +13,7 @@
 % -------------------------------------------------------------------------
 
 
-%% ÇóÇòÐÄÖ®ºóÓë¼ÓÁË¹¤¾ß×ø±êÏµÖ®ºóÖ®¼äµÄÎó²î; Find the error between the center of the sphere and the tool coordinate system;
+%% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÖ®ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Find the error between the center of the sphere and the tool coordinate system;
 clc;
 clear;
 format long g;
@@ -35,8 +35,8 @@ for i = 1:N
    error((i-1)*3+2) = er(2);
    error((i-1)*3+3) = er(3);
 end 
-error = error';%Õâ¾ÍÊÇ´øÁË¹¤¾ßÖ®ºó£¬ÇòÐÄÓë¸÷¸öµãÖ®¼äµÄÎó²î This is the error between the center of the sphere and each point with the tool
-%ÐèÒªerror = J*delta_dh½âÕâ¸ö·½³Ì,delta_dh¾ÍÊÇ±ê¶¨Ö®ºóµÄÃ¿ÏîµÄÎó²îÖµ; error = J*delta_dh is required to solve this equation, delta_dh is the error value of each term after calibration;
+error = error';%ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ This is the error between the center of the sphere and each point with the tool
+%ï¿½ï¿½Òªerror = J*delta_dhï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,delta_dhï¿½ï¿½ï¿½Ç±ê¶¨Ö®ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ; error = J*delta_dh is required to solve this equation, delta_dh is the error value of each term after calibration;
 
 
 L1 = 367;L2 = 420.7567;L3 = 46.4259;L4 = 417.6788;L5 = 83.5;L6 = 48.8438;L7 = 0.9755;

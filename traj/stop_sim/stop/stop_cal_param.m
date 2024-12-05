@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,16 +13,16 @@
 % -------------------------------------------------------------------------
 
 
-%´ËÊ±µÄA¿ÉÎªÕý¿ÉÎª¸º£¬A_set±íÊ¾±êÁ¿£¬A_set±íÊ¾·´Ïò¼õËÙ¶È´óÐ¡; In this case, A can be positive or negative, A_set represents a scalar quantity, and A_set represents the magnitude of reverse deceleration.
-%¿É¼ÆËã¼ÓËÙ¶Î¡¢ÔÈËÙ¶Î¡¢¼õËÙ¶Î; It can calculate the acceleration section, constant speed section and deceleration section;
-%stop_ext¡¢stop_standard¼õËÙ¶ÎÃ»ÓÐ×ö´¦Àí; stop_ext. The stop_standard deceleration section has not been treated;
+%ï¿½ï¿½Ê±ï¿½ï¿½Aï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½A_setï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A_setï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È´ï¿½Ð¡; In this case, A can be positive or negative, A_set represents a scalar quantity, and A_set represents the magnitude of reverse deceleration.
+%ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶Î¡ï¿½ï¿½ï¿½ï¿½Ù¶Î¡ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½; It can calculate the acceleration section, constant speed section and deceleration section;
+%stop_extï¿½ï¿½stop_standardï¿½ï¿½ï¿½Ù¶ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; stop_ext. The stop_standard deceleration section has not been treated;
 
 
 function [t,j] = stop_cal_param(V,A,A_set,J)
 
 
 
-    if(abs(A) <= 0.01)  %ÔÈËÙ¶Î; Constant velocity section
+    if(abs(A) <= 0.01)  %ï¿½ï¿½ï¿½Ù¶ï¿½; Constant velocity section
         t(1) = 0.0;
 
         t_vel = abs((V/J)^0.5);
@@ -39,10 +39,10 @@ function [t,j] = stop_cal_param(V,A,A_set,J)
         t(3) = t(2)+t3;
         t(4) = t(3)+t2;
         
-    elseif (A>0)        %¼ÓËÙ¶Î;acc
-        t(1) = abs(A/J);%ÁÙ½çÖµ;limit
+    elseif (A>0)        %ï¿½ï¿½ï¿½Ù¶ï¿½;acc
+        t(1) = abs(A/J);%ï¿½Ù½ï¿½Öµ;limit
         v_max = 1/2.0*A*t(1)+V;  
-        t_vel = sqrt(v_max/J);%ÁÙ½çÖµ;limit
+        t_vel = sqrt(v_max/J);%ï¿½Ù½ï¿½Öµ;limit
         t_acc = abs(A_set/J);
         
         if t_acc<t_vel
@@ -57,7 +57,7 @@ function [t,j] = stop_cal_param(V,A,A_set,J)
             t(3) = t(2);
             t(4) = t(3)+t2;
         end
-    else         %¼õËÙ¶Î dec
+    else         %ï¿½ï¿½ï¿½Ù¶ï¿½ dec
         
         t_ = abs(A/J);
         if(abs(V-1/2*abs(A)*t_)<0.001 )

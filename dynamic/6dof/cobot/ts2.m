@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -14,7 +14,7 @@
 
 
 
-%ÇóµÚÒ»¹Ø½ÚÁ¦¾ØÊ±ºòÓÃ;It is used to find the first joint moment;
+%ï¿½ï¿½ï¿½Ò»ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½;It is used to find the first joint moment;
 
 % mx2 = 0;
 % my2 = 0;
@@ -32,7 +32,7 @@
 % yz3 = 0.944216914802467;
 % zz3 = -2.23408046754102e-18;
 
-%ÇóµÚ¶þ¹Ø½ÚÁ¦¾ØÊ±ºòÓÃ;It is used to find the second joint moment;
+%ï¿½ï¿½Ú¶ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½;It is used to find the second joint moment;
 
 mx2 = 2.53176898323084;
 my2 = -9.47404813506614;
@@ -75,7 +75,7 @@ EE = zeros(14,1);
 FF = zeros(14,1);
 GG = zeros(14,1);
 
-%¿ÉÄÜ´æÔÚa4¡¢d4¡¢a4^2¡¢d4^2¡¢a4*d4,may exist a4¡¢d4¡¢a4^2¡¢d4^2¡¢a4*d4
+%ï¿½ï¿½ï¿½Ü´ï¿½ï¿½ï¿½a4ï¿½ï¿½d4ï¿½ï¿½a4^2ï¿½ï¿½d4^2ï¿½ï¿½a4*d4,may exist a4ï¿½ï¿½d4ï¿½ï¿½a4^2ï¿½ï¿½d4^2ï¿½ï¿½a4*d4
 A1 = a4*mx2;
 A2 = d4*mx2;
 A3 = a4^2*mx2;
@@ -140,7 +140,7 @@ G7 = 2*G2;
 % W(26) = F1;W(27) = F2;W(28) = F3;W(29) = F4;W(30) = F5;
 % W(31) = G1;W(32) = G2;W(33) = G3;W(34) = G4;W(35) = G5;
 
-%Ò²¿ÉÄÜ´æÔÚ¼Ó¼õ£¬ËùÒÔÕâÀïÓÐ10Ïî£¬Ä³Ð©ÏµÊý¶¼ÓÐ¿ÉÄÜ³ÉÎªÆ´³öÀ´µÄÖµ;There may also be additions and subtractions, so there are 10 terms here, and some coefficients may become spelled values;
+%Ò²ï¿½ï¿½ï¿½Ü´ï¿½ï¿½Ú¼Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½î£¬Ä³Ð©Ïµï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Ü³ï¿½ÎªÆ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ;There may also be additions and subtractions, so there are 10 terms here, and some coefficients may become spelled values;
 AA(1) = A1;AA(2) = A2;AA(3) = A3;AA(4) = A4;AA(5) = A5;AA(6) = -A1;AA(7) = -A2;AA(8) = -A3;AA(9) = -A4;AA(10) = -A5;AA(11) = A6;AA(12) = -A6;AA(13) = A7;AA(14) = -A7;
 BB(1) = B1;BB(2) = B2;BB(3) = B3;BB(4) = B4;BB(5) = B5;BB(6) = -B1;BB(7) = -B2;BB(8) = -B3;BB(9) = -B4;BB(10) = -B5;BB(11) = B6;BB(12) = -B6;BB(13) = B7;BB(14) = -B7;
 CC(1) = C1;CC(2) = C2;CC(3) = C3;CC(4) = C4;CC(5) = C5;CC(6) = -C1;CC(7) = -C2;CC(8) = -C3;CC(9) = -C4;CC(10) = -C5;CC(11) = C6;CC(12) = -C6;CC(13) = C7;CC(14) = -C7;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -26,66 +26,66 @@ pos4 = [336.625 -143.761 27.2846 -152.309 143.268 -24.3185];
 
 
 
-%´òÓ¡Ô²ÐÄ×ø±ê; Print the coordinates of the center of the circle;
+%ï¿½ï¿½Ó¡Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; Print the coordinates of the center of the circle;
 [Pc,r] = cal_sphere_center(pos1,pos2,pos3,pos4);
 
 
 
-%µÚÒ»¸öµãÇó×ª»»xyz; The first point is the transformation xyz;
+%ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½xyz; The first point is the transformation xyz;
 BB = Pc-pos1(1:3)';
-%sqrt(sum(BB.^2))%ÑéÖ¤ÇòÐÄ°ë¾¶ Verify the spherical radius
+%sqrt(sum(BB.^2))%ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Ä°ë¾¶ Verify the spherical radius
 AA = eye(4);
 AA = rotz(pos1(4))*roty(pos1(5))*rotz(pos1(6));
 V = inv(AA(1:3,1:3))*BB
-%ÑéÖ¤: Verify:
+%ï¿½ï¿½Ö¤: Verify:
 AA(1:3,4) = pos1(1:3)';
 T = eye(4);
 T(1:3,4) = V;
 AA*T;
-%ËùµÃ¾ØÕóµÄpÊ¸Á¿¾ÍÊÇÔ²ÐÄ×ø±ê The p-vector of the resulting matrix is the center coordinates
+%ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½pÊ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ The p-vector of the resulting matrix is the center coordinates
 
 
 
 
 
-%µÚ¶þ¸öµãÇó×ª»»xyz; The second point is the transformation xyz;
+%ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½xyz; The second point is the transformation xyz;
 BB = Pc-pos2(1:3)';
-%sqrt(sum(BB.^2))%ÑéÖ¤ÇòÐÄ°ë¾¶ Verify the spherical radius
+%sqrt(sum(BB.^2))%ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Ä°ë¾¶ Verify the spherical radius
 AA = rotz(pos2(4))*roty(pos2(5))*rotz(pos2(6));
 V = inv(AA(1:3,1:3))*BB
-%ÑéÖ¤: Verify:
+%ï¿½ï¿½Ö¤: Verify:
 AA(1:3,4) = pos2(1:3)';
 T = eye(4);
 T(1:3,4) = V;
 AA*T;
-%ËùµÃ¾ØÕóµÄpÊ¸Á¿¾ÍÊÇÔ²ÐÄ×ø±ê The p-vector of the resulting matrix is the center coordinates
+%ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½pÊ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ The p-vector of the resulting matrix is the center coordinates
 
 
-%µÚÈý¸öµãÇó×ª»»xyz; The third point is the transformation xyz;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½xyz; The third point is the transformation xyz;
 BB = Pc-pos3(1:3)';
-%sqrt(sum(BB.^2))%ÑéÖ¤ÇòÐÄ°ë¾¶ Verify the spherical radius
+%sqrt(sum(BB.^2))%ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Ä°ë¾¶ Verify the spherical radius
 AA = rotz(pos3(4))*roty(pos3(5))*rotz(pos3(6));
 V = inv(AA(1:3,1:3))*BB
-%ÑéÖ¤:Verify:
+%ï¿½ï¿½Ö¤:Verify:
 AA(1:3,4) =  pos3(1:3)';
 T = eye(4);
 T(1:3,4) = V;
 AA*T;
-%ËùµÃ¾ØÕóµÄpÊ¸Á¿¾ÍÊÇÔ²ÐÄ×ø±ê The p-vector of the resulting matrix is the center coordinates
+%ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½pÊ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ The p-vector of the resulting matrix is the center coordinates
 
 
 
-%µÚËÄ¸öµãÇó×ª»»xyz;The fourth point is the transformation xyz;
+%ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½xyz;The fourth point is the transformation xyz;
 BB = Pc-pos4(1:3)';
-%sqrt(sum(BB.^2))%ÑéÖ¤ÇòÐÄ°ë¾¶V erify the spherical radius
+%sqrt(sum(BB.^2))%ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Ä°ë¾¶V erify the spherical radius
 AA =rotz(pos4(4))*roty(pos4(5))*rotz(pos4(6));
 V = inv(AA(1:3,1:3))*BB
-%ÑéÖ¤:Verify:
+%ï¿½ï¿½Ö¤:Verify:
 AA(1:3,4) = pos4(1:3)';
 T = eye(4);
 T(1:3,4) = V;
 AA*T;
-%ËùµÃ¾ØÕóµÄpÊ¸Á¿¾ÍÊÇÔ²ÐÄ×ø±ê The p-vector of the resulting matrix is the center coordinates
+%ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½pÊ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ The p-vector of the resulting matrix is the center coordinates
 
 
 

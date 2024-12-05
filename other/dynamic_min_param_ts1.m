@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -20,18 +20,18 @@ clear;
 
 
 
-syms mi_1 mi mi1 mi2 real;%ÖÊÁ¿;mass
+syms mi_1 mi mi1 mi2 real;%ï¿½ï¿½ï¿½ï¿½;mass
 syms Pi_1_x Pi_1_y Pi_1_z Pi_x Pi_y Pi_z Pi1_x Pi1_y Pi1_z Pi2_x Pi2_y Pi2_z real
 syms Pci_1_x Pci_1_y Pci_1_z Pci_x Pci_y Pci_z Pci1_x Pci1_y Pci1_z Pci2_x Pci2_y Pci2_z real
-syms Ii_1_xx Ii_1_xy Ii_1_xz Ii_1_yy Ii_1_yz Ii_1_zz real;%i-1Öá¹ßÁ¿; i-1 axis inertia
-syms Ii_xx Ii_xy Ii_xz Ii_yy Ii_yz Ii_zz real;%iÖá¹ßÁ¿; i axis inertia
-syms Ii1_xx Ii1_xy Ii1_xz Ii1_yy Ii1_yz Ii1_zz real;%i+1Öá¹ßÁ¿;i+1 axis inertia
-syms Ii2_xx Ii2_xy Ii2_xz Ii2_yy Ii2_yz Ii2_zz real;%i+2Öá¹ßÁ¿; i+2 axis inertia
+syms Ii_1_xx Ii_1_xy Ii_1_xz Ii_1_yy Ii_1_yz Ii_1_zz real;%i-1ï¿½ï¿½ï¿½ï¿½ï¿½; i-1 axis inertia
+syms Ii_xx Ii_xy Ii_xz Ii_yy Ii_yz Ii_zz real;%iï¿½ï¿½ï¿½ï¿½ï¿½; i axis inertia
+syms Ii1_xx Ii1_xy Ii1_xz Ii1_yy Ii1_yz Ii1_zz real;%i+1ï¿½ï¿½ï¿½ï¿½ï¿½;i+1 axis inertia
+syms Ii2_xx Ii2_xy Ii2_xz Ii2_yy Ii2_yz Ii2_zz real;%i+2ï¿½ï¿½ï¿½ï¿½ï¿½; i+2 axis inertia
 
-syms dqi_1_x dqi_1_y dqi_1_z ddqi_1_x ddqi_1_y ddqi_1_z real;%i-1Öá½ÇËÙ¶È¡¢½Ç¼ÓËÙ¶È; i-1 axis angular velocity, angular acceleration;
-syms dqi_x dqi_y dqi_z ddqi_x ddqi_y ddqi_z real;%iÖá½ÇËÙ¶È¡¢½Ç¼ÓËÙ¶È; i axis angular velocity, angular acceleration;
-syms dqi1_x dqi1_y dqi1_z ddqi1_x ddqi1_y ddqi1_z real;%i+1Öá½ÇËÙ¶È¡¢½Ç¼ÓËÙ¶È;i+1 axis angular velocity, angular acceleration;
-syms dqi2_x dqi2_y dqi2_z ddqi2_x ddqi2_y ddqi2_z real;%i+2Öá½ÇËÙ¶È¡¢½Ç¼ÓËÙ¶È; i+2 axis angular velocity, angular acceleration;
+syms dqi_1_x dqi_1_y dqi_1_z ddqi_1_x ddqi_1_y ddqi_1_z real;%i-1ï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½Ç¼ï¿½ï¿½Ù¶ï¿½; i-1 axis angular velocity, angular acceleration;
+syms dqi_x dqi_y dqi_z ddqi_x ddqi_y ddqi_z real;%iï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½Ç¼ï¿½ï¿½Ù¶ï¿½; i axis angular velocity, angular acceleration;
+syms dqi1_x dqi1_y dqi1_z ddqi1_x ddqi1_y ddqi1_z real;%i+1ï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½Ç¼ï¿½ï¿½Ù¶ï¿½;i+1 axis angular velocity, angular acceleration;
+syms dqi2_x dqi2_y dqi2_z ddqi2_x ddqi2_y ddqi2_z real;%i+2ï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½Ç¼ï¿½ï¿½Ù¶ï¿½; i+2 axis angular velocity, angular acceleration;
 
 syms vi_1_x vi_1_y vi_1_z vi_x vi_y vi_z vi1_x vi1_y vi1_z vi2_x vi2_y vi2_z real;
 syms ai_1_x ai_1_y ai_1_z ai_x ai_y ai_z ai1_x ai1_y ai1_z ai2_x ai2_y ai2_z real;

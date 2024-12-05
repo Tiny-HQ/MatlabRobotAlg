@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -30,18 +30,18 @@ P = [0 10 1;
     25 -11 20;
     28 -23 -25;
     39 33 28;
-    45 50 36;]; % ¿ØÖÆµã×ø±ê   control point coodinate
+    45 50 36;]; % ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½   control point coodinate
 % P = [0 10 1;1 12 -5;5 2 9;6 33 -11;10 55 15 ;23 -20 17;25 -11 20;28 -23 -25;39 33 28;45 50 36;]; % modify one of control point, figure only change one part of them. 
 
-Wx = [1 ;2;3;4;6 ;1 ;2;3;5;6 ]; % È¨ÖØ  weight
-%Wx = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ÖØ weight
-Wy = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ÖØ weight
-% Wy = [1 ;2;3;5;6 ;10 ;2;3;4;6 ]; % È¨ÖØ  weight
- Wz = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ÖØ weight
-% Wz = [1 ;2;4;5;6 ;10 ;3;4;5;6 ]; % È¨ÖØ  weight
+Wx = [1 ;2;3;4;6 ;1 ;2;3;5;6 ]; % È¨ï¿½ï¿½  weight
+%Wx = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ï¿½ï¿½ weight
+Wy = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ï¿½ï¿½ weight
+% Wy = [1 ;2;3;5;6 ;10 ;2;3;4;6 ]; % È¨ï¿½ï¿½  weight
+ Wz = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ï¿½ï¿½ weight
+% Wz = [1 ;2;4;5;6 ;10 ;3;4;5;6 ]; % È¨ï¿½ï¿½  weight
   
-% ¶¨Òå NURBS ÇúÏß¶ÈÊý  degree
-k = 3; % ÇúÏß¶ÈÊý  
+% ï¿½ï¿½ï¿½ï¿½ NURBS ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  degree
+k = 3; % ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  
 [m,n] = size(P);
 u_vec = mnurbs_cal_knot_ext(k,m,last_value);
 

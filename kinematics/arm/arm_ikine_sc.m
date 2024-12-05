@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,8 +11,8 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%ÐýÁ¿·´½â; screw inverse solution
-%ÊµÔÚÊÇÌ«ÄÑÁË... It's just too hard
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; screw inverse solution
+%Êµï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½ï¿½ï¿½... It's just too hard
 
 
 function q = arm_ikine_sc(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
@@ -33,25 +33,25 @@ function q = arm_ikine_sc(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
 
 
     V65 = [0 0 -d6 1]';
-    V05 = T*V65;%´ÓµÚ0ºÅ×ø±êÏµµ½ÎåºÅ×ø±êÏµµÄÎ»ÖÃ×ª»»£¬»òÕßËµµ½µÚËÄºÅ×ø±êÏµµÄÎ»ÖÃ×ª»»£»¸ù¾Ý×îºóµÄ×ËÌ¬À´È·¶¨V65µÄ×ø±ê;×îºó×ËÌ¬ÊÇzÖá³¯ÍâµÄ£¬ËùÒÔ×ø±êÊÇ[0 0 -d6];Position conversion from coordinate system 0 to coordinate system 5, or position conversion to coordinate system 4; The coordinates of V65 are determined according to the final attitude; The last attitude is that the z-axis is facing outward, so the coordinates are [0 0 -d6];
+    V05 = T*V65;%ï¿½Óµï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½È·ï¿½ï¿½V65ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½zï¿½á³¯ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[0 0 -d6];Position conversion from coordinate system 0 to coordinate system 5, or position conversion to coordinate system 4; The coordinates of V65 are determined according to the final attitude; The last attitude is that the z-axis is facing outward, so the coordinates are [0 0 -d6];
     pe_x = V05(1);pe_y = V05(2);pe_z = V05(3); 
     
     pe = [pe_x pe_y pe_z 1]';
 
-    %!!!!!!ÖØµã!!!!!! important
-    %psÆðÊ¼Î»ÖÃ; pos start
-    %exp(w1*¦È1)*exp(w2*¦È2)*exp(w3*¦È3)*ps = pe;
-    %Éèexp(w1*¦È1)*pa = pe;  peÒÑÖª[pe_x pe_y pe_z];Çópa;                              Let exp(w1*¦È1)*pa = pe;  PE is known [pe_x pe_y pe_z]; Seek pa;
-    %paÊÇÒÔw1ÎªÖá£¬°ë¾¶ÊÇ¡Ì(pe_x^2+pe_y^2)µÄÔ²cÉÏÒ»µã(±È½ÏÄÑÀí½â(ÏÖÔÚ»¹Ã»ÓÐÖ¤Ã÷)£¬µ«È·ÊµÊÇÕâÑù);  pa is a point on the circle c with w1 as the axis and radius ¡Ì (pe_x^2+pe_y^2) (which is difficult to understand (it has not been proven yet), but it is);
-    %ÕâÒ»µãÊÇps£¨ÆðÊ¼µã£©¾­¹ýexp(w2*¦È2)*exp(w3*¦È3)Ó³Éäµ½Ô²cÉÏµÄµã£¬Õâ¸öÓ³ÉäºóµÄµãy×ø±êÊÇ-d3;   This point is the point where ps(start point) is mapped to the point on circle c by exp(w2*¦È2)*exp(w3*¦È3), and the mapped point y coordinate is -d3;
-    %Ïàµ±ÓÚexp(w2*¦È2)*exp(w3*¦È3)*ps = pa;                           It is equivalent to exp(w2*¦È2)*exp(w3*¦È3)*ps = pa;
-    %Ò²¿ÉÒÔÍ¨¹ýµãµ½ÖáÉÏÄ³Ò»µã¾àÀëÏàµÈÀ´Çó½âpa£¬½á¹ûÏàÍ¬;                      It is also possible to solve for PA by having an equal distance from a point to a point on the axis, with the same result;
-    %||exp(w2*¦È2)*exp(w3*¦È3)*ps-p1|| = ||pe-p1||,(p1 = [0 0 1]);
-    %||exp(w2*¦È2)*exp(w3*¦È3)*ps-p0|| = ||pe-p0||,(p1 = [0 0 0]);
-    %Ö»ÄÜ½â³öz=pe_z;  only can resolve the z=pe_z
+    %!!!!!!ï¿½Øµï¿½!!!!!! important
+    %psï¿½ï¿½Ê¼Î»ï¿½ï¿½; pos start
+    %exp(w1*ï¿½ï¿½1)*exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3)*ps = pe;
+    %ï¿½ï¿½exp(w1*ï¿½ï¿½1)*pa = pe;  peï¿½ï¿½Öª[pe_x pe_y pe_z];ï¿½ï¿½pa;                              Let exp(w1*ï¿½ï¿½1)*pa = pe;  PE is known [pe_x pe_y pe_z]; Seek pa;
+    %paï¿½ï¿½ï¿½ï¿½w1Îªï¿½á£¬ï¿½ë¾¶ï¿½Ç¡ï¿½(pe_x^2+pe_y^2)ï¿½ï¿½Ô²cï¿½ï¿½Ò»ï¿½ï¿½(ï¿½È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ú»ï¿½Ã»ï¿½ï¿½Ö¤ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½È·Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½);  pa is a point on the circle c with w1 as the axis and radius ï¿½ï¿½ (pe_x^2+pe_y^2) (which is difficult to understand (it has not been proven yet), but it is);
+    %ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½psï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ã£©ï¿½ï¿½ï¿½ï¿½exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3)Ó³ï¿½äµ½Ô²cï¿½ÏµÄµã£¬ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Äµï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-d3;   This point is the point where ps(start point) is mapped to the point on circle c by exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3), and the mapped point y coordinate is -d3;
+    %ï¿½àµ±ï¿½ï¿½exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3)*ps = pa;                           It is equivalent to exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3)*ps = pa;
+    %Ò²ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ãµ½ï¿½ï¿½ï¿½ï¿½Ä³Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½paï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬;                      It is also possible to solve for PA by having an equal distance from a point to a point on the axis, with the same result;
+    %||exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3)*ps-p1|| = ||pe-p1||,(p1 = [0 0 1]);
+    %||exp(w2*ï¿½ï¿½2)*exp(w3*ï¿½ï¿½3)*ps-p0|| = ||pe-p0||,(p1 = [0 0 0]);
+    %Ö»ï¿½Ü½ï¿½ï¿½z=pe_z;  only can resolve the z=pe_z
     pa(1) = sqrt(pe_x^2+pe_y^2-d3^2);pa(2) = -d3;pa(3) = pe_z;pa(4) = 1;
     
-    %µÚÒ»Öá; first axes
+    %ï¿½ï¿½Ò»ï¿½ï¿½; first axes
     if shoulder == -1
         q(1) = atan2(pe_y,pe_x)+atan2(pa(2),pa(1));
         if q(1)>0 
@@ -62,17 +62,17 @@ function q = arm_ikine_sc(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
     elseif shoulder == 1
         q(1) = atan2(pe_y,pe_x)-atan2(pa(2),pa(1));
     elseif shoulder == 0
-          %shoulder ÆæÒì,Ò²ÊÇÇ°ºóÆæÒì;
+          %shoulder ï¿½ï¿½ï¿½ï¿½,Ò²ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
           return;
     end
 
-    %µÚ¶þÖá¡¢µÚÈýÖá; second and third axes 
-    %ÒòÎªd3µÄÔ­Òò£¬Òª°ÑpsµÄyÖµ¼ò»¯³É0;  Because of d3, the y value of ps should be simplified to 0;
-    %pa_µÄÖµ¾ÍÊÇÇ°ÃæÇóµÚÒ»ÖáÊ±ºò£¬ÒÔÖÕµã»­µÄÔ²ÉÏÒ»µã£¬d3µÄ¹ØÏµ£¬°Ñpa_µÄyÖµÐ´³É0£¬µ«ÊÇ²¢²»ÊÇÈ¡xÖáÉÏÒ»µã£¬¾ÍÊÇpa_µÄxÖµÊÇ²»±ä£¬yÖµÐ´³É0£¬µ«²»ÊÇÈ¡xÖáÉÏÓëÔ²Ïà½»µÄÄÇÒ»µã;
+    %ï¿½Ú¶ï¿½ï¿½á¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; second and third axes 
+    %ï¿½ï¿½Îªd3ï¿½ï¿½Ô­ï¿½ï¿½Òªï¿½ï¿½psï¿½ï¿½yÖµï¿½ò»¯³ï¿½0;  Because of d3, the y value of ps should be simplified to 0;
+    %pa_ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Õµã»­ï¿½ï¿½Ô²ï¿½ï¿½Ò»ï¿½ã£¬d3ï¿½Ä¹ï¿½Ïµï¿½ï¿½ï¿½ï¿½pa_ï¿½ï¿½yÖµÐ´ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½È¡xï¿½ï¿½ï¿½ï¿½Ò»ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½pa_ï¿½ï¿½xÖµï¿½Ç²ï¿½ï¿½ä£¬yÖµÐ´ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½à½»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½;
     % The value of the pa_ is the relationship between the point on the circle drawn at the end point and d3 when the first axis is found before, and the y value of the pa_ is written as 0, but it is not taken as a point on the x-axis, that is, the x-value of the pa_ is unchanged, and the y-value is written as 0, but not the point on the x-axis that intersects the circle;
-    %Ðý×ª¹ý³ÌÊÇ´Ópsµ½pa'ÔÙµ½pa_;alpºÍbetaÊÇpa'µ½Öá2ÉÏÒ»µã£¨P2£©ºÍÖá3ÉÏÒ»µã£¨P3£©£¬Óëp2p3Ö®¼äµÄ¼Ð½Ç; The rotation process is from PS to PA' to pa_; alp and beta are the angles between pa' to a point on axis 2 (P2) and a point on axis 3 (P3), and P2P3;
+    %ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½psï¿½ï¿½pa'ï¿½Ùµï¿½pa_;alpï¿½ï¿½betaï¿½ï¿½pa'ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½Ò»ï¿½ã£¨P2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½Ò»ï¿½ã£¨P3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½p2p3Ö®ï¿½ï¿½Ä¼Ð½ï¿½; The rotation process is from PS to PA' to pa_; alp and beta are the angles between pa' to a point on axis 2 (P2) and a point on axis 3 (P3), and P2P3;
     w1 = [0 0 1]; q1 = [0 0 0]; v1 = -cross(w1,q1); T01 = ew(w1,v1,q(1));  w2 = [0 -1 0]; w3 = [0 -1 0];
-    pa_ = inv(T01)*pe;pa_ = pa_(1:3)';pa_(2) = 0.0;%ÕâÀï±ØÐë»¯³É0£¬¸úpsÒ»Ñù£¬y×ø±ê±ØÐë»¯³É0£¬yµÄÖµ»áÓ°Ïì¶þÈýÖáµÄÖµ;Here it must be reduced to 0, as with ps, the y coordinate must be reduced to 0, and the value of y will affect the value of the second and third axes;
+    pa_ = inv(T01)*pe;pa_ = pa_(1:3)';pa_(2) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë»¯ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½psÒ»ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë»¯ï¿½ï¿½0ï¿½ï¿½yï¿½ï¿½Öµï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ;Here it must be reduced to 0, as with ps, the y coordinate must be reduced to 0, and the value of y will affect the value of the second and third axes;
     P2 = [a1 0 d1];P3 = [a1 0 d1+a2];ps = [a1+d4 0.0 d1+a2+a3];
     u = ps-P3;v = pa_-P2;r23 = P2-P3; r32 = P3-P2;
     theta02 = atan2(w2*(cross(r32,v))',r32*v');
@@ -95,14 +95,14 @@ function q = arm_ikine_sc(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
             q(3) = q(3)+2*pi;
         end
      else
-         %ÆæÒì;
+         %ï¿½ï¿½ï¿½ï¿½;
      end
      if q(2)>2*pi
          q(2) = q(2)-2*pi;
      end
     
-    %¾­µäµÄÐýÁ¿·½·¨Çó456ÖáÌ«¹ýÓÚ¸´ÔÓ£¬Ã»ÓÐ´Ó×ËÌ¬¿¼ÂÇÇó½â£¬¿ÉÒÔ¿¼ÂÇµÈÐ§Å·À­½Ç·½·¨Çó½â; The classical screw method is too complicated to find the 456 axis, and the solution is not considered from the attitude consideration, and the equivalent Euler angle method can be considered.
-    %Å·À­½ÇµÄxyx¾Í¸ÕºÃµÈÐ§¶ÔÓ¦456Öá; The xyx of the Euler angle corresponds to exactly the 456 axis;
+    %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½456ï¿½ï¿½Ì«ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½Ó£ï¿½Ã»ï¿½Ð´ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½Çµï¿½Ð§Å·ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½; The classical screw method is too complicated to find the 456 axis, and the solution is not considered from the attitude consideration, and the equivalent Euler angle method can be considered.
+    %Å·ï¿½ï¿½ï¿½Çµï¿½xyxï¿½Í¸ÕºÃµï¿½Ð§ï¿½ï¿½Ó¦456ï¿½ï¿½; The xyx of the Euler angle corresponds to exactly the 456 axis;
     w1 = [0 0 1];w2 = [0 -1 0];w3 = [0 -1 0];
     q1 = [0 0 0];q2 = [a1 0 d1];q3 = [a1 d3 d1+a2];
     v1 = -cross(w1,q1);v2 = -cross(w2,q2);v3 = -cross(w3,q3);
@@ -124,8 +124,8 @@ function q = arm_ikine_sc(T,DH,shoulder,elbow,wrist,alpha_theta_option,option)
         q(4) = -atan2(T456(2,1)/sin(q(5)),T456(3,1)/sin(q(5)));
         q(6) = -atan2(T456(1,2)/sin(q(5)),-T456(1,3)/sin(q(5)));
     else
-        %ÕâÀïÒªÖØÐÂ´¦Àí;Òª¼ÇÂ¼ÉÏÒ»´ÎµÄÖµ£¬È»ºó¹ýÆæÒìµãµÄÊ±ºò±£³ÖÆäÖÐq(4)»òÕßq(6)²»±ä; Here it needs to be reprocessed; The last value should be recorded, and then q(4) or q(6) should be kept unchanged when passing the singularity;
-        %¾ÍÊÇÎåÖá·¢Ö¸ÁîµÄÊ±ºò£¬²»Òª·¢½Ç¶ÈÎª0Õâ¸öÖ¸Áî;  That is, when the five axes send instructions, do not send the command with an angle of 0; 
+        %ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½;Òªï¿½ï¿½Â¼ï¿½ï¿½Ò»ï¿½Îµï¿½Öµï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ò±£³ï¿½ï¿½ï¿½ï¿½ï¿½q(4)ï¿½ï¿½ï¿½ï¿½q(6)ï¿½ï¿½ï¿½ï¿½; Here it needs to be reprocessed; The last value should be recorded, and then q(4) or q(6) should be kept unchanged when passing the singularity;
+        %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á·¢Ö¸ï¿½ï¿½ï¿½Ê±ï¿½ò£¬²ï¿½Òªï¿½ï¿½ï¿½Ç¶ï¿½Îª0ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½;  That is, when the five axes send instructions, do not send the command with an angle of 0; 
         q(5) = 0;
         theta46 = atan2(T456(3,2),T456(2,2));
         q(4) = 0;

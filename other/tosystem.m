@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -14,20 +14,20 @@
 clc;clear all; close all;
 
 pi=3.14159267;
-counts=0;                  % Ê±¼ä´ÁÐòºÅ
-period=0.004;              % ¼ÆËãÖÜÆÚ
-pp=[ 120  100    0  0];       % ¹Ø½ÚÕýÏÞÎ»
-pn=[-120 -100    0  0];       % ¹Ø½Ú¸ºÏÞÎ»
+counts=0;                  % Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+period=0.004;              % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+pp=[ 120  100    0  0];       % ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
+pn=[-120 -100    0  0];       % ï¿½Ø½Ú¸ï¿½ï¿½ï¿½Î»
 s0=[ 0 0  0  0];
 for num=1:50    
-y1=pn(1)+(pp(1)-pn(1))*rand(1,1); % Ëæ»úÉú³ÉJ1½Ç¶È  
-y2=pn(2)+(pp(2)-pn(2))*rand(1,1); % Ëæ»úÉú³ÉJ2½Ç¶È  
-y3=pn(3)+(pp(3)-pn(3))*rand(1,1); % Ëæ»úÉú³ÉJ3½Ç¶È  
-y4=pn(4)+(pp(4)-pn(4))*rand(1,1); % Ëæ»úÉú³ÉJ4½Ç¶È  
+y1=pn(1)+(pp(1)-pn(1))*rand(1,1); % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½J1ï¿½Ç¶ï¿½  
+y2=pn(2)+(pp(2)-pn(2))*rand(1,1); % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½J2ï¿½Ç¶ï¿½  
+y3=pn(3)+(pp(3)-pn(3))*rand(1,1); % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½J3ï¿½Ç¶ï¿½  
+y4=pn(4)+(pp(4)-pn(4))*rand(1,1); % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½J4ï¿½Ç¶ï¿½  
 sf=[y1 y2 y3 y4];
 
-dabs=abs(sf-s0)+0.000001; % ½Ç¶È¾àÀë£¬ÎÞ·½Ïò
-dves=sf-s0;               % ½Ç¶È×ÜÎ»ÒÆ£¬ÓÐ·½Ïò
+dabs=abs(sf-s0)+0.000001; % ï¿½Ç¶È¾ï¿½ï¿½ë£¬ï¿½Þ·ï¿½ï¿½ï¿½
+dves=sf-s0;               % ï¿½Ç¶ï¿½ï¿½ï¿½Î»ï¿½Æ£ï¿½ï¿½Ð·ï¿½ï¿½ï¿½
 
 vmax=[375 600 925 875];
 amax=[3354 4848 2000 5000];
@@ -38,26 +38,26 @@ taj=amax./jmax*2*pi;
 t=[];
 tadc=[];
 ds=[];
-flag=[1 1 1 1];                           % Ä¬ÈÏ¸÷Öá¾ùÓÐÔÈËÙ¶Î
-dvs=[0 0 0 0];                            % ¹Ø½Ú¼Ó¼õËÙ¾àÀë
+flag=[1 1 1 1];                           % Ä¬ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
+dvs=[0 0 0 0];                            % ï¿½Ø½Ú¼Ó¼ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½
 for i=1:4
-    ti=max(tva(i),taj(i));                % ¹Ø½Ú×î´ó¼Ó¼õËÙÊ±¼ä
-    si=vmax(i)*ti*0.5;                    % ¹Ø½Ú×î´ó¼Ó¼õËÙ¾àÀë
-    tadc=[tadc ti];                       % ¸÷¹Ø½Ú×î´ó¼Ó¼õËÙÊ±¼ä
-      ds=[ds si];                         % ¸÷¹Ø½Ú×î´ó¼Ó¼õËÙ¾àÀë
-      if (dabs(i)-si) <0                  % ±¾¹Ø½ÚÎ´´ïµ½×î´óËÙ¶È
-          tti=(dabs(i)/si)^(1/3)*ti;      % ¸ù¾Ý½ÇÎ»ÒÆµÈ±ÈËõ·Å
-          flag(i)=0;                      % ÖÃ0£¬±íÕ÷ÎÞÔÈËÙ¶Î
+    ti=max(tva(i),taj(i));                % ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    si=vmax(i)*ti*0.5;                    % ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½
+    tadc=[tadc ti];                       % ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+      ds=[ds si];                         % ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½
+      if (dabs(i)-si) <0                  % ï¿½ï¿½ï¿½Ø½ï¿½Î´ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
+          tti=(dabs(i)/si)^(1/3)*ti;      % ï¿½ï¿½ï¿½Ý½ï¿½Î»ï¿½ÆµÈ±ï¿½ï¿½ï¿½ï¿½ï¿½
+          flag(i)=0;                      % ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
           dvs(i)=dves(i);                 %
-      else                                % ¹Ø½Ú´ïµ½×î´óËÙ¶È
-          tti=ti+(dabs(i)-si)/vmax(i);    % ¹Ø½ÚÔËÐÐ×ÜÊ±¼ä
+      else                                % ï¿½Ø½Ú´ïµ½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
+          tti=ti+(dabs(i)-si)/vmax(i);    % ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
           dvs(i)=dves(i)*si/dabs(i);      % 
       end 
      t=[t tti];
 end               
-[dt,jmain]=max(t);                        % Ö÷ÖáÔËÐÐÊ±¼ä¼°¹Ø½ÚÐòºÅ
+[dt,jmain]=max(t);                        % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä¼°ï¿½Ø½ï¿½ï¿½ï¿½ï¿½
 
-% ²»Ö»Ò»¸ùÖ÷Öá
+% ï¿½ï¿½Ö»Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 if size(jmain,1)>1
     jmain=jmain(1);
 end
@@ -69,12 +69,12 @@ vt=[];
 at=[];
 jt=[];
 
-if flag(jmain) == 1                           % Ö÷Öá´æÔÚÔÈËÙ¶Î
-    % µ÷Õû´ÓÖáµÄdvs£¨¼Ó¼õËÙ¾àÀë£©
+if flag(jmain) == 1                           % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
+    % ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dvsï¿½ï¿½ï¿½Ó¼ï¿½ï¿½Ù¾ï¿½ï¿½ë£©
     dvs=dves/(1+2*(dt-tadc(jmain))/tadc(jmain));
     for i=1:size(counT,1)
         countime=counT(i);
-        if countime <= tadc(jmain)*0.5        % Ê±¼ä´ÁÔÚ¼ÓËÙ¶Î 
+        if countime <= tadc(jmain)*0.5        % Ê±ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ù¶ï¿½ 
             sts1=s0+dvs*((countime)/tadc(jmain)-0.5*sin(2*pi*(countime)/tadc(jmain))/pi);
             vst1=dvs/tadc(jmain)-dvs*cos(2*pi*(countime)/tadc(jmain))/tadc(jmain);
             ast1=dvs*2*pi*sin(2*pi*countime/tadc(jmain))/tadc(jmain)^2;
@@ -83,7 +83,7 @@ if flag(jmain) == 1                           % Ö÷Öá´æÔÚÔÈËÙ¶Î
             vt=[vt;vst1];
             at=[at;ast1];
             jt=[jt;jst1];
-        elseif countime > (tadc(jmain)*0.5)  &&  countime <= (dt-tadc(jmain)*0.5)  % Ê±¼ä´ÁÔÚÔÈËÙ¶Î
+        elseif countime > (tadc(jmain)*0.5)  &&  countime <= (dt-tadc(jmain)*0.5)  % Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
 %             sts2=sts1+vst1*(countime-tadc(jmain)*0.5);
             vst2=(dvs*2)/tadc(jmain);
             sts2=s0+0.5*dvs+vst2*(countime-tadc(jmain)*0.5);            
@@ -93,7 +93,7 @@ if flag(jmain) == 1                           % Ö÷Öá´æÔÚÔÈËÙ¶Î
             vt=[vt;vst2];
             at=[at;ast2];
             jt=[jt;jst2];
-        elseif countime > (dt-tadc(jmain)*0.5) && countime <= dt    % Ê±¼ä´ÁÔÚ¼õËÙ¶Î
+        elseif countime > (dt-tadc(jmain)*0.5) && countime <= dt    % Ê±ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ù¶ï¿½
             sts3=s0+0.5*dvs+vst2*(dt-tadc(jmain))-dvs*0.5+dvs*((countime-dt+tadc(jmain))/tadc(jmain)-0.5*sin(2*pi*(countime-dt+tadc(jmain))/tadc(jmain))/pi);
             vst3=dvs/tadc(jmain)-dvs*cos(2*pi*(countime-dt+tadc(jmain))/tadc(jmain))/tadc(jmain);
             ast3=dvs*2*pi*sin(2*pi*(countime-dt+tadc(jmain))/tadc(jmain))/tadc(jmain)^2;
@@ -102,18 +102,18 @@ if flag(jmain) == 1                           % Ö÷Öá´æÔÚÔÈËÙ¶Î
             vt=[vt;vst3];
             at=[at;ast3];
             jt=[jt;jst3];
-        else countime>dt;                   % Ê±¼ä´Á³¬³öÖ÷ÖáÔËÐÐÊ±¼ä
+        else countime>dt;                   % Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
             st=[st;sf];
             vt=[vt;0 0 0 0];
             at=[at;0 0 0 0];
             jt=[jt;0 0 0 0];
         end
     end
-else                                      % Ö÷ÖáÃ»ÓÐÔÈËÙ¶Î
+else                                      % ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
     for i=1:size(counT,1)
         countime=counT(i);
         dvs=dves;
-        if countime <= dt                 % Ê±¼ä´ÁÔÚ¼Ó¼õËÙ¶Î 
+        if countime <= dt                 % Ê±ï¿½ï¿½ï¿½ï¿½Ú¼Ó¼ï¿½ï¿½Ù¶ï¿½ 
             sts1=s0+dvs*((countime)/dt-0.5*sin(2*pi*(countime)/dt)/pi);
             vst1=dvs/dt-dvs*cos(2*pi*(countime)/dt)/dt;
             ast1=dvs*2*pi*sin(2*pi*countime/dt)/dt^2;
@@ -122,7 +122,7 @@ else                                      % Ö÷ÖáÃ»ÓÐÔÈËÙ¶Î
             vt=[vt;vst1];
             at=[at;ast1];
             jt=[jt;jst1];
-        else countime>dt;                   % Ê±¼ä´Á³¬³öÖ÷ÖáÔËÐÐÊ±¼ä
+        else countime>dt;                   % Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
             st=[st;sf];
             vt=[vt;0 0 0 0];
             at=[at;0 0 0 0];

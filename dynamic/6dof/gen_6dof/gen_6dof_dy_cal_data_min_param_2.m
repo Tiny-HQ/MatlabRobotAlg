@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -122,9 +122,9 @@ function tao = gen_6dof_dy_cal_data_min_param_2(q,dq,ddq)
         U(36,:);];
     
 %     tao = U_r*fi;
-      %% ×îÐ¡¼¯;
+      %% ï¿½ï¿½Ð¡ï¿½ï¿½;
    
-     %% ³¢ÊÔµÚÒ»¡¢¶þ¡¢Èý¡¢ËÄ¡¢Îå¡¢Áù¹Ø½Úµ¥¶ÀÐ´×îÐ¡¼¯£¬ÆäËû¹Ø½ÚÏÈ²»¶¯£¬1¡¢2¡¢3¡¢4¡¢5¡¢6Öá½á¹ûok£¬
+     %% ï¿½ï¿½ï¿½Ôµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½å¡¢ï¿½ï¿½ï¿½Ø½Úµï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½2ï¿½ï¿½3ï¿½ï¿½4ï¿½ï¿½5ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½okï¿½ï¿½
      %Try to write the minimum set separately for the first, second, third, fourth, fifth, and sixth joints, and the other joints will not move first, and the results of the 1, 2, 3, 4, 5, and 6 axes are OK
     YY6 = Ii66yy;M6 = m6;
     MX6 = m6*Pc666(1); MY6 = m6*Pc666(2);MZ6 = m6*Pc666(3);
@@ -151,7 +151,7 @@ function tao = gen_6dof_dy_cal_data_min_param_2(q,dq,ddq)
     fi5_min_param = [MX5 MY5 XX5 XY5 XZ5 YZ5 ZZ5]';
     fi6_min_param = [MX6 MY6 XX6 XY6 XZ6 YZ6 ZZ6]';
     fi_min = [fi1_min_param;fi2_min_param;fi3_min_param;fi4_min_param;fi5_min_param;fi6_min_param];
-    U_min_param = zeros(6,36);%Ã¿Ò»¸öÖáÐ´³É×îÐ¡¼¯Ö®ºó£¬¾Í»áÉÙ¶ÔÓ¦µÄÁÐÊý£»%After each axis is written as the smallest set, the corresponding number of columns will be missing;
+    U_min_param = zeros(6,36);%Ã¿Ò»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ó£¬¾Í»ï¿½ï¿½Ù¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%After each axis is written as the smallest set, the corresponding number of columns will be missing;
     U_min_param(:,1) = U_r(:,10);
     U_min_param(:,2) = U_r(:,12);
     U_min_param(:,3) = U_r(:,13);

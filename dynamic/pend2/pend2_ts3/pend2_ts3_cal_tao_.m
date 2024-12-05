@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,7 +12,7 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%任意时候 位置 速度 加速度求得的tao值;The tao value obtained from the position velocity acceleration at any time;
+%锟斤拷锟斤拷时锟斤拷 位锟斤拷 锟劫讹拷 锟斤拷锟劫讹拷锟斤拷玫锟絫ao值;The tao value obtained from the position velocity acceleration at any time;
 
 
 

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -33,14 +33,14 @@ d3=L7;
 
 
 
-DH.a(1) = 0.0;%这里是从0开始的;matlab数组只能从1开始;Here it starts at 0; MATLAB arrays can only start at 1;
+DH.a(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷;matlab锟斤拷锟斤拷只锟杰达拷1锟斤拷始;Here it starts at 0; MATLAB arrays can only start at 1;
 DH.a(2) = a2;
 DH.a(3) = a3;
 DH.a(4) = a4;
 DH.a(5) = 0.0;
 DH.a(6) = 0.0;
 
-DH.alpha(1) = 0.0;%这里是从0开始的; Here it starts at 0;
+DH.alpha(1) = 0.0;%锟斤拷锟斤拷锟角达拷0锟斤拷始锟斤拷; Here it starts at 0;
 DH.alpha(2) = 90;
 DH.alpha(3) = 0.0;
 DH.alpha(4) = 90;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,7 +11,7 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%ok;Êµ¼Ê½¨Ä£¸úÀíÂÛ¶ÔÓ¦; Practical modeling corresponds to theory;
+%ok;Êµï¿½Ê½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Û¶ï¿½Ó¦; Practical modeling corresponds to theory;
 
 
 %
@@ -22,11 +22,11 @@
 %           |                        |
 %
 %
-%   ?UEÇtu×raeDlLZ?ÚÎtÖAÓÐCý¸öÐý×SÖáLt
-%   ÐýÁzÇó??
-%   TlÄÎtÖAE¸ÁzÓS¸AÎS[0 l 0]'
-%   NéÖ¤Í¨š?
-%   ×ËEZÓS¸AN?EÇsÔl?
+%   ?UEï¿½tuï¿½raeDlLZ?ï¿½ï¿½tï¿½Aï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Sï¿½ï¿½Lt
+%   ï¿½ï¿½ï¿½zï¿½ï¿½??
+%   Tlï¿½ï¿½tï¿½AEï¿½ï¿½zï¿½Sï¿½Aï¿½S[0 l 0]'
+%   Nï¿½Ö¤Í¨ï¿½?
+%   ï¿½ï¿½EZï¿½Sï¿½AN?Eï¿½sï¿½l?
 %
 
 
@@ -58,11 +58,11 @@ v3 = -cross(w3,q3);
 
 w_r = eye(3);
 a1 = w1(1);a2 = w1(2);a3 = w1(3);
-w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wl?´sÔlCžRO?
+w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wl?ï¿½sï¿½lCï¿½RO?
 w_r(2,1) = a3;w_r(2,2) = 0;w_r(2,3) = -a1;
 w_r(3,1) = -a2;w_r(3,2) = a1;w_r(3,3) = 0;
 w_r;
-ew = eye(3)+w_r*s1+w_r*w_r*(1-c1);%Ö¸EýtýšTE?;
+ew = eye(3)+w_r*s1+w_r*w_r*(1-c1);%Ö¸Eï¿½tï¿½ï¿½TE?;
 I = eye(3);
 x = cross(w1,v1);
 p1 = (I-ew)*x';
@@ -72,11 +72,11 @@ T1
 
 w_r = eye(3);
 a1 = w2(1);a2 = w2(2);a3 = w2(3);
-w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wl?´sÔlCžRO?
+w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wl?ï¿½sï¿½lCï¿½RO?
 w_r(2,1) = a3;w_r(2,2) = 0;w_r(2,3) = -a1;
 w_r(3,1) = -a2;w_r(3,2) = a1;w_r(3,3) = 0;
 w_r;
-ew = eye(3)+w_r*s2+w_r*w_r*(1-c2);%Ö¸EýtýšTE?;
+ew = eye(3)+w_r*s2+w_r*w_r*(1-c2);%Ö¸Eï¿½tï¿½ï¿½TE?;
 I = eye(3);
 x = cross(w2,v2);
 p2 = (I-ew)*x';
@@ -86,11 +86,11 @@ T2
 
 w_r = eye(3);
 a1 = w3(1);a2 = w3(2);a3 = w3(3);
-w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wl?´sÔlCžRO?
+w_r(1,1) = 0;w_r(1,2) = -a3;w_r(1,3) = a2;%wl?ï¿½sï¿½lCï¿½RO?
 w_r(2,1) = a3;w_r(2,2) = 0;w_r(2,3) = -a1;
 w_r(3,1) = -a2;w_r(3,2) = a1;w_r(3,3) = 0;
 w_r;
-ew = eye(3)+w_r*s3+w_r*w_r*(1-c3);%Ö¸EýtýšTE?;
+ew = eye(3)+w_r*s3+w_r*w_r*(1-c3);%Ö¸Eï¿½tï¿½ï¿½TE?;
 I = eye(3);
 x = cross(w3,v3);
 p3 = (I-ew)*x';

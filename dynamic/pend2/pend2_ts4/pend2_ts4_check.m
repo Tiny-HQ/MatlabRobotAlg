@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -29,9 +29,9 @@ for i = 1:sum
         
     end
     %[tao1(i),tao2(i)] =
-    %pend2_ts4_cal_tao(q(1),dq(1),ddq(1),q(2),dq(2),ddq(2));%Å£¶ÙÅ·À­¹«Ê½newton-euler
-    %[tao1(i),tao2(i)] = pend2_ts4_cal_tao_linear_separate(q(1),dq(1),ddq(1),q(2),dq(2),ddq(2));%ÏßÐÔ·ÖÀëÐÎÊ½ Linear separation form
-    [tao1(i),tao2(i)] = pend2_ts4_cal_tao_min_param(q(1),dq(1),ddq(1),q(2),dq(2),ddq(2));%×îÐ¡¼¯ÐÎÊ½ min paramter- form
+    %pend2_ts4_cal_tao(q(1),dq(1),ddq(1),q(2),dq(2),ddq(2));%Å£ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½Ê½newton-euler
+    %[tao1(i),tao2(i)] = pend2_ts4_cal_tao_linear_separate(q(1),dq(1),ddq(1),q(2),dq(2),ddq(2));%ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ Linear separation form
+    [tao1(i),tao2(i)] = pend2_ts4_cal_tao_min_param(q(1),dq(1),ddq(1),q(2),dq(2),ddq(2));%ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½Ê½ min paramter- form
 
 end
 
@@ -40,7 +40,7 @@ subplot(4,1,1);
 plot(tao1,'r');hold on;plot(tao_data_1.Data,'b');
 subplot(4,1,2);
 plot(tao2,'r');hold on;plot(tao_data_2.Data,'b');
-% ¹«Ê½¼ÆËã³öÀ´µÄtao¸úÊµ¼Ê·ÂÕæ½á¹û³öÀ´µÄtao×ö²î¶Ô±È;The difference between the TAO calculated by the formula and the TAO obtained by the actual simulation results is compared.
+% ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½taoï¿½ï¿½Êµï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½taoï¿½ï¿½ï¿½ï¿½Ô±ï¿½;The difference between the TAO calculated by the formula and the TAO obtained by the actual simulation results is compared.
 subplot(4,1,3);
 plot(tao1'-tao_data_1.Data);
 subplot(4,1,4);

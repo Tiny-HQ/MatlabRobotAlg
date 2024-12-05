@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,7 +13,7 @@
 % -------------------------------------------------------------------------
 
 
-%¸ù¾Ý¶¯Á¦Ñ§Ä£ÐÍ¹«Ê½¼ÆËã½Ç¶È¡¢½ÇËÙ¶È¡¢¼ÓËÙ¶ÈÏÂµÄÁ¦¾Ø;Calculate the moment under angle, angular velocity and acceleration according to the dynamic model formula;
+%ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½Ñ§Ä£ï¿½Í¹ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ç¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½;Calculate the moment under angle, angular velocity and acceleration according to the dynamic model formula;
 
 
 function tao = pend_cal_tao(acc,vel,theta)
@@ -25,7 +25,7 @@ function tao = pend_cal_tao(acc,vel,theta)
     vel = vel*pi/180.0;
     acc = acc*pi/180.0;
    
-    tao =(26*acc)/125 + (L*((2409*L*acc)/2000 - (2409*g*cos(theta))/1000))/2;%ÓÉpend_cal_formula()¼ÆËãµÃµ½µÄ£»calculated from pend_cal_formula();
+    tao =(26*acc)/125 + (L*((2409*L*acc)/2000 - (2409*g*cos(theta))/1000))/2;%ï¿½ï¿½pend_cal_formula()ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½Ä£ï¿½calculated from pend_cal_formula();
 
     tao = tao;
 

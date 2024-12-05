@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -100,8 +100,8 @@ sum(v.*[a1/3^0.5 b1/3^0.5 c1/3^0.5]')
 
 axis equal;
 
-xlabel('XÖá');
+xlabel('Xï¿½ï¿½');
 
-ylabel('YÖá');
+ylabel('Yï¿½ï¿½');
 
-zlabel('ZÖá');
+zlabel('Zï¿½ï¿½');

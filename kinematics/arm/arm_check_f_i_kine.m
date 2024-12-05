@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -18,10 +18,10 @@
 
 clc;
 clear;
-%a´Ó0¿ªÊ¼µ½5; a starts from 0 to 5;
-%alpha´Ó0¿ªÊ¼µ½5; alpha starts from 0 to 5;
-%d´Ó1¿ªÊ¼µ½6; d starts from 1 to 6;
-%theta´Ó1¿ªÊ¼µ½6; theta starts from 1 to 6;
+%aï¿½ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½5; a starts from 0 to 5;
+%alphaï¿½ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½5; alpha starts from 0 to 5;
+%dï¿½ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½6; d starts from 1 to 6;
+%thetaï¿½ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½6; theta starts from 1 to 6;
 %
 %+---+-----------+-----------+-----------+-----------+-----------+
 %| j |     theta |         d |         a |     alpha |    offset |
@@ -47,14 +47,14 @@ clear;
 
 
 
-% DH.a(1) = 0.0;%ÕâÀïÊÇ´Ó0¿ªÊ¼µÄ;matlabÊý×éÖ»ÄÜ´Ó1¿ªÊ¼; Here it starts at 0; MATLAB arrays can only start at 1;
+% DH.a(1) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½;matlabï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ü´ï¿½1ï¿½ï¿½Ê¼; Here it starts at 0; MATLAB arrays can only start at 1;
 % DH.a(2) = 0.163655;
 % DH.a(3) = 0.550739;
 % DH.a(4) = 0.208847;
 % DH.a(5) = 0.0;
 % DH.a(6) = 0.0;
 % 
-% DH.alpha(1) = 0.0;%ÕâÀïÊÇ´Ó0¿ªÊ¼µÄ; Here it starts at 0;
+% DH.alpha(1) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½; Here it starts at 0;
 % DH.alpha(2) = 90;
 % DH.alpha(3) = 0.0;
 % DH.alpha(4) = 90;
@@ -68,14 +68,14 @@ clear;
 % DH.d(5) = 0.0;
 % DH.d(6) = 0.115;
 
-DH.a(1) = 0.0;%ÕâÀïÊÇ´Ó0¿ªÊ¼µÄ;matlabÊý×éÖ»ÄÜ´Ó1¿ªÊ¼;Here it starts at 0; MATLAB arrays can only start at 1;
+DH.a(1) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½;matlabï¿½ï¿½ï¿½ï¿½Ö»ï¿½Ü´ï¿½1ï¿½ï¿½Ê¼;Here it starts at 0; MATLAB arrays can only start at 1;
 DH.a(2) = 0.163655;
 DH.a(3) = 0.550739;
 DH.a(4) = 0.208847;
 DH.a(5) = 0.0;
 DH.a(6) = 0.0;
 
-DH.alpha(1) = 0.0;%ÕâÀïÊÇ´Ó0¿ªÊ¼µÄ;Here it starts at 0;
+DH.alpha(1) = 0.0;%ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½;Here it starts at 0;
 DH.alpha(2) = 90;
 DH.alpha(3) = 0.0;
 DH.alpha(4) = 90;
@@ -97,10 +97,10 @@ DH.theta(5) = 0.0;
 DH.theta(6) = 0.0;
 
 
- %q = [130 25 156 -40 20 -90]%(0-180Ëæ±ãÌî;) (0-180 can be filled in casually; )
-q = [0 90 0 0 0 0];%(0-180Ëæ±ãÌî;) (0-180 can be filled in casually; )
-q = [pi/3 pi/2 pi/3 pi/4 pi/5 pi/6]*180/pi;%(0-180Ëæ±ãÌî;) (0-180 can be filled in casually; )
-%q = [0 90 0 0 0 0];%(0-180Ëæ±ãÌî;) (0-180 can be filled in casually; )
+ %q = [130 25 156 -40 20 -90]%(0-180ï¿½ï¿½ï¿½ï¿½ï¿½;) (0-180 can be filled in casually; )
+q = [0 90 0 0 0 0];%(0-180ï¿½ï¿½ï¿½ï¿½ï¿½;) (0-180 can be filled in casually; )
+q = [pi/3 pi/2 pi/3 pi/4 pi/5 pi/6]*180/pi;%(0-180ï¿½ï¿½ï¿½ï¿½ï¿½;) (0-180 can be filled in casually; )
+%q = [0 90 0 0 0 0];%(0-180ï¿½ï¿½ï¿½ï¿½ï¿½;) (0-180 can be filled in casually; )
 
 [T,shoulder,elbow,wrist] = arm_fkine_dh(q,DH,'deg','deg');
  T
@@ -113,8 +113,8 @@ q = [pi/3 pi/2 pi/3 pi/4 pi/5 pi/6]*180/pi;%(0-180Ëæ±ãÌî;) (0-180 can be filled 
 
 
 
-% q(2) = q(2)-90;%ÐýÁ¿µÄ³õÊ¼Î»ÖÃÊÇdhÎ»ÖÃ¸º90¶È; The initial position of the % spin is minus 90 degrees at the DH position;
-%q = [92 -36 60 167 35 14]%(0-180Ëæ±ãÌî;) (0-180 can be filled in casually; )
+% q(2) = q(2)-90;%ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ê¼Î»ï¿½ï¿½ï¿½ï¿½dhÎ»ï¿½Ã¸ï¿½90ï¿½ï¿½; The initial position of the % spin is minus 90 degrees at the DH position;
+%q = [92 -36 60 167 35 14]%(0-180ï¿½ï¿½ï¿½ï¿½ï¿½;) (0-180 can be filled in casually; )
 % [T1,shoulder1,elbow1,wrist1] = arm_fkine_sc(q,DH,'deg','deg');
 %T1;
 % shoulder1

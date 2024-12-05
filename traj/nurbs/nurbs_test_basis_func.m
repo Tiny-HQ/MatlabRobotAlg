@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -21,15 +21,15 @@ last_value = 1;
 
 u = 0:Ts:last_value;
   
-% ¶¨Òå NURBS ÇúÏß¿ØÖÆµãºÍÈ¨ÖØ  Define NURBS curve control points and weights  
-Px = [0 ;1;2;3;5;0 ;1;2;3;5;]; % ¿ØÖÆµã×ø±ê   Control point coordinates
-W = [1 ;2;3;4;5;6 ;1 ;2;3;4;5;6 ]; % È¨ÖØ  weight
+% ï¿½ï¿½ï¿½ï¿½ NURBS ï¿½ï¿½ï¿½ß¿ï¿½ï¿½Æµï¿½ï¿½È¨ï¿½ï¿½  Define NURBS curve control points and weights  
+Px = [0 ;1;2;3;5;0 ;1;2;3;5;]; % ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½   Control point coordinates
+W = [1 ;2;3;4;5;6 ;1 ;2;3;4;5;6 ]; % È¨ï¿½ï¿½  weight
 
 
 
   
-% ¶¨Òå NURBS ÇúÏß¶ÈÊý  Define the degrees of the NURBS curve  
-k = 3; % ÇúÏß¶ÈÊý  Define the degrees of the NURBS curve  
+% ï¿½ï¿½ï¿½ï¿½ NURBS ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  Define the degrees of the NURBS curve  
+k = 3; % ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  Define the degrees of the NURBS curve  
 [m,n] = size(Px);
 u_vec = nurbs_cal_knot(k,m,last_value);
 

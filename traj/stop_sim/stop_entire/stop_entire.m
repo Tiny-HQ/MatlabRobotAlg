@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -16,13 +16,13 @@ clear;
 
 
 D = -30;
-J = 30000;%±êÁ¿ scalar
+J = 30000;%ï¿½ï¿½ï¿½ï¿½ scalar
 
 
 
 % for i = 1:100
 %     
-%     %ÓÃËæ»úÊýÀ´¼ì²âËã·¨ÊÇ·ñok; Use random numbers to detect whether the algorithm is OK;
+%     %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½Ç·ï¿½ok; Use random numbers to detect whether the algorithm is OK;
 %     V = rand(1)*2000-1000 ; 
 %     A = rand(1)*2000-1000; A_set = rand(1)*2000;
 %   
@@ -43,7 +43,7 @@ J = 30000;%±êÁ¿ scalar
 V = 1000;
 A = 674; 
 A_set = 1186;
-J = 3183;%±êÁ¿
+J = 3183;%ï¿½ï¿½ï¿½ï¿½
 [t] = stop_cal_param_entire(V,A,A_set,J);
 
 [p,v,a,jerk] = stop_cal_pvaj_entire(t,J,V,A,D);
@@ -55,7 +55,7 @@ subplot(3,2,5);plot(jerk,'b');grid on;
 V = 100;
 A = 674; 
 A_set = 1186;
-J = 3183;%±êÁ¿
+J = 3183;%ï¿½ï¿½ï¿½ï¿½
 [t] = stop_cal_param_entire(V,A,A_set,J);
 [p,v,a,jerk] = stop_cal_pvaj_entire(t,J,V,A,D);
 subplot(3,2,2);plot(v,'r');grid on;
@@ -68,7 +68,7 @@ figure;
 V = -20;
 A = 674; 
 A_set = 1186;
-J = 3183;%±êÁ¿
+J = 3183;%ï¿½ï¿½ï¿½ï¿½
 [t] = stop_cal_param_entire(V,A,A_set,J);
 [p,v,a,jerk] = stop_cal_pvaj_entire(t,J,V,A,D);
 subplot(6,2,1);plot(v,'r');grid on;
@@ -79,7 +79,7 @@ subplot(6,2,5);plot(jerk,'b');grid on;
 V = 500;
 A = -1674; 
 A_set = 1186;
-J = 3183;%±êÁ¿
+J = 3183;%ï¿½ï¿½ï¿½ï¿½
 [t] = stop_cal_param_entire(V,A,A_set,J);
 [p,v,a,jerk] = stop_cal_pvaj_entire(t,J,V,A,D);
 subplot(6,2,2);plot(v,'r');grid on;
@@ -90,7 +90,7 @@ subplot(6,2,6);plot(jerk,'b');grid on;
 V = -100;
 A = 674; 
 A_set = 1186;
-J = 3183;%±êÁ¿
+J = 3183;%ï¿½ï¿½ï¿½ï¿½
 [t] = stop_cal_param_entire(V,A,A_set,J);
 [p,v,a,jerk] = stop_cal_pvaj_entire(t,J,V,A,D);
 
@@ -101,7 +101,7 @@ subplot(6,2,11);plot(jerk,'b');grid on;
 V = -400;
 A = 674; 
 A_set = 1186;
-J = 3183;%±êÁ¿
+J = 3183;%ï¿½ï¿½ï¿½ï¿½
 [t] = stop_cal_param_entire(V,A,A_set,J);
 [p,v,a,jerk] = stop_cal_pvaj_entire(t,J,V,A,D);
 subplot(6,2,8);plot(v,'r');grid on;

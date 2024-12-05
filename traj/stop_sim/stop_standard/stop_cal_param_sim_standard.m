@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -11,8 +11,8 @@
 % Disclaimer: This code is provided "as is" without any warranties. Use at your own risk.
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
-%AÎªµ±Ç°¼ÓËÙ¶È;
-%»¹¿ÉÒÔÐ´Ò»°æ£¬Ìá¹©Ä¿±ê¼õËÙ¶È;
+%AÎªï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ù¶ï¿½;
+%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´Ò»ï¿½æ£¬ï¿½á¹©Ä¿ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½;
 %A is the current acceleration;
 % can also write a version that provides target deceleration;
 

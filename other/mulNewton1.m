@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -18,8 +18,8 @@
 
 
 function [r,n]=mulNewton(x0,funcMat,var,eps)
-% x0ÎªÁ½¸ö±äÁ¿µÄÆðÊ¼Öµ,funcMatÊÇÁ½¸ö·½³Ì,varÎªÁ½¸ö·½³ÌµÄÁ½¸ö±äÁ¿,eps¿ØÖÆ¾«¶È
-% Å£¶Ùµü´ú·¨½â¶þÔª·ÇÏßÐÔ·½³Ì×é
+% x0Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Öµ,funcMatï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,varÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,epsï¿½ï¿½ï¿½Æ¾ï¿½ï¿½ï¿½
+% Å£ï¿½Ùµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½
     if nargin==0
         x0 = [0.2,0.6];
         funcMat=[sym('(15*x1+10*x2)-((40-30*x1-10*x2)^2*(15-15*x1*x1*x1))*5e-4')...
@@ -30,40 +30,40 @@ function [r,n]=mulNewton(x0,funcMat,var,eps)
         eps=1.0e-4;
     end
 
-    n_Var = size(var,2);%±äÁ¿µÄ¸öÊý
-    n_X = size(x0,2);%±äÁ¿µÄ¸öÊý
-    n_Func = size(funcMat,2);%º¯ÊýµÄ¸öÊý
+    n_Var = size(var,2);%ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+    n_X = size(x0,2);%ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+    n_Func = size(funcMat,2);%ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
 
     if n_X ~= n_Var && n_X ~= n_Func
         fprintf('Expression Error!\n');
         exit(0);
     end
 
-    %ºËÐÄµÄ¼ÆËã¹ý³Ì£¬ÏÈÖ´ÐÐµÚÒ»±é
+    %ï¿½ï¿½ï¿½ÄµÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½Ì£ï¿½ï¿½ï¿½Ö´ï¿½Ðµï¿½Ò»ï¿½ï¿½
     r=x0-myf(x0, funcMat, var)*inv(dmyf(x0, funcMat, var));
-    %µü´ú´ÎÊýÍ³¼Æ
+    %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½
     n=0;
 
-    %ÉèÖÃ³õÊ¼µÄÈÝ²î
+    %ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½ï¿½ï¿½Ý²ï¿½
     tol=1;
     while tol>=eps
         x0=r;
         r=x0-myf(x0, funcMat, var)*inv(dmyf(x0, funcMat, var));
 
-        %µÃµ½±¾´ÎµÄ¼ÆËã¾«¶È£¨¶àÎ¬µÄÅÐ¶Ï¿ÉÒÔÀí½âÎª¶àÎ¬ÏòÁ¿³¤¶ÈµÄÖµÎª¾«¶ÈÖµ£©
+        %ï¿½Ãµï¿½ï¿½ï¿½ï¿½ÎµÄ¼ï¿½ï¿½ã¾«ï¿½È£ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½Ð¶Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½ÖµÎªï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½
         tol=norm(r-x0);
         n=n+1;
         if(n>100000)
-            disp('µü´ú²½ÊýÌ«¶à£¬·½³Ì¿ÉÄÜ²»ÊÕÁ²');
+            disp('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì«ï¿½à£¬ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½Ü²ï¿½ï¿½ï¿½ï¿½ï¿½');
             return;
         end
     end
 end % end mulNewton
 
-% ÊäÈë…¢ÊýxÎªÁ½¸öÊýÖµ,funcÎª1*2·ûºÅ±äÁ¿¾ØÕó,varÎª1*2·ûºÅ±äÁ¿¾ØÕóÖÐµÄ±äÁ¿
-% ·µ»ØÖµÎª1*2¾ØÕó,ÄÚÈÝÎªÊýÖµ
+% ï¿½ï¿½ï¿½ë…¢ï¿½ï¿½xÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ,funcÎª1*2ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,varÎª1*2ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ±ï¿½ï¿½ï¿½
+% ï¿½ï¿½ï¿½ï¿½ÖµÎª1*2ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Öµ
 function f=myf(x,funcMat, varMat)
-    n_X = size(x,2);%±äÁ¿µÄ¸öÊý
+    n_X = size(x,2);%ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
     f_Val = zeros(1,n_X);
     for i=1:n_X
         tmp_Var = cell(1,n_X);
@@ -77,11 +77,11 @@ function f=myf(x,funcMat, varMat)
     f=f_Val;
 end % end myf
 
-% ·µ»ØÖµÎª2*2¾ØÕó,ÄÚÈÝÎªÊýÖµ
+% ï¿½ï¿½ï¿½ï¿½ÖµÎª2*2ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Öµ
 %df=[df1/x1, df1/x2;
 %    df2/x1. df2/x2];
 function df_val=dmyf(x, funcMat, varMat)
-    n_X = size(x,2);%±äÁ¿µÄ¸öÊý
+    n_X = size(x,2);%ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
     df =cell(n_X, n_X);
     for i=1:n_X
         for j=1:n_X

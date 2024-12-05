@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -21,17 +21,17 @@ last_value = 1;
 u = 0:Ts:last_value;
   
 %define nurbs curve control point and weight;
-Px = [-5 ;1 ;5;6;10;20 ;25;28;39;45;]; % ¿ØÖÆµã×ø±ê  control point coodinate
-Py = [10 ;12;2;33;55;20 ;-11;-23;33;52;]; % ¿ØÖÆµã×ø±ê  control point coodinate
-Wx = [1 ;2;4;5;6 ;1 ;2;3;5;6 ]; % È¨ÖØ  weight
-%Wx = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ÖØ weigth
-Wy = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ÖØ weight
-%Wy = [1 ;2;3;5;6 ;10 ;2;3;4;6 ]; % È¨ÖØ  weight
+Px = [-5 ;1 ;5;6;10;20 ;25;28;39;45;]; % ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½  control point coodinate
+Py = [10 ;12;2;33;55;20 ;-11;-23;33;52;]; % ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½ï¿½  control point coodinate
+Wx = [1 ;2;4;5;6 ;1 ;2;3;5;6 ]; % È¨ï¿½ï¿½  weight
+%Wx = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ï¿½ï¿½ weigth
+Wy = [1 ;1;1;1;1 ;1 ;1;1;1;1 ]; % È¨ï¿½ï¿½ weight
+%Wy = [1 ;2;3;5;6 ;10 ;2;3;4;6 ]; % È¨ï¿½ï¿½  weight
 
 
   
-% ¶¨Òå NURBS ÇúÏß¶ÈÊý  degree
-k = 3; % ÇúÏß¶ÈÊý  
+% ï¿½ï¿½ï¿½ï¿½ NURBS ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  degree
+k = 3; % ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½  
 [m,n] = size(Px);
 u_vec = mnurbs_cal_knot_ext(k,m,last_value);
 

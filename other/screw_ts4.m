@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -13,9 +13,9 @@
 % -------------------------------------------------------------------------
 
 
-%六自由度机械臂，旋量计算；类人型手，Six-degree-of-freedom robotic arm, screw calculation; humanoid hand,
+%锟斤拷锟斤拷锟缴度伙拷械锟桔ｏ拷锟斤拷锟斤拷锟斤拷锟姐；锟斤拷锟斤拷锟斤拷锟街ｏ拷Six-degree-of-freedom robotic arm, screw calculation; humanoid hand,
 %absolutely correct!!!!
-%位置矢量看不出来跟书上一样，需要化简，相当麻烦，只需要化简pz就行，pz相对简单，没有theta1的影响，pz化简得出来对的，就基本认定整个公式计算ok；
+%位锟斤拷矢锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷一锟斤拷锟斤拷锟斤拷要锟斤拷锟斤拷锟洁当锟介烦锟斤拷只锟斤拷要锟斤拷锟斤拷pz锟斤拷锟叫ｏ拷pz锟斤拷约虻ィ锟矫伙拷锟絫heta1锟斤拷影锟届，pz锟斤拷锟斤拷贸锟斤拷锟斤拷缘模锟斤拷突锟斤拷锟斤拷隙锟斤拷锟斤拷锟斤拷锟绞斤拷锟斤拷锟給k锟斤拷
 %The position vector can't be seen as the same as in the book, it needs to be simplified, it is quite troublesome, you only need to simplify pz, pz is relatively simple, there is no influence of theta1, pz simplification is right, it is basically OK to calculate the whole formula;
 
 clc;

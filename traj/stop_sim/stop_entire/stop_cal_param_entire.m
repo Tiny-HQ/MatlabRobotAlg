@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,17 +12,17 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%A_setÖµÒ»Ö±Îª±êÁ¿; A_set values are always scalar;
+%A_setÖµÒ»Ö±Îªï¿½ï¿½ï¿½ï¿½; A_set values are always scalar;
 
 function [t] = stop_cal_param_entire(V,A,A_set,J)
 
 
     
-    if(V*A>0)%ËÙ¶È¸ú¼ÓËÙ¶ÈÍ¬Ïò; Velocity is in the same direction as acceleration;
-        V=abs(V);A = abs(A);%È¡Í¬Ïò¼ÆËãÊ±¼ä£¬²»·ÖÁ½ÕßÄ³Ò»ÏîÊÇ¸ºµÄ; The calculation time in the same direction is negative regardless of whether one of the two is negative;
-        t(1) = abs(A/J);%ÁÙ½çÖµ;limit
+    if(V*A>0)%ï¿½Ù¶È¸ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Í¬ï¿½ï¿½; Velocity is in the same direction as acceleration;
+        V=abs(V);A = abs(A);%È¡Í¬ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³Ò»ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½; The calculation time in the same direction is negative regardless of whether one of the two is negative;
+        t(1) = abs(A/J);%ï¿½Ù½ï¿½Öµ;limit
         v_max = 1/2.0*A*t(1)+V;  
-        t_vel = sqrt(v_max/J);%ÁÙ½çÖµ;limit
+        t_vel = sqrt(v_max/J);%ï¿½Ù½ï¿½Öµ;limit
         t_acc = abs(A_set/J);
         
         if t_acc<t_vel
@@ -38,7 +38,7 @@ function [t] = stop_cal_param_entire(V,A,A_set,J)
             t(4) = t(3)+t2;
         end
 
-    elseif(V*A<0)%ËÙ¶ÈºÍ¼ÓËÙ¶ÈÒìÏò; velocity and acceleration redirection;
+    elseif(V*A<0)%ï¿½Ù¶ÈºÍ¼ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½; velocity and acceleration redirection;
         V = abs(V);A = -abs(A);
          t_ = abs(A/J);
         if ((V-1/2*abs(A)*t_)<0)
@@ -80,11 +80,11 @@ function [t] = stop_cal_param_entire(V,A,A_set,J)
         t(4) = t(3)+t4;
         t(5) = t(4)+t5;
 
-    else%ËÙ¶È¡¢¼ÓËÙ¶ÈÆäÖÐÓÐÒ»ÏîÎª0; One of the velocity and acceleration is 0;
+    else%ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Îª0; One of the velocity and acceleration is 0;
         if(abs(A)<eps)
-            t(1) = abs(A/J);%ÁÙ½çÖµ;limit
+            t(1) = abs(A/J);%ï¿½Ù½ï¿½Öµ;limit
             v_max = abs(1/2.0*A*t(1)+V);  
-            t_vel = sqrt(abs(v_max)/J);%ÁÙ½çÖµ;limit
+            t_vel = sqrt(abs(v_max)/J);%ï¿½Ù½ï¿½Öµ;limit
             t_acc = abs(A_set/J);
 
             if t_acc<t_vel

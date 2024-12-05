@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -80,8 +80,8 @@ function [p,v,a,jerk] = stop_cal_pvaj_entire(t,j,V,A,D)
 
     else
         
-        %Èç¹ûÊÇ¼õËÙ¶ÎÐèÒªÖØÐÂ¼ÆËã;Ê±¼äÐòÁÐµÄ¶¨Òå²»Í¬;¶øÇÒÊý×é³¤¶È²»Í¬;
-        %t(4)ºÍt(5)ÊÇ·´Ïò¼ÓËÙ¼õËÙ¹ý³Ì;Êµ¼ÊÇé¿öºÜÄÑ³öÏÖ;
+        %ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½;Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½ï¿½å²»Í¬;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é³¤ï¿½È²ï¿½Í¬;
+        %t(4)ï¿½ï¿½t(5)ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½Ù¹ï¿½ï¿½ï¿½;Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ³ï¿½ï¿½ï¿½;
         % If it is a deceleration section, it needs to be recalculated; Time series are defined differently; And the array length is different;
         %t(4) and t(5) are reverse acceleration and deceleration processes; It's hard to come up with a real situation;
         T = 0.0:Ts:t(5);

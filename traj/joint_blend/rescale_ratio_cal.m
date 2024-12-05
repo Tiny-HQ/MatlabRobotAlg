@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -14,16 +14,16 @@
 
 
 
-%Ëõ·ÅÄ£¿é; zoom module;
-%SÊÇ¾àÀë£¬²»ÊÇÎ»ÒÆ; S is the distance, not the displacement;
+%ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½; zoom module;
+%Sï¿½Ç¾ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½; S is the distance, not the displacement;
 
 function [rescale_ratio,s,v,a,j] = rescale_ratio_cal(S,V,A,J)
 
 
     axis_no = length(S);
-    MAX_SEG = 7;%Æß¶Î¼Ó¼õËÙµÄÊý×é×îºóÒ»¶Î; the last segment of the array of seven acceleration and deceleration;
-    main_axis = -1;%Ö÷Öá±àºÅ main axes number
-    main_axis_time = 0.0;%Ö÷ÖáÊ±¼ä; main axes time;
+    MAX_SEG = 7;%ï¿½ß¶Î¼Ó¼ï¿½ï¿½Ùµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½; the last segment of the array of seven acceleration and deceleration;
+    main_axis = -1;%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ main axes number
+    main_axis_time = 0.0;%ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½; main axes time;
     
     for i = 1:axis_no   
        [t,j] = s_curve_cal_param_con(S(i),V(i),A(i),J(i));
@@ -49,13 +49,13 @@ function [rescale_ratio,s,v,a,j] = rescale_ratio_cal(S,V,A,J)
         else
             MainAxis_V(i) = d_vel(main_axis);
         end
-         % ËùÓÐ´ÓÖá¼ÓËÙ¶È¼ì²é; All from the axis acceleration check;
+         % ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È¼ï¿½ï¿½; All from the axis acceleration check;
         if (d_acc(main_axis) * dDispRatio(i) > d_acc(i))
             MainAxis_A(i) = d_acc(i) / dDispRatio(i);
         else
             MainAxis_A(i) = d_acc(main_axis);
         end
-         % ËùÓÐ´ÓÖáJerk¼ì²é; All from shaft Jerk checks;
+         % ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Jerkï¿½ï¿½ï¿½; All from shaft Jerk checks;
         if (d_jerk(main_axis) * dDispRatio(i) > d_jerk(i))
             MainAxis_J(i) = d_jerk(i) / dDispRatio(i);
         else

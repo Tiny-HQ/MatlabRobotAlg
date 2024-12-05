@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -48,9 +48,9 @@ function [q] = scara_ikine(T,ori,DH,q_option,alpha_theta_option)
     
     
     theta1 = atan2(py,px);
-    theta2 = acos((a2^2-a1^2-pxy2)/(2*a1*pxy2^0.5));%ÕâÀïÐèÒª×¢ÒâµÄÊÇÈç¹û(a2^2-a1^2-pxy2)<0£¬acosµÄ·¶Î§ÊÇ[0,180]; It should be noted here that if (a2^2-a1^2-pxy2) < 0, the range of ACOS is [0,180];
+    theta2 = acos((a2^2-a1^2-pxy2)/(2*a1*pxy2^0.5));%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(a2^2-a1^2-pxy2)<0ï¿½ï¿½acosï¿½Ä·ï¿½Î§ï¿½ï¿½[0,180]; It should be noted here that if (a2^2-a1^2-pxy2) < 0, the range of ACOS is [0,180];
     if (a2^2-a1^2-pxy2)<0
-        theta2 = pi-theta2;%acos×Ô¼º¼ÓÁËpi£¬ËùÒÔÒª¼õµô; %acos adds pi itself, so subtract it;
+        theta2 = pi-theta2;%acosï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½piï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½; %acos adds pi itself, so subtract it;
     end
     
     if ori == 1

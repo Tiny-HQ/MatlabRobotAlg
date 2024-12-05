@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -22,8 +22,8 @@ function [tao1,tao2] = pend2_ts4_cal_tao(q11,dq1,ddq1,q22,dq2,ddq2)
     R23 = splitT_R( hrotx(90));
     R32 = R23';R21 = R12';R10 = R01';
     
-    %ÍâÍÆ0->3
-    w00 = [0 0 0]';dw00 = [0 0 0]';v00 = [0 0 0]';dv00 = [0 0 g]';%ÕâÀïÐ´gµÄ»°£¬±äÁ¿gÎª9.81£¬Èç¹ûÐ´-g£¬ÄÇÃ´±äÁ¿gÎª-9.81;% If you write g here, the variable g is 9.81, and if you write -g, then the variable g is -9.81;
+    %ï¿½ï¿½ï¿½ï¿½0->3
+    w00 = [0 0 0]';dw00 = [0 0 0]';v00 = [0 0 0]';dv00 = [0 0 g]';%ï¿½ï¿½ï¿½ï¿½Ð´gï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gÎª9.81ï¿½ï¿½ï¿½ï¿½ï¿½Ð´-gï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½gÎª-9.81;% If you write g here, the variable g is 9.81, and if you write -g, then the variable g is -9.81;
     zv = [0 0 1]';
     
     w11 = R10*w00+dq1*zv;
@@ -40,7 +40,7 @@ function [tao1,tao2] = pend2_ts4_cal_tao(q11,dq1,ddq1,q22,dq2,ddq2)
     F22 = m2*dvc22;
     N22 = IC22*dw22+cross(w22,IC22*w22);
 
-    %ÄÚÍÆ3->1
+    %ï¿½ï¿½ï¿½ï¿½3->1
     f33 = [0 0 0]';n33 = [0 0 0]';
     f22 = R32*f33+F22;
     n22 = N22+R32*n33+cross(PC22,F22)+cross(P23,R32*f33);

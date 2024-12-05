@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -59,7 +59,7 @@ function [t] = s_curve_cal_param_non_symmetry(S,V,A,D,J)
             if Sa2+Sd2>=S%????????
                 a = J^2/(2*A);b = J;c = J*T1/2;d = 0.0;e = -S;%???;ax^4+bx^3+cx^2+dx+e=0;
                 %T5 = cal_4_fun_ts2(a,b,c,d,e);
-                %T5 = cal_4_quartic_function(a,b,c,e);%;A(T1+T2) = J*T5^2 = V'...V'/2*(2*T1+T2)+V'*T5=S...V'?????????????»µ?V??????????????;
+                %T5 = cal_4_quartic_function(a,b,c,e);%;A(T1+T2) = J*T5^2 = V'...V'/2*(2*T1+T2)+V'*T5=S...V'?????????????ï¿½ï¿½?V??????????????;
                 T5 = roots([a,b,c,d,e]);T5 = T5(4);
                 
                 T2 = J*T5^2/A-T1;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -18,7 +18,7 @@ function [t,v] = jugg_cur_max_average_vel(i,n,p1,p2,Vel,Acc,Jerk,t_int)
     dis = abs(p1-p2);
 
     [t1,jerk]= s_curve_cal_param_con(dis,Vel,Acc,Jerk);
-    [s1,v1,a1,jerk1] = s_curve_cal_pvaj_con(t1,jerk,t_int);     %ÕâÀï²»ÐèÒªÈ«Çó³öÀ´£¬Ö»ÐèÒªÇóÖÐ¼ät/2Ê±µÄËÙ¶È¼´¿É;Here you don't need to find it all, just ask for the speed at the middle t/2;
+    [s1,v1,a1,jerk1] = s_curve_cal_pvaj_con(t1,jerk,t_int);     %ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ÒªÈ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½ï¿½ï¿½Ð¼ï¿½t/2Ê±ï¿½ï¿½ï¿½Ù¶È¼ï¿½ï¿½ï¿½;Here you don't need to find it all, just ask for the speed at the middle t/2;
     t_mid = t1(7)/2;
     v = sign(p2-p1)*v1(ceil(t_mid/t_int));
     t_ = dis/abs(v);
@@ -36,7 +36,7 @@ function [t,v] = jugg_cur_max_average_vel(i,n,p1,p2,Vel,Acc,Jerk,t_int)
         t_acc = t1(3);
         t_dec = t1(7)-t1(4);
 
-        if(t_acc+t_dec>t_)      %ËäÈ»tÊÇÔÈËÙ£¬µ«ÊÇÒ²·Ö³ÉÈý¶Î£¬Ô­À´µÄ¼ÓËÙ£¬¼õËÙ¶ÎÊ±¼ä±£Áô; Although t is a constant velocity, it is also divided into three stages, and the original acceleration and deceleration periods are retained;
+        if(t_acc+t_dec>t_)      %ï¿½ï¿½È»tï¿½ï¿½ï¿½ï¿½ï¿½Ù£ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ö³ï¿½ï¿½ï¿½ï¿½Î£ï¿½Ô­ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ù£ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½Ê±ï¿½ä±£ï¿½ï¿½; Although t is a constant velocity, it is also divided into three stages, and the original acceleration and deceleration periods are retained;
             t(1) = t_/2.0;
             t(2) = t(1);
             t(3) = t(2)+t_/2.0;

@@ -1,7 +1,7 @@
 % -------------------------------------------------------------------------
 % Author: [Tiny][YuZhi]                      
 % Contact: [tiny_h@163.com] 
-% GitHub: [https://github.com/Tredin] 
+% GitHub: [https://github.com/Tiny-HQ] 
 % Zhihu:[https://www.zhihu.com/people/tiny_hq]
 % Copyright (c) [2024] [Tiny][YuZhi]. All rights reserved.
 % 
@@ -12,11 +12,11 @@
 % The author is not responsible for any robot or machine safety-related issues arising from the use of this code.
 % -------------------------------------------------------------------------
 
-%AÎªµ±Ê±µÄ¼ÓËÙ¶ÈÖµ;
-%A_setÎªÉèÖÃµÄ¼õËÙ¶ÈÖµ,·ÇÁã;
-%Èç¹û´ËÊ±ÔË¶¯´¦ÓÚ¼õËÙ¶È¶Î£¬ÄÇÃ´½«²»»á±»´¦Àí;
-%´ËËã·¨Ó¦ÓÃÓÚ¼ÓËÙ¶È¶ÎºÍÔÈËÙ¶Î;
-%t1ÊÇ¼ÓËÙ¶È¼õÎª0£¬t2Îª·´Ïò¼ÓËÙµ½Éè¶¨µÄ¼õËÙ¶ÈÖµ
+%AÎªï¿½ï¿½Ê±ï¿½Ä¼ï¿½ï¿½Ù¶ï¿½Öµ;
+%A_setÎªï¿½ï¿½ï¿½ÃµÄ¼ï¿½ï¿½Ù¶ï¿½Öµ,ï¿½ï¿½ï¿½ï¿½;
+%ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ù¶È¶Î£ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½á±»ï¿½ï¿½ï¿½ï¿½;
+%ï¿½ï¿½ï¿½ã·¨Ó¦ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½Ù¶È¶Îºï¿½ï¿½ï¿½ï¿½Ù¶ï¿½;
+%t1ï¿½Ç¼ï¿½ï¿½Ù¶È¼ï¿½Îª0ï¿½ï¿½t2Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ùµï¿½ï¿½è¶¨ï¿½Ä¼ï¿½ï¿½Ù¶ï¿½Öµ
 %A is the acceleration value at that time;
 %A_set is the set deceleration value, non-zero;
 % If the motion is in the deceleration phase at this time, it will not be processed;
@@ -44,12 +44,12 @@ function [t,j] = stop_cal_param_sim_ext(V,A,A_set,J)
         t(3) = t(2)+t3;
         t(4) = t(3)+t2;
      else
-        t(1) = abs(A/J);%ÁÙ½çÖµ;limit
+        t(1) = abs(A/J);%ï¿½Ù½ï¿½Öµ;limit
         
         %V = V+1/2*A*t(1);
         v_max = 1/2.0*A*t(1)+V;
         
-        t_vel = sqrt(v_max/J);%ÁÙ½çÖµ;linmt
+        t_vel = sqrt(v_max/J);%ï¿½Ù½ï¿½Öµ;linmt
         t_acc = abs(A_set/J);
         
         if t_acc<t_vel

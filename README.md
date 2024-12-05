@@ -18,6 +18,7 @@ All algorithms have been **personally tested and verified**, though there may st
 - **Statics**🧲: Includes Jacobian matrix and acceleration Jacobian matrix for SCARA and six-axis industrial robots.
 - **Func_base**✨: Includes basic robot-related functions, such as matrix operations, Euler angles, quaternions, circular formulas, exponential sums, and more.
 - **Other**🐢: Includes some general tests, algorithm attempts, etc.
+- 🐢When using it, add the path including subfolders.
 
 ---
 

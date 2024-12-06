@@ -12,7 +12,7 @@ All algorithms have been **personally tested and verified**, though there may st
 ---
 
 ## Contents Overview
-- **Dynamics**⚙️: Includes SCARA, six-axis Puma robot, standard six-axis robots, cobots, Newton-Euler equations, linear separation, min-parameter methods, about dynamics simulations, and two-link related dynamics algorithms for learning.
+- **Dynamics**⚙️: Includes SCARA, six-axis Puma robot, standard six-axis robots, cobots, using Newton-Euler equations, linear separation, min-parameter methods to calculate dynamics simulations, and two-link related dynamics algorithms for learning.
 - **Kinematics**🚀: Includes SCARA, six-axis industrial robots, cobots, direct and inverse kinematics solutions using analytical and geometric methods, and screw theory.
 - **Trajectory Planning**📈 : Includes research on algorithms related to trapezoidal, S-curve, spline, blend, stop curves, NURBS, and constant-speed feed algorithms.
 - **Statics**🧲: Includes Jacobian matrix and acceleration Jacobian matrix for SCARA and six-axis industrial robots.
